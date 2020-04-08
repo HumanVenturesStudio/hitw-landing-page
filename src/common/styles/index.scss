@@ -1,0 +1,6 @@
+@import './variables';
+@import './reset';
+
+body {
+  background: var(--color--application-bg);
+}

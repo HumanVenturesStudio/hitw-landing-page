@@ -1,8 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'gatsby';
 
 import styles from './styles.module.scss';
-import { Link } from 'gatsby';
 
 const NavLink = (props) => (
   <Link
@@ -12,7 +12,7 @@ const NavLink = (props) => (
       // anchor element's props
       return {
         className: cx('link', styles.NavLink, {
-          [styles.active]: isCurrent,
+          [styles.NavLinkActive]: isCurrent,
         }),
       };
     }}

@@ -1,12 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 
+import Nav from 'components/Nav';
+import Logo from 'components/Logo';
 import styles from './styles.module.scss';
-import Nav from '../Nav';
 
 export default ({ children }) => (
   <div className={cx('layout', styles.Layout)}>
-    <h1>Website</h1>
+    <Logo className={styles.Logo} />
     <Nav />
     {children}
   </div>

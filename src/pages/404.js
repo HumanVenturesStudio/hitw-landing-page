@@ -6,6 +6,6 @@ import styles from './styles.module.scss';
 
 export default () => (
   <Layout>
-    <h2 className={styles.H2}>Home</h2>
+    <h2 className={styles.H2}>Not Found</h2>
   </Layout>
 );
