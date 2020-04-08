@@ -17,7 +17,7 @@ module.exports = {
         // Override the file regex for CSS modules
         sassRuleModulesTest: /\.module\.s(a|c)ss$/,
         cssLoaderOptions: {
-          localIdentName: 'hv_[local]__[hash:base64:8]',
+          localIdentName: 'hvs__[local]__[hash:base64:8]',
         },
       },
     },

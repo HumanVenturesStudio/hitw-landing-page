@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "web-landing-scaffold",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Human Studio landing page starter",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
+    "css-loader": "^3.5.1",
     "gatsby": "^2.20.12",
+    "gatsby-plugin-sass": "^2.2.1",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

@@ -1,0 +1,11 @@
+.Nav {
+  display: flex;
+}
+
+.NavLink {
+  display: block;
+
+  .active {
+    color: rosybrown;
+  }
+}
