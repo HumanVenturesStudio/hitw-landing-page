@@ -39,7 +39,7 @@ trackEvent.EVENT__CLICK_CTA = 'click:cta';
 export const withPageTracking = (Layout) => {
   function PageTrackingHOC(props) {
     const data = useStaticQuery(graphql`
-      query BranchQuery {
+      query {
         gitBranch(current: { eq: true }) {
           id
           name
