@@ -12,17 +12,20 @@ module.exports = {
     title: 'Foundation',
     titleTemplate: '%s',
     description: 'Foundation Landing Page',
-    url: 'https://www.humanventures.co', // No trailing slash allowed!
+    url: `${process.env.URL}`, // No trailing slash allowed!
     image: '/images/site.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@Human_Ventures',
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-source-local-git`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/Layout/index.js'),
+          default: require.resolve(
+            `${__dirname}/src/components/Layout/index.js`
+          ),
         },
       },
     },
