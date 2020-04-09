@@ -14,7 +14,7 @@ const NavLink = (props) => (
 
 export default ({ children }) => {
   const data = useStaticQuery(graphql`
-    query HeaderQuery {
+    query NavQuery {
       site {
         siteMetadata {
           menuLinks {

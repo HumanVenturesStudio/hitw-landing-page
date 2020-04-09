@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { info, warn } from 'common/lib/log';
 
 const FN_FALLBACK = (...args) => {
@@ -28,20 +28,21 @@ export const trackEvent = ({ name, data }) => {
 
 export const withPageTracking = (Layout) => {
   function PageTrackingHOC(props) {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            gitBranch(current: { eq: true }) {
-              id
-              name
-              commit
-            }
-          }
-        `}
-        render={(data) => trackPageView(data) && <Layout {...props} />}
-      />
-    );
+    const data = useStaticQuery(graphql`
+      query BranchQuery {
+        gitBranch(current: { eq: true }) {
+          id
+          name
+          commit
+        }
+      }
+    `);
+
+    React.useEffect(() => {
+      trackPageView(data);
+    }, [data]);
+
+    return <Layout {...props} />;
   }
 
   return PageTrackingHOC;
