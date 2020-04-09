@@ -17,10 +17,7 @@ const analytics = (typeof window !== `undefined` && window.analytics) || {
  */
 export const trackPage = (properties) => {
   info('[analytics]', '[page]', properties);
-  analytics.page({
-    dimension1: properties.gitBranch.commit,
-    ...properties.gitBranch,
-  });
+  analytics.page(properties);
   return true;
 };
 
@@ -52,7 +49,7 @@ export const withPageTracking = (Layout) => {
     `);
 
     React.useEffect(() => {
-      trackPage(data);
+      trackPage(data.gitBranch);
     }, [data]);
 
     return <Layout {...props} />;
