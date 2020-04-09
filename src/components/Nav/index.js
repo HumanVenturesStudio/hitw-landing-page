@@ -7,15 +7,8 @@ import styles from './styles.module.scss';
 const NavLink = (props) => (
   <Link
     {...props}
-    getProps={({ isCurrent }) => {
-      // the object returned here is passed to the
-      // anchor element's props
-      return {
-        className: cx('link', styles.NavLink, {
-          [styles.NavLinkActive]: isCurrent,
-        }),
-      };
-    }}
+    className={cx('link', styles.NavLink)}
+    activeClassName={styles.NavLinkActive}
   />
 );
 
