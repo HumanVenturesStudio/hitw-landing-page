@@ -1,12 +1,11 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
+  <img alt="web-landing-scaffold" src="./static/images/site.png" width="60" />
 </p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+
+<div>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/106eb458-0799-4d9d-a2bd-008fd744a6fc/deploy-status)](https://app.netlify.com/sites/suspicious-davinci-51007a/deploys)
+</div>
 
 Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
