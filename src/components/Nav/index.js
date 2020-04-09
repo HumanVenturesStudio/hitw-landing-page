@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import styles from './styles.module.scss';
 
@@ -12,9 +12,29 @@ const NavLink = (props) => (
   />
 );
 
-export default ({ children }) => (
-  <nav className={cx('navigation', styles.Nav)}>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/about">About</NavLink>
-  </nav>
-);
+export default ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+          }
+        }
+      }
+    }
+  `);
+  const links = data.site.siteMetadata.menuLinks;
+  return (
+    !!links.length && (
+      <nav className={cx('navigation', styles.Nav)}>
+        {links.map((link) => (
+          <NavLink key={link.link} to={link.link}>
+            {link.name}
+          </NavLink>
+        ))}
+      </nav>
+    )
+  );
+};

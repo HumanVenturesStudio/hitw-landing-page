@@ -7,6 +7,17 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const PAGES = [
+  {
+    name: 'Home',
+    link: '/',
+  },
+  {
+    name: 'About',
+    link: '/about',
+  },
+];
+
 module.exports = {
   siteMetadata: {
     title: 'Foundation',
@@ -15,6 +26,7 @@ module.exports = {
     url: `${process.env.URL}`, // No trailing slash allowed!
     image: '/images/site.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@Human_Ventures',
+    menuLinks: PAGES,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -61,12 +73,12 @@ module.exports = {
         // your segment write key for your production environment
         // when process.env.NODE_ENV === 'production'
         // required; non-empty string
-        prodKey: process.env.SEGMENT__WRITE_KEY,
+        prodKey: `${process.env.SEGMENT__WRITE_KEY}`,
 
         // if you have a development env for your segment account, paste that key here
         // when process.env.NODE_ENV === 'development'
         // optional; non-empty string
-        devKey: process.env.SEGMENT__WRITE_KEY,
+        devKey: `${process.env.SEGMENT__WRITE_KEY}`,
 
         // boolean (defaults to false) on whether you want
         // to include analytics.page() automatically
