@@ -18,6 +18,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout/index.js'),
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sass',
       options: {
         // Override the file regex for SASS

@@ -4,7 +4,9 @@
 </p>
 
 <div>
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/106eb458-0799-4d9d-a2bd-008fd744a6fc/deploy-status)](https://app.netlify.com/sites/suspicious-davinci-51007a/deploys)
+
 </div>
 
 Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
