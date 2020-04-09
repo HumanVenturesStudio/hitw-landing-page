@@ -1,9 +1,9 @@
 // gatsby-browser.js
 exports.onRouteUpdate = ({ location, prevLocation }) => {
-  window.analytics && window.analytics.page();
-  // window.analytics.page({
-  //   dimension1: '{{ BRANCH }}',
-  //   branch: `${process.env.BRANCH}`,
-  //   branch2: `${BRANCH}`,
-  // });
+  // const DATA = {};
+  const DATA = {
+    dimension1: `{{ GATSBY_BRANCH }}`,
+    branch: `${process.env.GATSBY_BRANCH}`,
+  };
+  window.analytics && window.analytics.page(DATA);
 };
