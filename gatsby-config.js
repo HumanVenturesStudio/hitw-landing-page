@@ -17,6 +17,7 @@ module.exports = {
     twitterUsername: '@Human_Ventures',
   },
   plugins: [
+    `gatsby-source-local-git`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
