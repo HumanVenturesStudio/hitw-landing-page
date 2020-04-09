@@ -1,4 +1,6 @@
 :root {
   --color--application-bg: #f2f2fa;
+  --color--cta-bg: #ffb2bb;
+  --color--cta-color: #444;
   --color--link-active: #a2a2aa;
 }

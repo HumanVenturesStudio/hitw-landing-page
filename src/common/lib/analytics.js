@@ -11,20 +11,33 @@ const analytics = (typeof window !== `undefined` && window.analytics) || {
   event: FN_FALLBACK,
 };
 
-export const trackPageView = (data) => {
-  info('[analytics]', '[page]', data);
+/**
+ * https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page
+ * @param {object} properties
+ */
+export const trackPage = (properties) => {
+  info('[analytics]', '[page]', properties);
   analytics.page({
-    dimension1: data.gitBranch.commit,
-    ...data.gitBranch,
+    dimension1: properties.gitBranch.commit,
+    ...properties.gitBranch,
   });
   return true;
 };
 
-export const trackEvent = ({ name, data }) => {
-  info('[analytics]', '[event]', name, data);
-  analytics.event(name, data);
+/**
+ * https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#track
+ * @param {string} name
+ * @param {object} properties
+ */
+export const trackEvent = (name, properties = {}) => {
+  info('[analytics]', '[event]', name, properties);
+  analytics.track(name, properties /*, [options], [callback] */);
   return true;
 };
+/**
+ * Analytics Event Keys
+ */
+trackEvent.EVENT__CLICK_CTA = 'click:cta';
 
 export const withPageTracking = (Layout) => {
   function PageTrackingHOC(props) {
@@ -39,7 +52,7 @@ export const withPageTracking = (Layout) => {
     `);
 
     React.useEffect(() => {
-      trackPageView(data);
+      trackPage(data);
     }, [data]);
 
     return <Layout {...props} />;

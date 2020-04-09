@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import Logo from 'components/Logo';
 import styles from './styles.module.scss';
 
 const NavLink = (props) => (
@@ -29,6 +30,7 @@ export default ({ children }) => {
   return (
     !!links.length && (
       <nav className={cx('navigation', styles.Nav)}>
+        <Logo className={styles.Logo} />
         {links.map((link) => (
           <NavLink key={link.link} to={link.link}>
             {link.name}
