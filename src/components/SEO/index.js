@@ -6,7 +6,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const SEO = ({ title, description, image, article }) => {
   const { pathname } = useLocation();
-  const { site } = useStaticQuery(query);
 
   const {
     defaultTitle,
@@ -15,7 +14,13 @@ const SEO = ({ title, description, image, article }) => {
     siteUrl,
     defaultImage,
     twitterUsername,
-  } = site.siteMetadata;
+  } = useStaticQuery(graphql`
+    query {
+      site {
+        ...SiteInfo
+      }
+    }
+  `).site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -71,20 +76,5 @@ SEO.defaultProps = {
   image: null,
   article: false,
 };
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-        defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`;
 
 export default SEO;

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 20px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5,
+h6 {
+  font-size: 1.25rem;
+}
+
+input,
+select,
+button,
+textarea {
+  -webkit-appearance: none;
+  border-radius: calc(2 * var(--size--unit-base));
+  border: none;
+  outline: none;
+  padding: calc(2 * var(--size--unit-base));
+  width: 100%;
+  box-shadow: var(--shadow--none);
+  transition: box-shadow 200ms ease-out;
+
+  &:focus {
+    box-shadow: var(--shadow--base);
+  }
+}
+
+button {
+  // Hack: Don't let the text take up vertical height
+  line-height: 0;
+  position: relative;
+  cursor: pointer;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+  }
+  &:hover {
+    box-shadow: var(--shadow--base);
+    &:after {
+      background: var(--color--glass-white);
+    }
+  }
+  &:active,
+  &:active:hover {
+    box-shadow: var(--shadow--inset);
+    &:after {
+      background: var(--color--glass-black);
+    }
+  }
+}

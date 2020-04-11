@@ -1,0 +1,17 @@
+.Callout {
+  border: 1px solid var(--color--hero-bg);
+  padding: var(--size--unit-base);
+  margin: var(--size--unit-base) 0;
+}
+
+.CalloutLeft {
+  text-align: left;
+}
+
+.CalloutRight {
+  text-align: right;
+}
+
+.CalloutThree {
+  background: #f00;
+}

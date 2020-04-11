@@ -1,0 +1,46 @@
+.Label {
+  display: block;
+  position: relative;
+  padding: calc(2 * var(--size--unit-base));
+  &:not(:last-child) {
+    margin-bottom: var(--size--unit-base);
+  }
+}
+
+.Input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  &:focus + .LabelText,
+  &:valid + .LabelText,
+  &:not([value='']) + .LabelText {
+    display: none;
+  }
+  &[value='']:focus + .LabelText {
+    display: block;
+  }
+}
+
+.LabelText {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  padding: 0 calc(2 * var(--size--unit-base));
+}
+
+.LabelRequired {
+  display: none;
+}
+
+.Form {
+  margin: auto;
+}
+
+.Submit {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
