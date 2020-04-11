@@ -10,17 +10,20 @@ const CTA = ({ url = '#submit', label, onClick, children, className }) => {
   const data = useStaticQuery(graphql`
     query {
       gitBranch(current: { eq: true }) {
-        id
-        name
-        commit
+        ...GitInfo
+      }
+      markdownRemark(frontmatter: { name: { eq: "CTA" } }) {
+        ...CTAContent
       }
     }
   `);
 
+  const content = data.markdownRemark.frontmatter;
+
   return (
     <a
       className={cx('call-to-action', styles.CTA)}
-      href={url}
+      href={content.url || url}
       onClick={(e) => {
         trackEvent(trackEvent.EVENT__CLICK_CTA, data.gitBranch);
         onClick && onClick();
@@ -30,13 +33,10 @@ const CTA = ({ url = '#submit', label, onClick, children, className }) => {
         }
       }}
     >
-      {label}
-      {children}
+      {content.label || label}
     </a>
   );
 };
-
-export default CTA;
 
 CTA.propTypes = {
   label: PropTypes.string,
@@ -45,3 +45,5 @@ CTA.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
 };
+
+export default CTA;

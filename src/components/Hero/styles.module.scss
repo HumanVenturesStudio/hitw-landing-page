@@ -1,0 +1,7 @@
+.Hero {
+  width: 100vw;
+  margin-left: calc(-1 * var(--size--unit-base));
+  height: 50vh;
+  background: var(--color--hero-bg) 50% 50% no-repeat;
+  background-size: cover;
+}

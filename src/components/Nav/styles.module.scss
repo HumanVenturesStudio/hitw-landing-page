@@ -1,12 +1,12 @@
 .Nav {
   display: flex;
   text-align: center;
-  padding-bottom: 1rem;
+  padding-bottom: var(--size--unit-base);
 }
 
 .NavLink {
   display: inline-block;
-  padding: 0.5rem;
+  padding: var(--size--unit-small);
   text-decoration: none;
 }
 

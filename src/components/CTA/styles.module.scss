@@ -1,9 +1,9 @@
 .CTA {
   background: var(--color--cta-bg);
   color: var(--color--cta-color);
+  padding: var(--size--unit-base);
   text-decoration: none;
   display: inline-block;
   line-height: 1;
-  padding: 1rem;
   text-align: center;
 }

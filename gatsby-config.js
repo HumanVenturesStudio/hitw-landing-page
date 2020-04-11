@@ -1,3 +1,6 @@
+const metadata = require('./config/metadata');
+const pages = require('./config/pages');
+
 /**
  * Configure your Gatsby site with this file.
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
@@ -7,30 +10,25 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const PAGES = [
-  {
-    name: 'Home',
-    link: '/',
-  },
-  {
-    name: 'About',
-    link: '/about',
-  },
-];
-
 module.exports = {
   siteMetadata: {
-    title: 'Foundation',
+    ...metadata,
     titleTemplate: '%s',
-    description: 'Foundation Landing Page',
     url: `${process.env.URL}`, // No trailing slash allowed!
     image: '/images/site.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@Human_Ventures',
-    menuLinks: PAGES,
+    menuLinks: pages,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-source-local-git`,
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`,
+      },
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

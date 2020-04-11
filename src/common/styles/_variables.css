@@ -3,4 +3,10 @@
   --color--cta-bg: #ffb2bb;
   --color--cta-color: #444;
   --color--link-active: #a2a2aa;
+  --color--hero-bg:#a2a2aa;
+
+  --size--unit-small: 0.5rem;
+  --size--unit-base: 1rem;
+  --size--unit-medium: 2.5rem;
+  --size--unit-large: 4rem;
 }
