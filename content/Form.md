@@ -1,17 +1,17 @@
 ---
 name: Form
-submitLabel: Submit
-custom: false
 action: https://netlify.us19.list-manage.com/subscribe/post?u=1f28b6be6f07eec26646ad787&amp;id=4637b5fba8
-u: 1f28b6be6f07eec26646ad787
-id: 4637b5fba8
 honeypot: b_1f28b6be6f07eec26646ad787_4637b5fba8
+id: 4637b5fba8
+submitLabel: Submit
+u: 1f28b6be6f07eec26646ad787
+useCustom: false
 ---
 
 <!--
   Notes:
   - Configure the Mailchimp form by replacing the values above with your own
-  - Set `custom` to "true" and paste your own email capture form below, replacing the example
+  - Set `useCustom` to "true" and paste your own email capture form below, replacing the example
  -->
 
 

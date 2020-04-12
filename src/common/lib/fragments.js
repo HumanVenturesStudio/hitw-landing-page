@@ -84,6 +84,7 @@ export const SuccessContent = graphql`
     html
     frontmatter {
       name
+      redirect
     }
   }
 `;
@@ -103,13 +104,13 @@ export const FormContent = graphql`
     id
     html
     frontmatter {
-      name
-      custom
       action
-      id
-      u
       honeypot
+      id
+      name
       submitLabel
+      u
+      useCustom
     }
   }
 `;

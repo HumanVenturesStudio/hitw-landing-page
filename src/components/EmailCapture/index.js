@@ -44,7 +44,7 @@ const EmailCapture = () => {
   const { html, frontmatter } = data.markdownRemark;
 
   return (
-    (frontmatter.custom && (
+    (frontmatter.useCustom && (
       <div
         id={`${frontmatter.name}`}
         className={cx('callout', styles.Form, {})}
@@ -55,7 +55,7 @@ const EmailCapture = () => {
         />
       </div>
     )) ||
-    (!frontmatter.custom && (
+    (!frontmatter.useCustom && (
       <div className={cx('form', styles.Form)}>
         <div className={cx(styles.Content)}>
           <form
@@ -79,6 +79,7 @@ const EmailCapture = () => {
               type="text"
               name="MERGE1"
               value={first}
+              id="subscribe"
               required
             />
             <FormField

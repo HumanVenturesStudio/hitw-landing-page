@@ -18,7 +18,9 @@ const Header = () => {
   return (
     <header className={cx('header', styles.Header)}>
       <h1 className={cx('header-h1', styles.HeaderH1)}>
-        <Logo />
+        <a href="/">
+          <Logo />
+        </a>
       </h1>
       <Nav links={data.site.siteMetadata.navigation.header} />
     </header>

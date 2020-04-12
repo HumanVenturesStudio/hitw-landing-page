@@ -19,6 +19,14 @@ const EmailCapture = () => {
 
   const { html, frontmatter } = data.markdownRemark;
 
+  React.useEffect(() => {
+    if (frontmatter.redirect === true) {
+      setTimeout(() => {
+        document.location.href = '/';
+      }, 5000);
+    }
+  }, [frontmatter.redirect]);
+
   return (
     <div
       id={`${frontmatter.name}`}

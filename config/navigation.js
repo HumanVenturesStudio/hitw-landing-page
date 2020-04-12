@@ -5,8 +5,8 @@ module.exports = {
       link: '/',
     },
     {
-      name: 'Sign Up',
-      link: '/#sign-up',
+      name: 'Subscribe',
+      link: '/#subscribe',
     },
   ],
   footer: [
