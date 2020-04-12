@@ -1,6 +1,6 @@
 ---
 name: Hero
-background: site.png
+background: hero.jpg
 ---
 
 <!--

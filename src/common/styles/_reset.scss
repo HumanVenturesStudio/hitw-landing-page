@@ -1,3 +1,5 @@
+@import 'common/styles';
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +64,24 @@ h6 {
 }
 
 // ==================================================================
-// List Styles
+// Links
+// ==================================================================
+
+a {
+  color: var(--color--link-color);
+
+  &:hover,
+  &:focus {
+    color: var(--color--link-hover-color);
+  }
+
+  &:active {
+    color: var(--color--link-active-color);
+  }
+}
+
+// ==================================================================
+// Lists
 // ==================================================================
 ul,
 ol {
@@ -70,7 +89,7 @@ ol {
 }
 
 // ==================================================================
-// Form Styles
+// Forms
 // ==================================================================
 
 input,
@@ -96,17 +115,7 @@ button {
   line-height: 0;
   position: relative;
   cursor: pointer;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: inherit;
-  }
+  @include after-glass;
   &:hover {
     box-shadow: var(--shadow--base);
     &:after {

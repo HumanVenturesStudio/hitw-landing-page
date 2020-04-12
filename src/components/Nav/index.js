@@ -8,7 +8,7 @@ const NavLink = (props) => (
   <Link
     {...props}
     className={cx('link', styles.NavLink)}
-    activeClassName={styles.NavLinkActive}
+    activeClassName={styles.NavLinkCurrent}
   />
 );
 

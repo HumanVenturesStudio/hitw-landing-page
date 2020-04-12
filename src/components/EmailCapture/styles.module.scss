@@ -2,6 +2,8 @@
 
 .Form {
   @include block;
+  background: var(--color--form--bg);
+  color: var(--color--form--color);
 }
 
 .Content {
@@ -39,6 +41,7 @@
   left: 0;
   transform: translate(0, -50%);
   padding: 0 calc(2 * var(--size--unit-base));
+  color: var(--color--form--label);
 }
 
 .LabelRequired {
@@ -49,4 +52,5 @@
   display: block;
   margin: auto;
   width: 50%;
+  background: var(--color--form--submit);
 }

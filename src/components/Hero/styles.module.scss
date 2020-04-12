@@ -3,16 +3,35 @@
 .Hero {
   @include block;
   width: 100vw;
-  height: 50vh;
-  // margin: 0;
+  height: 66vh;
+  color: var(--color--hero-color);
   background: var(--color--hero-bg) 50% 50% no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  h1,
+  h2 {
+    font-weight: bold;
+    font-size: 6rem;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  @include before-glass;
+
+  &:before {
+    background-color: var(--color--hero-glass);
+  }
 }
 
 .Content {
   @include block-content;
+  text-align: center;
 }

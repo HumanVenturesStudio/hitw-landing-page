@@ -2,23 +2,40 @@
 // Theme -- CSS Variables
 // ================================================================== */
 :root {
-  --color--application-bg: #f2f2fa;
-  --color--cta-bg: #ffb2bb;
+  --color--application-bg: #FAE632;
+
+  --color--callout-left-bg: #FD4E1A;
+  --color--callout-left-text: white;
+
+  --color--callout-right-bg: #FF3172;
+  --color--callout-right-text: white;
+
+  --color--callout-three-bg: #0065CE;
+  --color--callout-three-text: white;
+
+  --color--cta-bg: #FD4E1A;
   --color--cta-color: #444;
-  --color--link-active: #a2a2aa;
-  --color--hero-bg: #a2a2aa;
-  --color--footer-bg: #fff;
-  --color--glass-black: rgba(0, 0, 0, 0.05);
-  --color--glass-white: rgba(255, 255, 255, 0.15);
 
-  --color--callout-left-bg: rgba(0, 0, 0, 0.05);
-  --color--callout-left-text: rgba(0, 0, 0, 0.05);
+  --color--footer-bg: white;
 
-  --color--callout-right-bg: rgba(0, 0, 0, 0.05);
-  --color--callout-right-text: rgba(0, 0, 0, 0.05);
+  --color--form--bg:#FAE632;
+  --color--form--color: white;
+  --color--form--label: black;
+  --color--form--submit: #FD4E1A;
 
-  --color--callout-three-bg: rgba(0, 0, 0, 0.05);
-  --color--callout-three-text: rgba(0, 0, 0, 0.05);
+  --color--glass-black: rgba(0, 0, 0, 0.25);
+  --color--glass-white: rgba(255, 255, 255, 0.1);
+
+  --color--hero-bg: #FAE632;
+  --color--hero-color: white;
+  --color--hero-glass: var(--color--glass-black);
+
+  --color--link-active: black;
+  --color--link-hover: #FD4E1A;
+  --color--link: black;
+
+  --color--nav-link-current: #FD4E1A;
+  --color--nav-link: white;
 
   --size--unit-small: 0.5rem;
   --size--unit-base: 1rem;

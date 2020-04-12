@@ -5,8 +5,9 @@
   display: inline-block;
   padding: var(--size--unit-small);
   text-decoration: none;
+  color: var(--color--nav-link);
 }
 
-.NavLinkActive {
-  color: var(--color--link-active);
+.NavLinkCurrent {
+  color: var(--color--nav-link-current);
 }
