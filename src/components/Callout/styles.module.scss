@@ -6,11 +6,35 @@
 
 .Content {
   @include block-content;
+  @include block-content-columns;
+
+  ul {
+    @include list-todo;
+    font-size: var(--font--size-m);
+  }
+
+  em {
+    color: var(--color--callout-em);
+  }
 }
 
 .CalloutLeft {
   background: var(--color--callout-left-bg);
   color: var(--color--callout-left-text);
+  .Content {
+    @media ($mq-desktop) {
+      section:nth-child(1) {
+        order: 2;
+        padding: 0;
+        padding-left: var(--size--unit-base);
+      }
+      section:nth-child(2) {
+        order: 1;
+        padding: 0;
+        padding-right: var(--size--unit-base);
+      }
+    }
+  }
 }
 
 .CalloutRight {
@@ -21,4 +45,36 @@
 .CalloutThree {
   background: var(--color--callout-three-bg);
   color: var(--color--callout-three-text);
+  .Content {
+    flex-direction: column;
+
+    & > section {
+      @include block-content-columns;
+      flex-direction: row;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-bottom: var(--size--unit-base);
+    }
+
+    text-align: center;
+  }
+
+  h3 {
+    margin: auto;
+    text-align: center;
+    line-height: calc(2 * var(--font--size-l));
+    font-size: calc(2 * var(--font--size-m));
+    width: calc(2 * var(--font--size-l));
+    height: calc(2 * var(--font--size-l));
+    border-radius: calc(2 * var(--font--size-l));
+    background: var(--callout--number-bg);
+    color: var(--callout--number-text);
+  }
+
+  p {
+    padding-top: var(--size--unit-base);
+  }
 }

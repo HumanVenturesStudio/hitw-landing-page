@@ -22,28 +22,12 @@
 }
 
 .Content {
-  @media ($mq-desktop) {
-    display: flex;
-  }
+  @include block-content;
+  @include block-content-columns;
 
-  & > * {
-    flex: 1;
-    @media ($mq-mobile) {
-      padding: calc(var(--size--unit-base)) 0;
-    }
-  }
-
-  ul,
-  ol {
-    list-style: none;
+  ul {
     @media ($mq-desktop) {
       text-align: right;
     }
-  }
-
-  a {
-    display: inline-block;
-    padding: var(--size--unit-small) var(--size--unit-small) 0 0;
-    text-decoration: none;
   }
 }

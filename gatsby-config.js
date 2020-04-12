@@ -21,7 +21,34 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-source-local-git`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              // usePrefix defaults to false
+              // usePrefix: true is the same as ["oembed"]
+              usePrefix: ['oembed', 'video'],
+              providers: {
+                // include: ['Youtube', 'Vimeo', 'Twitter', 'Instagram'],
+                // Important to exclude providers that adds js to the page.
+                // If you do not need them.
+                // exclude: ['Reddit'],
+                settings: {
+                  // Ex. Show all Twitter embeds with the dark theme
+                  // Twitter: { theme: 'dark' },
+                  // Ex. Hide all Instagram comments by default
+                  // Instagram: { hidecaption: true },
+                },
+              },
+            },
+          },
+          `gatsby-remark-responsive-iframe`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

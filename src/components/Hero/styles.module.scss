@@ -2,6 +2,8 @@
 
 .Hero {
   @include block;
+  @include before-glass;
+
   width: 100vw;
   height: 66vh;
   color: var(--color--hero-color);
@@ -15,16 +17,21 @@
   h1,
   h2 {
     font-weight: bold;
-    font-size: 6rem;
+    @media ($mq-desktop) {
+      font-size: var(--font--size-xxl);
+    }
   }
 
   p {
     font-weight: bold;
-    font-size: 3rem;
     line-height: 1.2;
+    @media ($mq-desktop) {
+      font-size: var(--font--size-xl);
+    }
+    @media ($mq-mobile) {
+      font-size: var(--font--size-m);
+    }
   }
-
-  @include before-glass;
 
   &:before {
     background-color: var(--color--hero-glass);
@@ -33,5 +40,6 @@
 
 .Content {
   @include block-content;
+
   text-align: center;
 }

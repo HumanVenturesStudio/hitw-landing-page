@@ -1,9 +1,18 @@
 .CTA {
   background: var(--color--cta-bg);
   color: var(--color--cta-color);
-  padding: var(--size--unit-base);
+  padding: var(--size--unit-base) calc(2 * var(--size--unit-base));
+  font-size: var(--cta--font-size);
   text-decoration: none;
   display: inline-block;
-  line-height: 1;
+  // line-height: 1;
   text-align: center;
+  border-radius: calc(4 * var(--size--unit-base));
+  margin: calc(2 * var(--size--unit-base));
+
+  &:hover,
+  &:focus {
+    background: var(--color--cta-color);
+    color: var(--color--cta-bg);
+  }
 }

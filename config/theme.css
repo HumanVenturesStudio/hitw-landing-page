@@ -4,6 +4,10 @@
 :root {
   --color--application-bg: #FAE632;
 
+  --color--callout-em:#FAE632;
+  --callout--number-bg: white;
+  --callout--number-text: #0065CE;
+
   --color--callout-left-bg: #FD4E1A;
   --color--callout-left-text: white;
 
@@ -14,7 +18,7 @@
   --color--callout-three-text: white;
 
   --color--cta-bg: #FD4E1A;
-  --color--cta-color: #444;
+  --color--cta-color: white;
 
   --color--footer-bg: white;
 
@@ -39,10 +43,22 @@
 
   --size--unit-small: 0.5rem;
   --size--unit-base: 1rem;
-  --size--unit-medium: 2.5rem;
+  --size--unit-medium: 2rem;
   --size--unit-large: 4rem;
 
   --size--desktop-content-max: 1080px;
+
+  --cta--font-size: var(--font--size-m);
+
+  --font--root--size: 20px;
+  --font--root--weight: bold;
+  --font--root--line-height: 1.5;
+
+  --font--size-xxl: 6rem;
+  --font--size-xl: 3rem;
+  --font--size-l: 2.5rem;
+  --font--size-m: 1.75rem;
+  --font--size: 1.25rem;
 
   --shadow--base: 0 0 4px rgba(0, 0, 0, 0.2);
   --shadow--inset: inset 1px 1px 4px rgba(0, 0, 0, 0.1);

@@ -1,8 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-
-import styles from './styles.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
+
+import CTA from 'components/CTA';
+import styles from './styles.module.scss';
 
 const Hero = ({ backgroundImage = '/images/site.png' }) => {
   const data = useStaticQuery(graphql`
@@ -31,6 +32,7 @@ const Hero = ({ backgroundImage = '/images/site.png' }) => {
         className={cx(styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      <CTA />
     </div>
   );
 };

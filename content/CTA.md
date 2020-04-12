@@ -1,6 +1,6 @@
 ---
 name: CTA
-label: Pizza Time
+label: Try Koala!
 url: "#typeform"
 ---
 
