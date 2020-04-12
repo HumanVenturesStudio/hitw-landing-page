@@ -43,8 +43,12 @@ const Callout = ({ name, format = 'left' }) => {
         [styles.CalloutRight]: calloutFormat === CALLOUT_RIGHT,
         [styles.CalloutThree]: calloutFormat === CALLOUT_THREE,
       })}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    >
+      <div
+        className={cx(styles.Content)}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </div>
   );
 };
 

@@ -1,7 +1,18 @@
+@import 'common/styles';
+
 .Hero {
+  @include block;
   width: 100vw;
-  margin-left: calc(-1 * var(--size--unit-base));
   height: 50vh;
+  // margin: 0;
   background: var(--color--hero-bg) 50% 50% no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Content {
+  @include block-content;
 }

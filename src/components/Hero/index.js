@@ -26,11 +26,12 @@ const Hero = ({ backgroundImage = '/images/site.png' }) => {
   };
 
   return (
-    <div
-      className={cx('hero', styles.Hero)}
-      style={style}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <div className={cx('hero', styles.Hero)} style={style}>
+      <div
+        className={cx(styles.Content)}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </div>
   );
 };
 

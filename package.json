@@ -27,7 +27,11 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-source-local-git": "^0.2.2",
     "gatsby-transformer-remark": "^2.7.1",
+    "humps": "^2.0.1",
+    "lodash.isempty": "^4.4.0",
+    "lodash.isobject": "^3.0.2",
     "node-sass": "^4.13.1",
+    "query-string": "^6.12.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0"

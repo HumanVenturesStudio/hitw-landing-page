@@ -1,7 +1,13 @@
 ---
-name: "Hero"
-background: "site.png"
+name: Hero
+background: site.png
 ---
+
+<!--
+  Notes:
+  - Add a new image or replace `site.png` found in the Project's `static/images/site.png` with your own background image.
+    It's automatically sized to fit a 16:9 rectangle
+ -->
 
 # Big Time Hero Heading
 

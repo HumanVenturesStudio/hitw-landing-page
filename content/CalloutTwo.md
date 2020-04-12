@@ -1,6 +1,6 @@
 ---
-name: "CalloutTwo"
-format: "right"
+name: CalloutTwo
+format: right
 ---
 
 # Callout Two

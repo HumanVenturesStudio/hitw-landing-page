@@ -5,19 +5,30 @@ import styles from './styles.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 
 export default ({ className }) => {
-  const { defaultTitle } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         ...SiteInfo
       }
+      gitBranch(current: { eq: true }) {
+        ...GitInfo
+      }
+      markdownRemark(frontmatter: { name: { eq: "Logo" } }) {
+        ...LogoContent
+      }
     }
-  `).site.siteMetadata;
+  `);
+
+  const { defaultTitle } = data.site.siteMetadata;
+  const { frontmatter } = data.markdownRemark;
+
+  const src = `/images/${frontmatter.asset || 'logo.svg'}`;
 
   return (
     <img
       alt={defaultTitle || 'Logo'}
       className={cx('logo', styles.Logo, className)}
-      src="/images/logo.svg"
+      src={src}
     />
   );
 };

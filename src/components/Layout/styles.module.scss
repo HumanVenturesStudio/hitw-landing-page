@@ -1,5 +1,6 @@
 @import 'common/styles';
+@import 'common/styles/_reset';
+@import '../../../config/theme.css';
 
 .Layout {
-  padding: var(--size--unit-base);
 }

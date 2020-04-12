@@ -8,7 +8,7 @@ export const SiteInfo = graphql`
       defaultDescription: description
       siteUrl: url
       defaultImage: image
-      twitterUsername
+      twitter
     }
   }
 `;
@@ -34,6 +34,15 @@ export const GitInfo = graphql`
   fragment GitInfo on GitBranch {
     name
     commit
+  }
+`;
+
+export const LogoContent = graphql`
+  fragment LogoContent on MarkdownRemark {
+    id
+    frontmatter {
+      asset
+    }
   }
 `;
 
@@ -65,6 +74,42 @@ export const CalloutContent = graphql`
     frontmatter {
       name
       format
+    }
+  }
+`;
+
+export const SuccessContent = graphql`
+  fragment SuccessContent on MarkdownRemark {
+    id
+    html
+    frontmatter {
+      name
+    }
+  }
+`;
+
+export const FooterContent = graphql`
+  fragment FooterContent on MarkdownRemark {
+    id
+    html
+    frontmatter {
+      name
+    }
+  }
+`;
+
+export const FormContent = graphql`
+  fragment FormContent on MarkdownRemark {
+    id
+    html
+    frontmatter {
+      name
+      custom
+      action
+      id
+      u
+      honeypot
+      submitLabel
     }
   }
 `;

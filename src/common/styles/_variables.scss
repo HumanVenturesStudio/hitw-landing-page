@@ -1,18 +1,13 @@
-:root {
-  --color--application-bg: #f2f2fa;
-  --color--cta-bg: #ffb2bb;
-  --color--cta-color: #444;
-  --color--link-active: #a2a2aa;
-  --color--hero-bg: #a2a2aa;
-  --color--footer-bg: #fff;
-  --color--glass-black: rgba(0, 0, 0, 0.05);
-  --color--glass-white: rgba(255, 255, 255, 0.15);
-  --size--unit-small: 0.5rem;
-  --size--unit-base: 1rem;
-  --size--unit-medium: 2.5rem;
-  --size--unit-large: 4rem;
+// ==================================================================
+// Breakpoints
+// ==================================================================
 
-  --shadow--base: 0 0 4px rgba(0, 0, 0, 0.2);
-  --shadow--inset: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
-  --shadow--none: 0 0 0 rgba(0, 0, 0, 0);
-}
+$mq-mobile-px: 767px;
+$mq-desktop-px: 768px;
+
+$mq-mobile: 'max-width: #{$mq-mobile-px}';
+$mq-desktop: 'min-width: #{$mq-desktop-px}';
+
+// Usage:
+// @media ($mq-mobile) { ... }
+// @media ($mq-desktop) { ... }

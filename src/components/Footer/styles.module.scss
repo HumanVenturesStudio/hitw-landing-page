@@ -1,8 +1,49 @@
+@import 'common/styles';
+
 .Footer {
+  @include block;
+  padding: calc(2 * var(--size--unit-base));
+
   width: 100vw;
-  margin-top: var(--size--unit-large);
-  margin-left: calc(-1 * var(--size--unit-base));
-  height: 50vh;
+  margin: auto auto 0 0;
   background: var(--color--footer-bg);
-  padding: var(--size--unit-base);
+  @media ($mq-desktop) {
+    display: flex;
+  }
+
+  & > :not(:first-child) {
+    flex: 1;
+  }
+}
+
+.Logo {
+  margin-top: var(--size--unit-small);
+  padding-right: var(--size--unit-medium);
+}
+
+.Content {
+  @media ($mq-desktop) {
+    display: flex;
+  }
+
+  & > * {
+    flex: 1;
+    @media ($mq-mobile) {
+      padding: calc(var(--size--unit-base)) 0;
+    }
+  }
+
+  ul,
+  ol {
+    list-style: none;
+    @media ($mq-desktop) {
+      text-align: right;
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: var(--size--unit-small) var(--size--unit-small) 0 0;
+    text-decoration: none;
+  }
 }

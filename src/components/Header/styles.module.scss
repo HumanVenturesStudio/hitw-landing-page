@@ -1,7 +1,9 @@
+@import 'common/styles';
+
 .Header {
+  @include block;
   display: flex;
   text-align: center;
-  padding-bottom: var(--size--unit-base);
 }
 
 .HeaderH1 {

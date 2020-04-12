@@ -1,6 +1,6 @@
 ---
-name: "CTA"
-label: "Pizza Time"
+name: CTA
+label: Pizza Time
 url: "#typeform"
 ---
 

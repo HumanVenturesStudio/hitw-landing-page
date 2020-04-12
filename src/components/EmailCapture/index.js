@@ -3,24 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import styles from './styles.module.scss';
-
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
-const handleSubmit = (e, data) => {
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': 'contact', ...data }),
-  })
-    .then(() => alert('Success!'))
-    .catch((error) => alert(error));
-
-  e.preventDefault();
-};
+import { useStaticQuery, graphql } from 'gatsby';
 
 const FormField = ({ name, label, onChange, ...attrs }) => {
   const id = `field[${name}]`;
@@ -42,41 +25,85 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const id = 'sign-up';
-
 const EmailCapture = () => {
-  const [name, setName] = React.useState('');
+  const [first, setFirst] = React.useState('');
+  const [last, setLast] = React.useState('');
   const [email, setEmail] = React.useState('');
 
+  const data = useStaticQuery(graphql`
+    query {
+      gitBranch(current: { eq: true }) {
+        ...GitInfo
+      }
+      markdownRemark(frontmatter: { name: { eq: "Form" } }) {
+        ...FormContent
+      }
+    }
+  `);
+
+  const { html, frontmatter } = data.markdownRemark;
+
   return (
-    <form
-      id={`${id}`}
-      className={styles.Form}
-      netlify-honeypot="bot-field"
-      data-netlify="true"
-      onSubmit={(e) => handleSubmit(e, { name, email })}
-    >
-      <input type="hidden" name="bot-field" />
-      <FormField
-        label="Enter your name"
-        onChange={(e) => setName(e.target.value)}
-        type="text"
-        name="name"
-        value={name}
-        required
-      />
-      <FormField
-        label="Enter your email"
-        onChange={(e) => setEmail(e.target.value)}
-        type="email"
-        name="email"
-        value={email}
-        required
-      />
-      <button className={styles.Submit} type="submit">
-        Sign Up Now!
-      </button>
-    </form>
+    (frontmatter.custom && (
+      <div
+        id={`${frontmatter.name}`}
+        className={cx('callout', styles.Form, {})}
+      >
+        <div
+          className={cx(styles.Content)}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
+    )) ||
+    (!frontmatter.custom && (
+      <div className={cx('form', styles.Form)}>
+        <div className={cx(styles.Content)}>
+          <form
+            method="POST"
+            name="mc-embedded-subscribe-form"
+            action={frontmatter.action}
+          >
+            <input type="hidden" name="u" value={frontmatter.u} />
+            <input type="hidden" name="id" value={frontmatter.id} />
+            <input
+              type="hidden"
+              name={frontmatter.honeypot}
+              tabIndex="-1"
+              style={{ position: 'absolute', left: '-200vw' }}
+              aria-hidden="true"
+            />
+
+            <FormField
+              label="Enter your first name"
+              onChange={(e) => setFirst(e.target.value)}
+              type="text"
+              name="MERGE1"
+              value={first}
+              required
+            />
+            <FormField
+              label="Enter your last name"
+              onChange={(e) => setLast(e.target.value)}
+              type="text"
+              name="MERGE2"
+              value={last}
+              required
+            />
+            <FormField
+              label="Enter your email"
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="MERGE0"
+              value={email}
+              required
+            />
+            <button className={styles.Submit} type="submit">
+              {frontmatter.submitLabel}
+            </button>
+          </form>
+        </div>
+      </div>
+    ))
   );
 };
 

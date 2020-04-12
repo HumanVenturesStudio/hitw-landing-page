@@ -1,17 +1,24 @@
+@import 'common/styles';
+
 .Callout {
-  border: 1px solid var(--color--hero-bg);
-  padding: var(--size--unit-base);
-  margin: var(--size--unit-base) 0;
+  @include block;
+}
+
+.Content {
+  @include block-content;
 }
 
 .CalloutLeft {
-  text-align: left;
+  background: var(--color--callout-left-bg);
+  color: var(--color--callout-left-text);
 }
 
 .CalloutRight {
-  text-align: right;
+  background: var(--color--callout-right-bg);
+  color: var(--color--callout-right-text);
 }
 
 .CalloutThree {
-  background: #f00;
+  background: var(--color--callout-three-bg);
+  color: var(--color--callout-three-text);
 }

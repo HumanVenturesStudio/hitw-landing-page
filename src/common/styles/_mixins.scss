@@ -1,0 +1,12 @@
+@import './variables';
+
+@mixin block() {
+  padding: var(--size--unit-base);
+}
+
+@mixin block-content() {
+  @media ($mq-desktop) {
+    max-width: var(--size--desktop-content-max);
+    margin: auto;
+  }
+}

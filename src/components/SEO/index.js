@@ -13,7 +13,7 @@ const SEO = ({ title, description, image, article }) => {
     defaultDescription,
     siteUrl,
     defaultImage,
-    twitterUsername,
+    twitter,
   } = useStaticQuery(graphql`
     query {
       site {
@@ -48,9 +48,7 @@ const SEO = ({ title, description, image, article }) => {
 
       <meta name="twitter:card" content="summary_large_image" />
 
-      {twitterUsername && (
-        <meta name="twitter:creator" content={twitterUsername} />
-      )}
+      {twitter && <meta name="twitter:creator" content={twitter} />}
 
       {seo.title && <meta name="twitter:title" content={seo.title} />}
 

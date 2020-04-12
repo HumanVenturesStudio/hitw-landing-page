@@ -1,3 +1,13 @@
+@import 'common/styles';
+
+.Form {
+  @include block;
+}
+
+.Content {
+  @include block-content;
+}
+
 .Label {
   display: block;
   position: relative;
@@ -33,10 +43,6 @@
 
 .LabelRequired {
   display: none;
-}
-
-.Form {
-  margin: auto;
 }
 
 .Submit {

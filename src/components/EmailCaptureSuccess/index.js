@@ -1,18 +1,18 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Logo from 'components/Logo';
 import styles from './styles.module.scss';
 
-const Footer = () => {
+const EmailCapture = () => {
   const data = useStaticQuery(graphql`
     query {
       gitBranch(current: { eq: true }) {
         ...GitInfo
       }
-      markdownRemark(frontmatter: { name: { eq: "Footer" } }) {
-        ...FooterContent
+      markdownRemark(frontmatter: { name: { eq: "Success" } }) {
+        ...SuccessContent
       }
     }
   `);
@@ -20,14 +20,16 @@ const Footer = () => {
   const { html, frontmatter } = data.markdownRemark;
 
   return (
-    <footer id={`${frontmatter.name}`} className={cx('footer', styles.Footer)}>
-      <Logo className={styles.Logo} />
+    <div
+      id={`${frontmatter.name}`}
+      className={cx('success', styles.EmailCaptureSuccess)}
+    >
       <div
         className={cx(styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default EmailCapture;
