@@ -4,6 +4,7 @@
   @include block;
   background: var(--color--form--bg);
   color: var(--color--form--color);
+  padding: calc(2 * var(--size--unit-base));
 }
 .CustomForm {
   @include block;

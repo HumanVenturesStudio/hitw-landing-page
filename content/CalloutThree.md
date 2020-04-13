@@ -1,19 +1,22 @@
 ---
 name: CalloutThree
-format: left
+format: full
 ---
 
 <section>
 
-`video: https://www.youtube.com/watch?v=k5veb0wZas0`
+<br/>
+<br/>
+
+![Beatiful](/images/art-2.svg)
 
 </section>
 
 
+
 <section>
 
-### Never fear, we're always here
-
+### Never fear, <br/> we're always here
 With <em>Koala</em>, your child will never be bored again
 
 </section>

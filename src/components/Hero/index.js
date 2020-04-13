@@ -16,18 +16,16 @@ const Hero = ({ backgroundImage = '/images/site.png' }) => {
       }
     }
   `);
+  const { html, frontmatter } = data.markdownRemark;
+  const inlineStyle = {};
 
-  const { background } = data.markdownRemark.frontmatter;
-  const html = data.markdownRemark.html;
-
-  const style = {
-    backgroundImage: `url("${
-      background ? `/images/${background}` : backgroundImage
-    }")`,
-  };
+  inlineStyle.backgroundImage = backgroundImage;
+  if (frontmatter.background) {
+    inlineStyle.backgroundImage = `url("${`/images/${frontmatter.background}`}")`;
+  }
 
   return (
-    <div className={cx('hero', styles.Hero)} style={style}>
+    <div className={cx('hero', styles.Hero)} style={inlineStyle}>
       <div
         className={cx(styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}

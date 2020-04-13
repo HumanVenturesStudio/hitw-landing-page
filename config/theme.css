@@ -14,8 +14,11 @@
   --color--callout-right-bg: #FF3172;
   --color--callout-right-text: white;
 
-  --color--callout-three-bg: #0065CE;
+  --color--callout-three-bg: #FD4E1A;
   --color--callout-three-text: white;
+
+  --color--callout-full-bg: #0065CE;
+  --color--callout-full-text: white;
 
   --color--cta-bg: #FD4E1A;
   --color--cta-color: white;

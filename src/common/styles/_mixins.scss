@@ -23,13 +23,6 @@
     padding: var(--size--unit-small) var(--size--unit-small) 0 0;
     text-decoration: none;
   }
-
-  iframe,
-  embed,
-  video {
-    // max-width: 100%;
-    // height: auto;
-  }
 }
 
 @mixin block-content-columns() {

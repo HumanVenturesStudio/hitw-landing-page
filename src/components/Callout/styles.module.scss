@@ -2,6 +2,12 @@
 
 .Callout {
   @include block;
+
+  &.hasBg {
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .Content {
@@ -77,4 +83,11 @@
   p {
     padding-top: var(--size--unit-base);
   }
+}
+
+.CalloutFull {
+  background: var(--color--callout-full-bg);
+  color: var(--color--callout-full-text);
+
+  padding: 0;
 }

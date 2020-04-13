@@ -58,6 +58,7 @@ export const HeroContent = graphql`
     id
     html
     frontmatter {
+      name
       background
     }
   }
@@ -69,6 +70,7 @@ export const CalloutContent = graphql`
     html
     frontmatter {
       name
+      background
       format
     }
   }
