@@ -17,6 +17,6 @@ format: left
 
 <section>
 
-`video: https://www.youtube.com/watch?v=k5veb0wZas0`
+`embed: https://www.youtube.com/watch?v=k5veb0wZas0`
 
 </section>

@@ -4,9 +4,12 @@
 :root {
   --color--application-bg: #FAE632;
 
+  --color--cta-bg: #FD4E1A;
+  --color--cta-bg: #0065CE;
+  --color--cta-color: white;
+
+
   --color--callout-em:#FAE632;
-  --callout--number-bg: white;
-  --callout--number-text: #0065CE;
 
   --color--callout-left-bg: #FD4E1A;
   --color--callout-left-text: white;
@@ -19,9 +22,6 @@
 
   --color--callout-full-bg: #0065CE;
   --color--callout-full-text: white;
-
-  --color--cta-bg: #FD4E1A;
-  --color--cta-color: white;
 
   --color--footer-bg: white;
 
@@ -43,6 +43,9 @@
 
   --color--nav-link-current: #FD4E1A;
   --color--nav-link: white;
+
+  --callout--number-bg: white;
+  --callout--number-text: #0065CE;
 
   --size--unit-small: 0.5rem;
   --size--unit-base: 1rem;

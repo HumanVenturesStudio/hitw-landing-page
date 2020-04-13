@@ -1,6 +1,6 @@
 ---
 name: CTA
-label: Try Koala!
+label: Try Koala Now!
 url: "#typeform"
 ---
 

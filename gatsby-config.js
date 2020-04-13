@@ -30,7 +30,7 @@ module.exports = {
             options: {
               // usePrefix defaults to false
               // usePrefix: true is the same as ["oembed"]
-              usePrefix: ['oembed', 'video', 'embed'],
+              usePrefix: ['embed'],
               providers: {
                 // Full list of Providers can be found here: https://oembed.com/providers.json
                 include: [

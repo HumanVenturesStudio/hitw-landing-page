@@ -10,11 +10,11 @@ name: Footer
 
 <section>
 
-## Feeling Fine
+## Koala
 
-Just hanging out doing footer stuff.
+Just hanging out doing cool stuff.
 
-New Company &copy; 2020.
+Koala Company LLC &copy; 2020.
 
 </section>
 

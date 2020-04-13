@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Foundation',
-  description: 'Foundation Landing Page',
-  twitter: '@Human_Ventures',
+  title: 'Koala',
+  description: 'Koala Landing Page',
+  twitter: '@Koala',
 };
