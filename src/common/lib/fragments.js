@@ -21,10 +21,6 @@ export const NavInfo = graphql`
           name
           link
         }
-        footer {
-          name
-          link
-        }
       }
     }
   }

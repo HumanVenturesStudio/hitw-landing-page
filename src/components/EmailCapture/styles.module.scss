@@ -5,6 +5,10 @@
   background: var(--color--form--bg);
   color: var(--color--form--color);
 }
+.CustomForm {
+  @include block;
+  background: var(--color--form--bg);
+}
 
 .Content {
   @include block-content;

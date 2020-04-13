@@ -30,9 +30,21 @@ module.exports = {
             options: {
               // usePrefix defaults to false
               // usePrefix: true is the same as ["oembed"]
-              usePrefix: ['oembed', 'video'],
+              usePrefix: ['oembed', 'video', 'embed'],
               providers: {
-                // include: ['Youtube', 'Vimeo', 'Twitter', 'Instagram'],
+                // Full list of Providers can be found here: https://oembed.com/providers.json
+                include: [
+                  'YouTube',
+                  'Vimeo',
+                  'Twitter',
+                  'Instagram',
+                  // 'Twitch',
+                  // 'TED',
+                  // 'The New York Times',
+                  // 'Codepen',
+                  // 'GIPHY',
+                  // 'Spotify',
+                ],
                 // Important to exclude providers that adds js to the page.
                 // If you do not need them.
                 // exclude: ['Reddit'],
@@ -40,7 +52,7 @@ module.exports = {
                   // Ex. Show all Twitter embeds with the dark theme
                   // Twitter: { theme: 'dark' },
                   // Ex. Hide all Instagram comments by default
-                  // Instagram: { hidecaption: true },
+                  Instagram: { hidecaption: true },
                 },
               },
             },

@@ -9,10 +9,4 @@ module.exports = {
       link: '/#subscribe',
     },
   ],
-  footer: [
-    {
-      name: 'Home',
-      link: '/',
-    },
-  ],
 };

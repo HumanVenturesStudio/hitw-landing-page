@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useStaticQuery, graphql } from 'gatsby';
+import DangerousHTMLContent from 'dangerously-set-html-content';
 
 import styles from './styles.module.scss';
-import { useStaticQuery, graphql } from 'gatsby';
 
 const FormField = ({ name, label, onChange, ...attrs }) => {
   const id = `field[${name}]`;
@@ -47,12 +48,11 @@ const EmailCapture = () => {
     (frontmatter.useCustom && (
       <div
         id={`${frontmatter.name}`}
-        className={cx('callout', styles.Form, {})}
+        className={cx('form', styles.CustomForm, {})}
       >
-        <div
-          className={cx(styles.Content)}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <div className={cx(styles.Content)}>
+          <DangerousHTMLContent html={html} />
+        </div>
       </div>
     )) ||
     (!frontmatter.useCustom && (

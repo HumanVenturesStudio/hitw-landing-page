@@ -19,6 +19,7 @@
     "@raae/gatsby-remark-oembed": "^0.1.1",
     "classnames": "^2.2.6",
     "css-loader": "^3.5.1",
+    "dangerously-set-html-content": "^1.0.3",
     "gatsby": "^2.20.12",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-mdx": "^1.1.6",
