@@ -30,7 +30,7 @@ const Hero = ({ backgroundImage = '/images/site.png' }) => {
         className={cx(styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <CTA />
+      <CTA label={frontmatter.ctaLabel} url={frontmatter.ctaUrl} />
     </div>
   );
 };

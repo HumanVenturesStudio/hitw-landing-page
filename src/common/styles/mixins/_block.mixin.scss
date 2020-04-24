@@ -1,0 +1,50 @@
+@import '../variables';
+
+// ==================================================================
+// Blocks
+// ==================================================================
+@mixin block() {
+  padding: var(--block--padding);
+}
+
+@mixin block-content() {
+  @media ($mq-desktop) {
+    max-width: var(--block--max-width);
+    margin: auto;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  a {
+    display: inline-block;
+    padding: var(--theme--unit--small) var(--theme--unit--small) 0 0;
+    text-decoration: none;
+  }
+}
+
+@mixin block-content-columns() {
+  @media ($mq-desktop) {
+    display: flex;
+  }
+
+  & > section {
+    @media ($mq-desktop) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      &:nth-child(odd) {
+        padding-right: var(--block--padding);
+      }
+      &:nth-child(even) {
+        padding-left: var(--block--padding);
+      }
+    }
+    @media ($mq-mobile) {
+      padding: calc(var(--block--padding)) 0;
+    }
+  }
+}

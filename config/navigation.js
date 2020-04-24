@@ -1,5 +1,5 @@
 module.exports = {
-  header: [
+  links: [
     {
       name: 'Home',
       link: '/',

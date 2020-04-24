@@ -2,11 +2,11 @@
 
 .Footer {
   @include block;
-  padding: calc(2 * var(--size--unit-base));
+  padding: calc(2 * var(--page--footer--padding));
 
   width: 100vw;
   margin: auto auto 0 0;
-  background: var(--color--footer-bg);
+  background: var(--page--footer--background);
   @media ($mq-desktop) {
     display: flex;
   }
@@ -17,8 +17,8 @@
 }
 
 .Logo {
-  margin-top: var(--size--unit-small);
-  padding-right: var(--size--unit-medium);
+  margin-top: var(--theme--unit--small);
+  padding-right: var(--theme--unit--medium);
 }
 
 .Content {

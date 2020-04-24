@@ -12,35 +12,33 @@ const CTA = ({ url = '#submit', label, onClick, children, className }) => {
       gitBranch(current: { eq: true }) {
         ...GitInfo
       }
-      markdownRemark(frontmatter: { name: { eq: "CTA" } }) {
-        ...CTAContent
-      }
     }
   `);
-
-  const content = data.markdownRemark.frontmatter;
 
   return (
     <a
       className={cx('call-to-action', styles.CTA)}
-      href={content.url || url}
+      href={url}
       onClick={(e) => {
-        trackEvent(trackEvent.EVENT__CLICK_CTA, data.gitBranch);
+        // Track CTA Click
+        trackEvent(trackEvent.EVENT__CONVERSION__CTA__CLICK, data.gitBranch);
+        // Handle Callback
         onClick && onClick();
+        // Support for inline anchors
         if (/^#/.test(url)) {
           e.preventDefault();
           return false;
         }
       }}
     >
-      {content.label || label}
+      {label}
     </a>
   );
 };
 
 CTA.propTypes = {
-  label: PropTypes.string,
-  url: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,

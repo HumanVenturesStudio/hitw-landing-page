@@ -2,71 +2,125 @@
 // Theme -- CSS Variables
 // ================================================================== */
 :root {
-  --color--application-bg: #FAE632;
+  /* ==================================================================
+  // Color Palette
+  // ================================================================== */
+  --theme--color--primary: #0065CE;
+  --theme--color--secondary: #FAE632;
+  --theme--color--tertiary: #FD4E1A;
+  --theme--color--quaternary: #FF3172;
+  --theme--color--white: #FFF;
+  --theme--color--black: #000;
+  --theme--color--transparent-dark: rgba(0, 0, 0, 0.25);
+  --theme--color--transparent-light: rgba(255, 255, 255, 0.1);
 
-  --color--cta-bg: #FD4E1A;
-  --color--cta-bg: #0065CE;
-  --color--cta-color: white;
+
+  /* ==================================================================
+  // Typography
+  // ================================================================== */
+  --theme--font--root--family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --theme--font--root--size: 20px;
+  --theme--font--root--weight: bold;
+  --theme--font--root--line-height: 1.5;
+  --theme--font--size-xxl: 6rem;
+  --theme--font--size-xl: 3rem;
+  --theme--font--size-l: 2.5rem;
+  --theme--font--size-m: 1.75rem;
+  --theme--font--size: 1.25rem;
 
 
-  --color--callout-em:#FAE632;
+  /* ==================================================================
+  // Sizing / Spacing
+  // ================================================================== */
+  --theme--unit--small: 0.5rem;
+  --theme--unit--base: 1rem;
+  --theme--unit--medium: 2rem;
+  --theme--unit--large: 4rem;
 
-  --color--callout-left-bg: #FD4E1A;
-  --color--callout-left-text: white;
 
-  --color--callout-right-bg: #FF3172;
-  --color--callout-right-text: white;
+  /* ==================================================================
+  // Dropshadows
+  // ================================================================== */
+  --theme--shadow--base: 0 0 4px rgba(0, 0, 0, 0.2);
+  --theme--shadow--inset: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+  --theme--shadow--none: 0 0 0 rgba(0, 0, 0, 0);
 
-  --color--callout-three-bg: #FD4E1A;
-  --color--callout-three-text: white;
 
-  --color--callout-full-bg: #0065CE;
-  --color--callout-full-text: white;
+  /* ==================================================================
+  // Page
+  // ================================================================== */
+  --page--background: var(--theme--color--secondary);
+  --page--navigation--color--active: var(--theme--color--tertiary);
+  --page--navigation--color: var(--theme--color--white);
+  --page--link-active--color: var(--theme--color--black);
+  --page--link-hover--color: var(--theme--color--tertiary);
+  --page--link--color: var(--theme--color--black);
+  --page--footer--background: var(--theme--color--white);
+  --page--footer--padding: var(--theme--unit--base);
 
-  --color--footer-bg: white;
 
-  --color--form--bg:#FAE632;
-  --color--form--color: white;
-  --color--form--label: black;
-  --color--form--submit: #FD4E1A;
+  /* ==================================================================
+  // Logo
+  // ================================================================== */
+  --logo--height: var(--theme--unit--medium);
 
-  --color--glass-black: rgba(0, 0, 0, 0.25);
-  --color--glass-white: rgba(255, 255, 255, 0.1);
 
-  --color--hero-bg: #FAE632;
-  --color--hero-color: white;
-  --color--hero-glass: var(--color--glass-black);
+  /* ==================================================================
+  // Blocks
+  // ================================================================== */
+  --block--max-width: 1080px;
+  --block--padding: var(--theme--unit--base);
 
-  --color--link-active: black;
-  --color--link-hover: #FD4E1A;
-  --color--link: black;
 
-  --color--nav-link-current: #FD4E1A;
-  --color--nav-link: white;
+  /* ==================================================================
+  // Block: Hero
+  // ================================================================== */
+  --hero--color: var(--theme--color--white);
+  --hero--background: var(--theme--color--seconary);
+  --hero--heading-size: var(--theme--font--size-xxl);
+  --hero--heading-size--mobile: var(--theme--font--size-l);
+  --hero--text-size: var(--theme--font--size-xl);
+  --hero--text-size--mobile: var(--theme--font--size-m);
+  --hero--overlay-color: var(--theme--color--transparent-dark);
 
-  --callout--number-bg: white;
-  --callout--number-text: #0065CE;
 
-  --size--unit-small: 0.5rem;
-  --size--unit-base: 1rem;
-  --size--unit-medium: 2rem;
-  --size--unit-large: 4rem;
+  /* ==================================================================
+  // Block: CTA
+  // ================================================================== */
+  --cta--background: var(--theme--color--primary);
+  --cta--color: var(--theme--color--white);
+  --cta--font-size: var(--theme--font--size-m);
+  --cta--size: var(--theme--unit--base);
 
-  --size--desktop-content-max: 1080px;
 
-  --cta--font-size: var(--font--size-m);
+  /* ==================================================================
+  // Block: Callout
+  // ================================================================== */
+  --callout--accent-color: var(--theme--color--secondary);
+  --callout--list--font-size: var(--theme--font--size-m);
+  --callout--size: var(--theme--unit--base);
+  --callout--number-bg: var(--theme--color--white);
+  --callout--number-text: var(--theme--color--primary);
 
-  --font--root--size: 20px;
-  --font--root--weight: bold;
-  --font--root--line-height: 1.5;
+  --callout--left--background: var(--theme--color--tertiary);
+  --callout--left--color: var(--theme--color--white);
 
-  --font--size-xxl: 6rem;
-  --font--size-xl: 3rem;
-  --font--size-l: 2.5rem;
-  --font--size-m: 1.75rem;
-  --font--size: 1.25rem;
+  --callout--right--background: var(--theme--color--quaternary);
+  --callout--right--color: var(--theme--color--white);
 
-  --shadow--base: 0 0 4px rgba(0, 0, 0, 0.2);
-  --shadow--inset: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
-  --shadow--none: 0 0 0 rgba(0, 0, 0, 0);
+  --callout--three--background: var(--theme--color--tertiary);
+  --callout--three--color: var(--theme--color--white);
+
+  --callout--full--background: var(--theme--color--primary);
+  --callout--full--color: var(--theme--color--white);
+
+
+  /* ==================================================================
+  // Block: Conversion
+  // ================================================================== */
+  --conversion--form--background: var(--theme--color--secondary);
+  --conversion--form--color: var(--theme--color--white);
+  --conversion--form--padding: var(--theme--unit--base);
+  --conversion--form-label--color: var(--theme--color--black);
+  --conversion--form-submit--background: var(--theme--color--tertiary);
 }

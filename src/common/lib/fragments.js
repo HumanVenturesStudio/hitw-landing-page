@@ -17,7 +17,7 @@ export const NavInfo = graphql`
   fragment NavInfo on Site {
     siteMetadata {
       navigation {
-        header {
+        links {
           name
           link
         }
@@ -42,17 +42,6 @@ export const LogoContent = graphql`
   }
 `;
 
-export const CTAContent = graphql`
-  fragment CTAContent on MarkdownRemark {
-    id
-    html
-    frontmatter {
-      label
-      url
-    }
-  }
-`;
-
 export const HeroContent = graphql`
   fragment HeroContent on MarkdownRemark {
     id
@@ -60,6 +49,8 @@ export const HeroContent = graphql`
     frontmatter {
       name
       background
+      ctaLabel
+      ctaUrl
     }
   }
 `;
@@ -72,6 +63,7 @@ export const CalloutContent = graphql`
       name
       background
       format
+      hide
     }
   }
 `;
@@ -97,8 +89,8 @@ export const FooterContent = graphql`
   }
 `;
 
-export const FormContent = graphql`
-  fragment FormContent on MarkdownRemark {
+export const ConversionContent = graphql`
+  fragment ConversionContent on MarkdownRemark {
     id
     html
     frontmatter {

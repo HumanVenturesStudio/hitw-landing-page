@@ -1,0 +1,31 @@
+@import '../variables';
+
+// ==================================================================
+// Glass
+// ==================================================================
+@mixin glass() {
+  content: '';
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+}
+@mixin after-glass() {
+  position: relative;
+  &:after {
+    @include glass;
+  }
+}
+@mixin before-glass() {
+  position: relative;
+  &:before {
+    @include glass;
+  }
+  & > * {
+    position: relative;
+  }
+}

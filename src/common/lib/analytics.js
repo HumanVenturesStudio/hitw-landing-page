@@ -34,7 +34,10 @@ export const trackEvent = (name, properties = {}) => {
 /**
  * Analytics Event Keys
  */
-trackEvent.EVENT__CLICK_CTA = 'click:cta';
+trackEvent.EVENT__CONVERSION__CTA__CLICK = 'conversion:cta:click';
+trackEvent.EVENT__CONVERSION__INTENT = 'conversion:intent';
+trackEvent.EVENT__CONVERSION__SUCCESS = 'conversion:success';
+trackEvent.EVENT__CONVERSION__PAGE__SCROLL = 'conversion:page:scroll';
 
 export const withPageTracking = (Layout) => {
   function PageTrackingHOC(props) {

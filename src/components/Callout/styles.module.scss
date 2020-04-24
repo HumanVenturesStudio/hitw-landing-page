@@ -16,41 +16,42 @@
 
   ul {
     @include list-todo;
-    font-size: var(--font--size-m);
+    font-size: var(--callout--list--font-size);
   }
 
   em {
-    color: var(--color--callout-em);
+    color: var(--callout--accent-color);
   }
 }
 
 .CalloutLeft {
-  background: var(--color--callout-left-bg);
-  color: var(--color--callout-left-text);
+  background: var(--callout--left--background);
+  color: var(--callout--left--color);
   .Content {
     @media ($mq-desktop) {
       section:nth-child(1) {
         order: 2;
         padding: 0;
-        padding-left: var(--size--unit-base);
+        padding-left: var(--callout--size);
       }
       section:nth-child(2) {
         order: 1;
         padding: 0;
-        padding-right: var(--size--unit-base);
+        padding-right: var(--callout--size);
       }
     }
   }
 }
 
 .CalloutRight {
-  background: var(--color--callout-right-bg);
-  color: var(--color--callout-right-text);
+  background: var(--callout--right--background);
+  color: var(--callout--right--color);
 }
 
 .CalloutThree {
-  background: var(--color--callout-three-bg);
-  color: var(--color--callout-three-text);
+  background: var(--callout--three--background);
+  color: var(--callout--three--color);
+
   .Content {
     flex-direction: column;
 
@@ -62,7 +63,7 @@
     h1,
     h2,
     h3 {
-      margin-bottom: var(--size--unit-base);
+      margin-bottom: var(--callout--size);
     }
 
     text-align: center;
@@ -71,23 +72,23 @@
   h3 {
     margin: auto;
     text-align: center;
-    line-height: calc(2 * var(--font--size-l));
-    font-size: calc(2 * var(--font--size-m));
-    width: calc(2 * var(--font--size-l));
-    height: calc(2 * var(--font--size-l));
-    border-radius: calc(2 * var(--font--size-l));
+    line-height: calc(2 * var(--theme--font--size-l));
+    font-size: calc(2 * var(--theme--font--size-m));
+    width: calc(2 * var(--theme--font--size-l));
+    height: calc(2 * var(--theme--font--size-l));
+    border-radius: calc(2 * var(--theme--font--size-l));
     background: var(--callout--number-bg);
     color: var(--callout--number-text);
   }
 
   p {
-    padding-top: var(--size--unit-base);
+    padding-top: var(--callout--size);
   }
 }
 
 .CalloutFull {
-  background: var(--color--callout-full-bg);
-  color: var(--color--callout-full-text);
+  background: var(--callout--full--background);
+  color: var(--callout--full--color);
 
   padding: 0;
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import DangerousHTMLContent from 'dangerously-set-html-content';
+import { trackEvent } from 'common/lib/analytics';
 
 import styles from './styles.module.scss';
 
@@ -26,23 +27,30 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const EmailCapture = () => {
-  const [first, setFirst] = React.useState('');
-  const [last, setLast] = React.useState('');
-  const [email, setEmail] = React.useState('');
-
+const Conversion = () => {
   const data = useStaticQuery(graphql`
     query {
       gitBranch(current: { eq: true }) {
         ...GitInfo
       }
-      markdownRemark(frontmatter: { name: { eq: "Form" } }) {
-        ...FormContent
+      markdownRemark(frontmatter: { name: { eq: "Conversion" } }) {
+        ...ConversionContent
       }
     }
   `);
 
   const { html, frontmatter } = data.markdownRemark;
+
+  const [first, setFirst] = React.useState('');
+  const [last, setLast] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [hasIntent, setHasIntent] = React.useState();
+
+  React.useEffect(() => {
+    if (hasIntent === true) {
+      trackEvent(trackEvent.EVENT__CONVERSION__INTENT, data.gitBranch);
+    }
+  }, [data.gitBranch, hasIntent]);
 
   return (
     (frontmatter.useCustom && (
@@ -75,7 +83,10 @@ const EmailCapture = () => {
 
             <FormField
               label="Enter your first name"
-              onChange={(e) => setFirst(e.target.value)}
+              onChange={(e) => {
+                setHasIntent(true);
+                setFirst(e.target.value);
+              }}
               type="text"
               name="MERGE1"
               value={first}
@@ -84,7 +95,10 @@ const EmailCapture = () => {
             />
             <FormField
               label="Enter your last name"
-              onChange={(e) => setLast(e.target.value)}
+              onChange={(e) => {
+                setHasIntent(true);
+                setLast(e.target.value);
+              }}
               type="text"
               name="MERGE2"
               value={last}
@@ -92,7 +106,10 @@ const EmailCapture = () => {
             />
             <FormField
               label="Enter your email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setHasIntent(true);
+                setEmail(e.target.value);
+              }}
               type="email"
               name="MERGE0"
               value={email}
@@ -108,4 +125,4 @@ const EmailCapture = () => {
   );
 };
 
-export default EmailCapture;
+export default Conversion;

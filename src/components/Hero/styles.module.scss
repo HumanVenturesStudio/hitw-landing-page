@@ -6,8 +6,8 @@
 
   width: 100vw;
   height: 66vh;
-  color: var(--color--hero-color);
-  background: var(--color--hero-bg) 50% 50% no-repeat;
+  color: var(--hero--color);
+  background: var(--hero--background) 50% 50% no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -17,8 +17,9 @@
   h1,
   h2 {
     font-weight: bold;
+    font-size: var(--hero--heading-size--mobile);
     @media ($mq-desktop) {
-      font-size: var(--font--size-xxl);
+      font-size: var(--hero--heading-size);
     }
   }
 
@@ -26,15 +27,15 @@
     font-weight: bold;
     line-height: 1.2;
     @media ($mq-desktop) {
-      font-size: var(--font--size-xl);
+      font-size: var(--hero--text-size);
     }
     @media ($mq-mobile) {
-      font-size: var(--font--size-m);
+      font-size: var(--hero--text-size--mobile);
     }
   }
 
   &:before {
-    background-color: var(--color--hero-glass);
+    background-color: var(--hero--overlay-color);
   }
 }
 

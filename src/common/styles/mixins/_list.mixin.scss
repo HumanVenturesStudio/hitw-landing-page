@@ -1,0 +1,20 @@
+@import '../variables';
+
+// ==================================================================
+// Lists
+// ==================================================================
+@mixin list-todo() {
+  li {
+    &:before {
+      content: '';
+      display: inline-block;
+      height: var(--theme--unit--base);
+      width: var(--theme--unit--base);
+      background-image: url('/images/list-check.png'); // Fallback PNG
+      background-image: url('/images/list-check.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: calc(0.5 * var(--theme--unit--base));
+    }
+  }
+}

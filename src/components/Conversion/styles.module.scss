@@ -2,13 +2,13 @@
 
 .Form {
   @include block;
-  background: var(--color--form--bg);
-  color: var(--color--form--color);
-  padding: calc(2 * var(--size--unit-base));
+  background: var(--conversion--form--background);
+  color: var(--conversion--form--color);
+  padding: calc(2 * var(--conversion--form--padding));
 }
 .CustomForm {
   @include block;
-  background: var(--color--form--bg);
+  background: var(--conversion--form--background);
 }
 
 .Content {
@@ -18,9 +18,9 @@
 .Label {
   display: block;
   position: relative;
-  padding: calc(2 * var(--size--unit-base));
+  padding: calc(2 * var(--conversion--form--padding));
   &:not(:last-child) {
-    margin-bottom: var(--size--unit-base);
+    margin-bottom: var(--conversion--form--padding);
   }
 }
 
@@ -45,8 +45,8 @@
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
-  padding: 0 calc(2 * var(--size--unit-base));
-  color: var(--color--form--label);
+  padding: 0 calc(2 * var(--conversion--form--padding));
+  color: var(--conversion--form-label--color);
 }
 
 .LabelRequired {
@@ -57,5 +57,5 @@
   display: block;
   margin: auto;
   width: 50%;
-  background: var(--color--form--submit);
+  background: var(--conversion--form-submit--background);
 }

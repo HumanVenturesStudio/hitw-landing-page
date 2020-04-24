@@ -12,7 +12,7 @@ html {
 
 body {
   overscroll-behavior: none;
-  background: var(--color--application-bg);
+  background: var(--page--background);
 }
 
 // Full Height Layout to support Sticky Footer
@@ -31,11 +31,10 @@ input,
 textarea,
 select,
 button {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: var(--font--root--size);
-  font-weight: var(--font--root--weight);
-  line-height: var(--font--root--line-height);
+  font-family: var(--theme--font--root--family);
+  font-size: var(--theme--font--root--size);
+  font-weight: var(--theme--font--root--weight);
+  line-height: var(--theme--font--root--line-height);
 }
 
 h1,
@@ -50,20 +49,20 @@ h6 {
 
 h1,
 h2 {
-  font-size: var(--font--size-xl);
+  font-size: var(--theme--font--size-xl);
 }
 
 h3 {
-  font-size: var(--font--size-l);
+  font-size: var(--theme--font--size-l);
 }
 
 h4 {
-  font-size: var(--font--size-m);
+  font-size: var(--theme--font--size-m);
 }
 
 h5,
 h6 {
-  font-size: var(--font--size);
+  font-size: var(--theme--font--size);
 }
 
 em,
@@ -76,6 +75,10 @@ p {
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
+  // Hide empty <p></p> Tags because they add vertical space
+  &:empty {
+    display: none;
+  }
 }
 
 img {
@@ -87,15 +90,15 @@ img {
 // ==================================================================
 
 a {
-  color: var(--color--link);
+  color: var(--page--link--color);
 
   &:hover,
   &:focus {
-    color: var(--color--link-hover);
+    color: var(--page--link-hover--color);
   }
 
   &:active {
-    color: var(--color--link-active);
+    color: var(--page--link-active--color);
   }
 }
 
@@ -116,16 +119,16 @@ select,
 button,
 textarea {
   -webkit-appearance: none;
-  border-radius: calc(2 * var(--size--unit-base));
+  border-radius: calc(2 * var(--theme--unit--base));
   border: none;
   outline: none;
-  padding: calc(2 * var(--size--unit-base));
+  padding: calc(2 * var(--theme--unit--base));
   width: 100%;
-  box-shadow: var(--shadow--none);
+  box-shadow: var(--theme--shadow--none);
   transition: box-shadow 200ms ease-out;
 
   &:focus {
-    box-shadow: var(--shadow--base);
+    box-shadow: var(--theme--shadow--base);
   }
 }
 
@@ -136,16 +139,16 @@ button {
   cursor: pointer;
   @include after-glass;
   &:hover {
-    box-shadow: var(--shadow--base);
+    box-shadow: var(--theme--shadow--base);
     &:after {
-      background: var(--color--glass-white);
+      background: var(--theme--color--transparent-light);
     }
   }
   &:active,
   &:active:hover {
-    box-shadow: var(--shadow--inset);
+    box-shadow: var(--theme--shadow--inset);
     &:after {
-      background: var(--color--glass-black);
+      background: var(--theme--color--transparent-dark);
     }
   }
 }

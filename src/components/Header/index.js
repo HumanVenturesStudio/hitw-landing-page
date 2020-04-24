@@ -22,7 +22,7 @@ const Header = () => {
           <Logo />
         </a>
       </h1>
-      <Nav links={data.site.siteMetadata.navigation.header} />
+      <Nav links={data.site.siteMetadata.navigation.links} />
     </header>
   );
 };

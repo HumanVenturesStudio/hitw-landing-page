@@ -1,18 +1,18 @@
 .CTA {
-  background: var(--color--cta-bg);
-  color: var(--color--cta-color);
-  padding: var(--size--unit-base) calc(2 * var(--size--unit-base));
+  background: var(--cta--background);
+  color: var(--cta--color);
+  padding: var(--cta--size) calc(2 * var(--cta--size));
   font-size: var(--cta--font-size);
   text-decoration: none;
   display: inline-block;
   // line-height: 1;
   text-align: center;
-  border-radius: calc(4 * var(--size--unit-base));
-  margin: calc(2 * var(--size--unit-base));
+  border-radius: calc(4 * var(--cta--size));
+  margin: calc(2 * var(--cta--size));
 
   &:hover,
   &:focus {
-    background: var(--color--cta-color);
-    color: var(--color--cta-bg);
+    background: var(--cta--color);
+    color: var(--cta--background);
   }
 }

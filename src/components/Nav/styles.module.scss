@@ -3,11 +3,11 @@
 
 .NavLink {
   display: inline-block;
-  padding: var(--size--unit-small);
+  padding: var(--theme--unit--small);
   text-decoration: none;
-  color: var(--color--nav-link);
+  color: var(--page--navigation--color);
 }
 
 .NavLinkCurrent {
-  color: var(--color--nav-link-current);
+  color: var(--page--navigation--color--active);
 }
