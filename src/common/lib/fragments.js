@@ -112,13 +112,18 @@ export const ConversionContent = graphql`
     html
     frontmatter {
       hide
+      name
       action
       honeypot
       id
-      name
-      submitLabel
       u
+      submitLabel
       useCustom
+      labels {
+        first
+        last
+        email
+      }
     }
   }
 `;

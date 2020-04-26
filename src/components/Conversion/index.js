@@ -39,7 +39,7 @@ const Conversion = ({ release }) => {
   `);
 
   const { html, frontmatter } = data.markdownRemark;
-  const { hide } = frontmatter;
+  const { hide, labels } = frontmatter;
 
   const [first, setFirst] = React.useState('');
   const [last, setLast] = React.useState('');
@@ -83,7 +83,7 @@ const Conversion = ({ release }) => {
             />
 
             <FormField
-              label="Enter your first name"
+              label={labels.first || 'Enter your first name'}
               onChange={(e) => {
                 setHasIntent(true);
                 setFirst(e.target.value);
@@ -95,7 +95,7 @@ const Conversion = ({ release }) => {
               required
             />
             <FormField
-              label="Enter your last name"
+              label={labels.last || 'Enter your last name'}
               onChange={(e) => {
                 setHasIntent(true);
                 setLast(e.target.value);
@@ -106,7 +106,7 @@ const Conversion = ({ release }) => {
               required
             />
             <FormField
-              label="Enter your email"
+              label={labels.email || 'Enter your email'}
               onChange={(e) => {
                 setHasIntent(true);
                 setEmail(e.target.value);
