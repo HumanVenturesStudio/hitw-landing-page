@@ -17,7 +17,7 @@ const Hero = ({ release, backgroundImage = '/images/site.png' }) => {
     }
   `);
   const { html, frontmatter } = data.markdownRemark;
-  const { hide } = frontmatter;
+  const { hide, fullScreen } = frontmatter;
   const inlineStyle = {};
 
   if (hide) {
@@ -30,7 +30,14 @@ const Hero = ({ release, backgroundImage = '/images/site.png' }) => {
   }
 
   return (
-    <div className={cx('hero', styles.Hero)} style={inlineStyle}>
+    <div
+      className={cx(
+        { [styles.HeroFullScreen]: fullScreen },
+        styles.Hero,
+        'hero'
+      )}
+      style={inlineStyle}
+    >
       <div
         className={cx(styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}

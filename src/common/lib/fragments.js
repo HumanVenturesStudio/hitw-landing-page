@@ -50,6 +50,7 @@ export const HeroContent = graphql`
     html
     frontmatter {
       hide
+      fullScreen
       name
       background
       ctaLabel

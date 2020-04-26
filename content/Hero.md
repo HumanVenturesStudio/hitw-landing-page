@@ -4,6 +4,7 @@ background: hero.jpg
 ctaLabel: Try Koala Now!
 ctaUrl: "/#get-started"
 hide: false
+fullScreen: true
 ---
 
 <!--

@@ -37,6 +37,10 @@
   &:before {
     background-color: var(--hero--overlay-color);
   }
+
+  &.HeroFullScreen {
+    height: 100vh;
+  }
 }
 
 .Content {
