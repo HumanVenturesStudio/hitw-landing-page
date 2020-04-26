@@ -19,6 +19,11 @@ const Logo = ({ release, className }) => {
 
   const { defaultTitle } = data.site.siteMetadata;
   const { frontmatter } = data.markdownRemark;
+  const { hide } = frontmatter;
+
+  if (hide) {
+    return null;
+  }
 
   const src = `/images/${frontmatter.asset || 'logo.svg'}`;
 
