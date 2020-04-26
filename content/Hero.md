@@ -1,17 +1,14 @@
 ---
 name: Hero
-background: hero.jpg
-ctaLabel: Try Koala Now!
-ctaUrl: "/#get-started"
-hide: false
-fullScreen: true
+background: hero.jpg      # Hero Background Image, see: static/images/hero.jpg
+ctaLabel: Try Koala Now!  # CTA Label
+ctaUrl: "/#get-started"   # CTA Destination | Defaults to Conversion
+hide: false               # Hides Element
+fullScreen: false         # Sets Hero to full height of screen
+# ---------------------------------------------------------
+# Notes:
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - Change the background by replacing `hero.jpg` found in the Project's `static/images/hero.jpg` with your own background image.
-    It's automatically sized to fit a 16:9 rectangle
- -->
 
 # A new kind of interactive learning experience
 

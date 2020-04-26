@@ -1,13 +1,14 @@
 ---
 name: Callout4
-format: big-numbers
-hide: false
+format: big-numbers       # Callout Format ("left-aligned", "right-aligned", "full-bleed", or "big-numbers")
+hide: false               # Hides Element
+# ---------------------------------------------------------
+# Notes:
+# ---------------------------------------------------------
 ---
 
 <!--
   Notes:
-  - Set `format` to "left-aligned", "right-aligned", "full-bleed", or "big-numbers" to change appearance
-  - Set `hide` to true to hide this Callout on the page
  -->
 
 ## How to get started with <em>Koala</em>

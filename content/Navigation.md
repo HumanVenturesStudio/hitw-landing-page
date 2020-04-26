@@ -9,12 +9,10 @@ links:
   #   url: "/faq"
   # - label: External Link
   #   url: "https://humanventures.co"
-hide: false
+hide: false               # Hides Element
+# ---------------------------------------------------------
+# Notes:
+#   - External links open in new tabs
+#   - Internal links begin with a "/" forward slash
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - External links open in new tabs
-  - Internal links begin with a "/" forward slash
-  - Hide navigation by changing `hide` to true.
- -->

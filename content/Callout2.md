@@ -1,14 +1,12 @@
 ---
 name: Callout2
-format: right-aligned
-hide: false
+format: right-aligned     # Callout Format ("left-aligned", "right-aligned", "full-bleed", or "big-numbers")
+hide: false               # Hides Element
+# ---------------------------------------------------------
+# Notes:
+#   - Add more images with `![Koala](/images/art-1.svg)`, see the folder: static/images
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - Set `format` to "left-aligned", "right-aligned", "full-bleed", or "big-numbers" to change appearance
-  - Set `hide` to true to hide this Callout on the page
- -->
 
 <section>
 
@@ -21,7 +19,7 @@ hide: false
 
 <section>
 
-![Beatiful](/images/art-1.svg)
+![Koala](/images/art-1.svg)
 
 </section>
 

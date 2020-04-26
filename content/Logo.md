@@ -1,10 +1,8 @@
 ---
 name: Logo
-asset: logo.svg
-hide: false
+asset: logo.svg           # Logo Image, see: `static/images/logo.svg`
+hide: false               # Hides Element
+# ---------------------------------------------------------
+# Notes:
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - Add a new image or replace `logo.svg` found in the Project's `static/images/logo.svg`
- -->

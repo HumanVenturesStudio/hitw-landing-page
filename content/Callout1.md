@@ -1,14 +1,12 @@
 ---
 name: Callout1
-format: left-aligned
-hide: false
+format: left-aligned      # Callout Format ("left-aligned", "right-aligned", "full-bleed", or "big-numbers")
+hide: false               # Hides Element
+# ---------------------------------------------------------
+# Notes:
+#   - Add any video from YouTube, Vimeo, Twitter, Instagram with `embed: <URL TO VIDEO>`
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - Set `format` to "left-aligned", "right-aligned", "full-bleed", or "big-numbers" to change appearance
-  - Set `hide` to true to hide this Callout on the page
- -->
 
 <section>
 

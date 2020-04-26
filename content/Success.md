@@ -1,14 +1,12 @@
 ---
 name: Success
-redirect: true
+redirect: true    # Set `redirect` to false to remain on this page.
+                  # Otherwise it will send the user back to the
+                  # landing page after five seconds.
+# ---------------------------------------------------------
+# Notes:
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - This page is shown to visitors who have signed up
-  - Set `redirect` to false to stay on the success page. Otherwise it will send the user
-    back to the landing page after five seconds.
- -->
 
 # Thank You!
 

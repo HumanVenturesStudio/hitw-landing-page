@@ -1,20 +1,19 @@
 ---
 name: Conversion
+# BEGIN Mailchimp Fields
 action: https://netlify.us19.list-manage.com/subscribe/post?u=1f28b6be6f07eec26646ad787&amp;id=4637b5fba8
 honeypot: b_1f28b6be6f07eec26646ad787_4637b5fba8
 id: 4637b5fba8
-submitLabel: Submit
 u: 1f28b6be6f07eec26646ad787
-useCustom: false
-hide: false
+# END Mailchimp Fields
+submitLabel: Submit		# Label for Submit Button
+useCustom: false			# Replaces Built-in Form with any HTML pasted below
+hide: false						# Hides Element
+# ---------------------------------------------------------
+# Notes:
+#  - Configure the Mailchimp form by replacing the values above with your own
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - Configure the Mailchimp form by replacing the values above with your own
-  - Set `useCustom` to "true" and paste your own email capture form below, replacing the example
- -->
-
 
 <!-- Begin Mailchimp Signup Form -- See: https://us19.admin.mailchimp.com/lists/dashboard/signup-forms -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">

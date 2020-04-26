@@ -1,13 +1,12 @@
 ---
 name: Footer
-hide: false
+hide: false               # Hides Element
+# ---------------------------------------------------------
+# Notes:
+#   - Sections display as columns on Desktop
+#   - Sections stack up on Mobile
+# ---------------------------------------------------------
 ---
-
-<!--
-  Notes:
-  - Sections are columns on Desktop
-  - Sections stack up on Mobile
- -->
 
 <section>
 
