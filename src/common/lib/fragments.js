@@ -13,23 +13,23 @@ export const SiteInfo = graphql`
   }
 `;
 
-export const NavInfo = graphql`
-  fragment NavInfo on Site {
-    siteMetadata {
-      navigation {
-        links {
-          name
-          link
-        }
-      }
-    }
-  }
-`;
-
 export const GitInfo = graphql`
   fragment GitInfo on GitBranch {
     name
     commit
+  }
+`;
+
+export const NavigationContent = graphql`
+  fragment NavigationContent on MarkdownRemark {
+    id
+    frontmatter {
+      hide
+      links {
+        label
+        url
+      }
+    }
   }
 `;
 

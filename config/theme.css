@@ -11,6 +11,7 @@
   --theme--color--quaternary: #FF3172;
   --theme--color--white: #FFF;
   --theme--color--black: #000;
+  --theme--color--transparent: transparent;
   --theme--color--transparent-dark: rgba(0, 0, 0, 0.25);
   --theme--color--transparent-light: rgba(255, 255, 255, 0.1);
 
@@ -45,18 +46,27 @@
   --theme--shadow--inset: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
   --theme--shadow--none: 0 0 0 rgba(0, 0, 0, 0);
 
+  /* ==================================================================
+  // Animation
+  // ================================================================== */
+  --theme--animation-timing: 360ms;
 
   /* ==================================================================
   // Page
   // ================================================================== */
   --page--background: var(--theme--color--secondary);
-  --page--navigation--color--active: var(--theme--color--tertiary);
-  --page--navigation--color: var(--theme--color--white);
   --page--link-active--color: var(--theme--color--black);
   --page--link-hover--color: var(--theme--color--tertiary);
   --page--link--color: var(--theme--color--black);
   --page--footer--background: var(--theme--color--white);
   --page--footer--padding: var(--theme--unit--base);
+
+  /* ==================================================================
+  // Page
+  // ================================================================== */
+  --navigation--link--color--active: var(--theme--color--tertiary);
+  --navigation--link--color: var(--theme--color--white);
+  --navigation--mobile-menu--background: var(--theme--color--secondary);
 
 
   /* ==================================================================
@@ -85,7 +95,7 @@
 
 
   /* ==================================================================
-  // Block: CTA
+  // Block: CTA (in Hero)
   // ================================================================== */
   --cta--background: var(--theme--color--primary);
   --cta--color: var(--theme--color--white);

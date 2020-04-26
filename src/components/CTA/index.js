@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import { trackEvent } from 'common/lib/analytics';
+import { isInlineUrl } from 'common/lib/expressions';
 
 import styles from './styles.module.scss';
 
@@ -25,7 +26,7 @@ const CTA = ({ url = '#submit', label, onClick, children, className }) => {
         // Handle Callback
         onClick && onClick();
         // Support for inline anchors
-        if (/^#/.test(url)) {
+        if (isInlineUrl(url)) {
           e.preventDefault();
           return false;
         }

@@ -1,0 +1,42 @@
+@import 'common/styles';
+
+.Glass {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: $z-1;
+  // Starting Animation Properties
+  background: var(--theme--color--transparent-dark);
+  opacity: 0;
+
+  &.show {
+    pointer-events: initial;
+  }
+
+  &.show,
+  &.hide {
+    animation-name: showGlass;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1; // Run animation once
+    animation-fill-mode: forwards; // Stop animation on end frame
+  }
+  &.hide {
+    animation-delay: -1s;
+    animation-direction: reverse; // Run animation backwards
+  }
+}
+
+@keyframes showGlass {
+  0% {
+    opacity: 0;
+    background: var(--theme--color--transparent);
+  }
+  100% {
+    opacity: 1;
+    background: var(--theme--color--transparent-dark);
+  }
+}

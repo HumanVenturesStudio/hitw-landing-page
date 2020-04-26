@@ -12,6 +12,14 @@ hide: false
 
 <section>
 
+### Never fear, <br/> we're always here
+With <em>Koala</em>, your child will never be bored again
+
+</section>
+
+
+<section>
+
 <br/>
 <br/>
 
@@ -19,13 +27,5 @@ hide: false
 
 </section>
 
-
-
-<section>
-
-### Never fear, <br/> we're always here
-With <em>Koala</em>, your child will never be bored again
-
-</section>
 
 

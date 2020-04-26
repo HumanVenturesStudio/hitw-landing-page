@@ -1,5 +1,4 @@
 const metadata = require('./config/metadata');
-const navigation = require('./config/navigation');
 
 /**
  * Configure your Gatsby site with this file.
@@ -13,7 +12,6 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     ...metadata,
-    navigation: navigation,
     titleTemplate: '%s',
     url: `${process.env.URL}`, // No trailing slash allowed!
     image: '/images/site.png', // Path to your image you placed in the 'static' folder

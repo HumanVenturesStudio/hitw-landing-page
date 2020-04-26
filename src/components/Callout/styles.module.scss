@@ -90,5 +90,16 @@
   background: var(--callout--full--background);
   color: var(--callout--full--color);
 
-  padding: 0;
+  @media ($mq-desktop) {
+    padding: 0;
+  }
+
+  @media ($mq-mobile) {
+    padding-bottom: 0;
+    .Content {
+      section {
+        padding-bottom: 0;
+      }
+    }
+  }
 }

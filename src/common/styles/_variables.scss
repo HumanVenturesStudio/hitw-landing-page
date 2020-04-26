@@ -1,13 +1,29 @@
 // ==================================================================
 // Breakpoints
+//
+// Usage:
+// @media ($mq-mobile) { ... }
+// @media ($mq-desktop) { ... }
 // ==================================================================
 
-$mq-mobile-px: 767px;
-$mq-desktop-px: 768px;
+// Note: Keep this in sync with common/responsive.js
+$mq-mobile-unitless: 767;
+$mq-desktop-unitless: 768;
+
+$mq-mobile-px: '#{$mq-mobile-unitless}px';
+$mq-desktop-px: '#{$mq-desktop-unitless}px';
 
 $mq-mobile: 'max-width: #{$mq-mobile-px}';
 $mq-desktop: 'min-width: #{$mq-desktop-px}';
 
-// Usage:
-// @media ($mq-mobile) { ... }
-// @media ($mq-desktop) { ... }
+// ==================================================================
+// Z-index
+// ==================================================================
+
+$z-max: 2147483647;
+$z-5: 50;
+$z-4: 40;
+$z-3: 30;
+$z-2: 20;
+$z-1: 10;
+$z-0: 0;

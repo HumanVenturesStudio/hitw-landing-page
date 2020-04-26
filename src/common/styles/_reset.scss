@@ -83,6 +83,7 @@ p {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 // ==================================================================
@@ -150,5 +151,12 @@ button {
     &:after {
       background: var(--theme--color--transparent-dark);
     }
+  }
+}
+
+// Accessibility! Disables Transitions using this var()
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --theme--animation-timing: 0ms;
   }
 }

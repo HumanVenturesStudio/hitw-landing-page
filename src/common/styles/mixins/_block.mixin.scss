@@ -44,7 +44,7 @@
       }
     }
     @media ($mq-mobile) {
-      padding: calc(var(--block--padding)) 0;
+      padding: calc(var(--block--padding));
     }
   }
 }

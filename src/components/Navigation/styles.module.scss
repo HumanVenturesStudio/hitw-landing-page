@@ -1,0 +1,59 @@
+@import 'common/styles';
+
+.Nav {
+}
+
+.NavLink {
+  display: inline-block;
+  padding: var(--theme--unit--small);
+  text-decoration: none;
+  color: var(--navigation--link--color);
+}
+
+.NavLinkCurrent {
+  color: var(--navigation--link--color--active);
+}
+
+@media ($mq-mobile) {
+  .NavContainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: $z-max;
+  }
+  .Nav {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    max-width: 90vw;
+    min-width: 240px;
+
+    background: var(--navigation--mobile-menu--background);
+    text-align: right;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    z-index: $z-2;
+
+    transform: translateX(100%);
+    transition: transform var(--theme--animation-timing) ease-in-out;
+
+    .NavContainerActive & {
+      transform: translateX(0);
+    }
+  }
+  .NavMenuToggle {
+    display: flex;
+    svg {
+      margin: auto;
+      display: block;
+    }
+  }
+  .NavLink {
+    display: block;
+    padding: var(--theme--unit--base) var(--theme--unit--medium);
+  }
+}
