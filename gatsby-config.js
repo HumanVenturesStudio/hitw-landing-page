@@ -79,6 +79,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
+        // Use dart-sass, not node-sass
+        // https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sass#alternative-sass-implementations
+        implementation: require('sass'),
         // Override the file regex for SASS
         sassRuleTest: /\.global\.s(a|c)ss$/,
         // Override the file regex for CSS modules

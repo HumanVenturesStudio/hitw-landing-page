@@ -3,10 +3,13 @@ import cx from 'classnames';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 
 import { withPageTracking, trackEvent } from 'common/lib/analytics';
+import withReleaseInfo from 'common/lib/withReleaseInfo';
 import SEO from 'components/SEO';
 import styles from './styles.module.scss';
 
 const SCROLL_THROTTLE = 500;
+const WINDOW = typeof window !== `undefined` ? window : false;
+const BODY = typeof document !== `undefined` ? document.body : false;
 
 /**
  * @param {float} offset Pixels scroll on the page
@@ -17,20 +20,22 @@ const calculateScrollPercentage = (offset, max) => {
   return Math.abs(Math.round((offset * 100) / max));
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ release, children }) => {
   const [maxScroll, setMaxScroll] = React.useState(0);
-  const bodyRect = document.body.getClientRects()[0];
-  const endScroll = bodyRect.height - window.innerHeight;
+  const bodyRect = (BODY && BODY.getClientRects()[0]) || false;
+  const endScroll = BODY && bodyRect.height - WINDOW.innerHeight;
   const prevOffsetRef = React.useRef();
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      const prev = prevPos.y;
-      const curr = currPos.y;
-      prevOffsetRef.current = prev;
-      setMaxScroll(
-        calculateScrollPercentage(prev < curr ? curr : prev, endScroll)
-      );
+      if (bodyRect && endScroll) {
+        const prev = prevPos.y;
+        const curr = currPos.y;
+        prevOffsetRef.current = prev;
+        setMaxScroll(
+          calculateScrollPercentage(prev < curr ? curr : prev, endScroll)
+        );
+      }
     },
     [endScroll],
     null,
@@ -39,12 +44,15 @@ const Layout = ({ children }) => {
   );
 
   React.useEffect(() => {
-    if (maxScroll >= prevOffsetRef.current) {
-      trackEvent(trackEvent.EVENT__CONVERSION__PAGE__SCROLL, {
-        maxScroll,
-      });
+    if (bodyRect && endScroll) {
+      if (maxScroll >= prevOffsetRef.current) {
+        trackEvent(trackEvent.EVENT__CONVERSION__PAGE__SCROLL, {
+          maxScroll,
+          release,
+        });
+      }
     }
-  }, [maxScroll]);
+  }, [bodyRect, endScroll, maxScroll, release]);
 
   return (
     <>
@@ -54,4 +62,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default withPageTracking(Layout);
+export default withPageTracking(withReleaseInfo(Layout));

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import DangerousHTMLContent from 'dangerously-set-html-content';
+
 import { trackEvent } from 'common/lib/analytics';
+import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 import styles from './styles.module.scss';
 
@@ -27,12 +29,9 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const Conversion = () => {
+const Conversion = ({ release }) => {
   const data = useStaticQuery(graphql`
     query {
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
-      }
       markdownRemark(frontmatter: { name: { eq: "Conversion" } }) {
         ...ConversionContent
       }
@@ -48,16 +47,13 @@ const Conversion = () => {
 
   React.useEffect(() => {
     if (hasIntent === true) {
-      trackEvent(trackEvent.EVENT__CONVERSION__INTENT, data.gitBranch);
+      trackEvent(trackEvent.EVENT__CONVERSION__INTENT, { release });
     }
-  }, [data.gitBranch, hasIntent]);
+  }, [hasIntent, release]);
 
   return (
     (frontmatter.useCustom && (
-      <div
-        id={`${frontmatter.name}`}
-        className={cx('form', styles.CustomForm, {})}
-      >
+      <div id="get-started" className={cx('form', styles.CustomForm, {})}>
         <div className={cx(styles.Content)}>
           <DangerousHTMLContent html={html} />
         </div>
@@ -90,7 +86,7 @@ const Conversion = () => {
               type="text"
               name="MERGE1"
               value={first}
-              id="subscribe"
+              id="get-started"
               required
             />
             <FormField
@@ -125,4 +121,4 @@ const Conversion = () => {
   );
 };
 
-export default Conversion;
+export default withReleaseInfo(Conversion);

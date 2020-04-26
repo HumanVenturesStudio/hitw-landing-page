@@ -15,6 +15,7 @@ export const SiteInfo = graphql`
 
 export const GitInfo = graphql`
   fragment GitInfo on GitBranch {
+    id
     name
     commit
   }

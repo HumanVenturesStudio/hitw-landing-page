@@ -1,6 +1,7 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+
 import { info, warn } from 'common/lib/log';
+import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 /**
  * ============================================================================
@@ -27,7 +28,7 @@ const analytics = (typeof window !== `undefined` && window.analytics) || {
  */
 export const trackPage = (properties) => {
   info('[analytics]', '[page]', properties);
-  analytics.page(properties);
+  analytics && analytics.page(properties);
   return true;
 };
 
@@ -36,22 +37,13 @@ export const trackPage = (properties) => {
  * @param {Component} Layout
  */
 export const withPageTracking = (Layout) => {
-  function PageTrackingHOC(props) {
-    const data = useStaticQuery(graphql`
-      query {
-        gitBranch(current: { eq: true }) {
-          id
-          name
-          commit
-        }
-      }
-    `);
+  function PageTrackingHOC({ release, ...props }) {
     React.useEffect(() => {
-      trackPage(data.gitBranch);
-    }, [data]);
+      trackPage({ release });
+    }, [release]);
     return <Layout {...props} />;
   }
-  return PageTrackingHOC;
+  return withReleaseInfo(PageTrackingHOC);
 };
 
 /**
@@ -61,7 +53,7 @@ export const withPageTracking = (Layout) => {
  */
 export const trackEvent = (name, properties = {}) => {
   info('[analytics]', '[event]', name, properties);
-  analytics.track(name, properties /*, [options], [callback] */);
+  analytics && analytics.track(name, properties /*, [options], [callback] */);
   return true;
 };
 
@@ -72,3 +64,5 @@ trackEvent.EVENT__CONVERSION__CTA__CLICK = 'conversion:cta:click';
 trackEvent.EVENT__CONVERSION__INTENT = 'conversion:intent';
 trackEvent.EVENT__CONVERSION__SUCCESS = 'conversion:success';
 trackEvent.EVENT__CONVERSION__PAGE__SCROLL = 'conversion:page:scroll';
+trackEvent.EVENT__CONVERSION__NAV_CLICK = 'conversion:navigation:click';
+trackEvent.EVENT__CONVERSION__NAV_OPEN = 'conversion:navigation:open';

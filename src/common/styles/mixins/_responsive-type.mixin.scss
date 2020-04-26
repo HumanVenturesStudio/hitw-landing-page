@@ -1,0 +1,9 @@
+// [Experimental]: Responsive Type
+// https://css-tricks.com/simplified-fluid-typography/
+
+@mixin responsive-type() {
+  font-size: min(
+    max(var(--theme--font--root--size--min), 4vw),
+    var(--theme--font--root--size--max)
+  );
+}

@@ -2,15 +2,15 @@ import React from 'react';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import withReleaseInfo from 'common/lib/withReleaseInfo';
+
 import CTA from 'components/CTA';
+
 import styles from './styles.module.scss';
 
-const Hero = ({ backgroundImage = '/images/site.png' }) => {
+const Hero = ({ release, backgroundImage = '/images/site.png' }) => {
   const data = useStaticQuery(graphql`
     query {
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
-      }
       markdownRemark(frontmatter: { name: { eq: "Hero" } }) {
         ...HeroContent
       }
@@ -35,4 +35,4 @@ const Hero = ({ backgroundImage = '/images/site.png' }) => {
   );
 };
 
-export default Hero;
+export default withReleaseInfo(Hero);

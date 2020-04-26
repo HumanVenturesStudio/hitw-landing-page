@@ -1,17 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
+
 import { trackEvent } from 'common/lib/analytics';
+import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 import styles from './styles.module.scss';
 
-const Conversion = () => {
+const ConversionSuccess = ({ release }) => {
   const data = useStaticQuery(graphql`
     query {
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
-      }
       markdownRemark(frontmatter: { name: { eq: "Success" } }) {
         ...SuccessContent
       }
@@ -28,7 +26,9 @@ const Conversion = () => {
     }
   }, [frontmatter.redirect]);
 
-  trackEvent(trackEvent.EVENT__CONVERSION__SUCCESS, data.gitBranch);
+  React.useEffect(() => {
+    trackEvent(trackEvent.EVENT__CONVERSION__SUCCESS, { release });
+  }, [release]);
 
   return (
     <div
@@ -43,4 +43,4 @@ const Conversion = () => {
   );
 };
 
-export default Conversion;
+export default withReleaseInfo(ConversionSuccess);

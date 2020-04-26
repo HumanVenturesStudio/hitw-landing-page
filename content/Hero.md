@@ -2,7 +2,7 @@
 name: Hero
 background: hero.jpg
 ctaLabel: Try Koala Now!
-ctaUrl: "#typeform"
+ctaUrl: "/#get-started"
 ---
 
 <!--
@@ -11,6 +11,6 @@ ctaUrl: "#typeform"
     It's automatically sized to fit a 16:9 rectangle
  -->
 
-# A new kind of interactive learning expericence
+# A new kind of interactive learning experience
 
 Kids up to 8 can explore any subject hands-on with <em>Koala</em> in their living room.

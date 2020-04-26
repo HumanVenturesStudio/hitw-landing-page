@@ -4,7 +4,7 @@ links:
   - label: Home
     url: /
   - label: Subscribe
-    url: "/#subscribe"
+    url: "/#get-started"
   # - label: FAQ
   #   url: "/faq"
   # - label: External Link

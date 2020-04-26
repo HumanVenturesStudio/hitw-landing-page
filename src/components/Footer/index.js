@@ -2,15 +2,15 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import cx from 'classnames';
 
+import withReleaseInfo from 'common/lib/withReleaseInfo';
+
 import Logo from 'components/Logo';
+
 import styles from './styles.module.scss';
 
-const Footer = () => {
+const Footer = ({ release }) => {
   const data = useStaticQuery(graphql`
     query {
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
-      }
       markdownRemark(frontmatter: { name: { eq: "Footer" } }) {
         ...FooterContent
       }
@@ -30,4 +30,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default withReleaseInfo(Footer);

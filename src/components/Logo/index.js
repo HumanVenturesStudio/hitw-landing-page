@@ -1,17 +1,15 @@
 import React from 'react';
 import cx from 'classnames';
-
-import styles from './styles.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export default ({ className }) => {
+import withReleaseInfo from 'common/lib/withReleaseInfo';
+import styles from './styles.module.scss';
+
+const Logo = ({ release, className }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
         ...SiteInfo
-      }
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
       }
       markdownRemark(frontmatter: { name: { eq: "Logo" } }) {
         ...LogoContent
@@ -32,3 +30,5 @@ export default ({ className }) => {
     />
   );
 };
+
+export default withReleaseInfo(Logo);

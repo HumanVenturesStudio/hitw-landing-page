@@ -3,33 +3,27 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import { trackEvent } from 'common/lib/analytics';
-import { isInlineUrl } from 'common/lib/expressions';
+import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 import styles from './styles.module.scss';
 
-const CTA = ({ url = '#submit', label, onClick, children, className }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
-      }
-    }
-  `);
-
+const CTA = ({
+  release,
+  url = '#submit',
+  label,
+  onClick,
+  children,
+  className,
+}) => {
   return (
     <a
       className={cx('call-to-action', styles.CTA)}
       href={url}
       onClick={(e) => {
         // Track CTA Click
-        trackEvent(trackEvent.EVENT__CONVERSION__CTA__CLICK, data.gitBranch);
+        trackEvent(trackEvent.EVENT__CONVERSION__CTA__CLICK, { release });
         // Handle Callback
         onClick && onClick();
-        // Support for inline anchors
-        if (isInlineUrl(url)) {
-          e.preventDefault();
-          return false;
-        }
       }}
     >
       {label}
@@ -45,4 +39,4 @@ CTA.propTypes = {
   className: PropTypes.string,
 };
 
-export default CTA;
+export default withReleaseInfo(CTA);

@@ -7,6 +7,9 @@
 }
 
 html {
+  // [Experimental]: Responsive Type
+  // https://css-tricks.com/simplified-fluid-typography/
+  // @include responsive-type();
   height: 100%;
 }
 
@@ -31,8 +34,8 @@ input,
 textarea,
 select,
 button {
-  font-family: var(--theme--font--root--family);
   font-size: var(--theme--font--root--size);
+  font-family: var(--theme--font--root--family);
   font-weight: var(--theme--font--root--weight);
   line-height: var(--theme--font--root--line-height);
 }
@@ -83,6 +86,7 @@ p {
 
 img {
   display: block;
+  margin: auto;
   max-width: 100%;
 }
 

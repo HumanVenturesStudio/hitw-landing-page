@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useStaticQuery, graphql } from 'gatsby';
+
+import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 import styles from './styles.module.scss';
-import { useStaticQuery, graphql } from 'gatsby';
 
 export const CALLOUT_ALIGNED_LEFT = 'left-aligned';
 export const CALLOUT_ALIGNED_RIGHT = 'right-aligned';
@@ -16,12 +18,9 @@ export const CALLOUT_FORMATS = [
   CALLOUT_FULL_BLEED,
 ];
 
-const Callout = ({ name, format = 'left' }) => {
+const Callout = ({ release, name, format = 'left' }) => {
   const data = useStaticQuery(graphql`
     query {
-      gitBranch(current: { eq: true }) {
-        ...GitInfo
-      }
       allMarkdownRemark(
         filter: { frontmatter: { name: { regex: "/Callout/" } } }
       ) {
@@ -76,4 +75,4 @@ Callout.propTypes = {
   format: PropTypes.oneOf(CALLOUT_FORMATS),
 };
 
-export default Callout;
+export default withReleaseInfo(Callout);
