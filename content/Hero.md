@@ -7,10 +7,10 @@ ctaUrl: "#typeform"
 
 <!--
   Notes:
-  - Add a new image or replace `site.png` found in the Project's `static/images/site.png` with your own background image.
+  - Change the background by replacing `hero.jpg` found in the Project's `static/images/hero.jpg` with your own background image.
     It's automatically sized to fit a 16:9 rectangle
  -->
 
-# Big Time Hero Heading
+# A new kind of interactive learning expericence
 
-I just want to say that this has been a great time.
+Kids up to 8 can explore any subject hands-on with <em>Koala</em> in their living room.
