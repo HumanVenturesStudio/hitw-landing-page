@@ -1,3 +1,8 @@
 /* ==================================================================
 // Landing Page Styles -- Add any custom styles here
 // ================================================================== */
+
+.conversion--form {
+  display: flex;
+  min-height: 100vh;
+}

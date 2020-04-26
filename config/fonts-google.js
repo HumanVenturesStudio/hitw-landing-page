@@ -11,4 +11,4 @@
  * @link https://medium.com/@matt.readout/using-google-fonts-in-your-gatsby-js-projects-b59a3abfba15
  */
 
-module.exports = [`Roboto`];
+module.exports = [`Ultra`];
