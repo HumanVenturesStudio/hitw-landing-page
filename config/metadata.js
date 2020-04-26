@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'Koala',
-  description: 'Koala Landing Page',
-  twitter: '@Koala',
-  keywords: ['Koala', 'Kids', 'Learning', 'Enrichment'],
+  title: 'Members Only',
+  description: 'Members Only: Sign up and find out',
+  twitter: '@MembersOnly',
+  keywords: ['MembersOnly', 'Exclusive', 'Secret Event', 'Health', 'Wellness'],
   lang: 'en',
   image: {
     src: '/images/site.png', // Path to your image you placed in the 'static' folder

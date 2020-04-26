@@ -9,7 +9,7 @@ links:
   #   url: "/faq"
   # - label: External Link
   #   url: "https://humanventures.co"
-hide: false               # Hides Element
+hide: true               # Hides Element
 # ---------------------------------------------------------
 # Notes:
 #   - External links open in new tabs
