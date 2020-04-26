@@ -18,6 +18,11 @@ const Footer = ({ release }) => {
   `);
 
   const { html, frontmatter } = data.markdownRemark;
+  const { hide } = frontmatter;
+
+  if (hide) {
+    return null;
+  }
 
   return (
     <footer id={`${frontmatter.name}`} className={cx('footer', styles.Footer)}>

@@ -1,6 +1,7 @@
 ---
 name: Logo
 asset: logo.svg
+hide: false
 ---
 
 <!--

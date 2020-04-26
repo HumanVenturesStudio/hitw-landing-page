@@ -54,6 +54,7 @@
   /* ==================================================================
   // Page
   // ================================================================== */
+  --page--scroll-behavior: smooth; /* smooth|auto */
   --page--background: var(--theme--color--secondary);
   --page--link-active--color: var(--theme--color--black);
   --page--link-hover--color: var(--theme--color--tertiary);

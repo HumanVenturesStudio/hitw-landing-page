@@ -39,6 +39,7 @@ const Conversion = ({ release }) => {
   `);
 
   const { html, frontmatter } = data.markdownRemark;
+  const { hide } = frontmatter;
 
   const [first, setFirst] = React.useState('');
   const [last, setLast] = React.useState('');
@@ -50,6 +51,10 @@ const Conversion = ({ release }) => {
       trackEvent(trackEvent.EVENT__CONVERSION__INTENT, { release });
     }
   }, [hasIntent, release]);
+
+  if (hide) {
+    return null;
+  }
 
   return (
     (frontmatter.useCustom && (

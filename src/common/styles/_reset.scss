@@ -11,6 +11,7 @@ html {
   // https://css-tricks.com/simplified-fluid-typography/
   // @include responsive-type();
   height: 100%;
+  scroll-behavior: var(--page--scroll-behavior);
 }
 
 body {

@@ -5,7 +5,8 @@ redirect: true
 
 <!--
   Notes:
-  - Set `redirect` to false to stay on the success page. Otherwwise it will send the user
+  - This page is shown to visitors who have signed up
+  - Set `redirect` to false to stay on the success page. Otherwise it will send the user
     back to the landing page after five seconds.
  -->
 

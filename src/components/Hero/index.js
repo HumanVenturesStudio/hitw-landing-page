@@ -17,7 +17,12 @@ const Hero = ({ release, backgroundImage = '/images/site.png' }) => {
     }
   `);
   const { html, frontmatter } = data.markdownRemark;
+  const { hide } = frontmatter;
   const inlineStyle = {};
+
+  if (hide) {
+    return null;
+  }
 
   inlineStyle.backgroundImage = backgroundImage;
   if (frontmatter.background) {

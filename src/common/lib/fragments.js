@@ -38,6 +38,7 @@ export const LogoContent = graphql`
   fragment LogoContent on MarkdownRemark {
     id
     frontmatter {
+      hide
       asset
     }
   }
@@ -48,6 +49,7 @@ export const HeroContent = graphql`
     id
     html
     frontmatter {
+      hide
       name
       background
       ctaLabel
@@ -61,6 +63,7 @@ export const CalloutContent = graphql`
     id
     html
     frontmatter {
+      hide
       name
       background
       format
@@ -80,11 +83,23 @@ export const SuccessContent = graphql`
   }
 `;
 
+export const HeaderContent = graphql`
+  fragment HeaderContent on MarkdownRemark {
+    id
+    html
+    frontmatter {
+      hide
+      name
+    }
+  }
+`;
+
 export const FooterContent = graphql`
   fragment FooterContent on MarkdownRemark {
     id
     html
     frontmatter {
+      hide
       name
     }
   }
@@ -95,6 +110,7 @@ export const ConversionContent = graphql`
     id
     html
     frontmatter {
+      hide
       action
       honeypot
       id

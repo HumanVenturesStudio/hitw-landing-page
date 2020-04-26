@@ -1,5 +1,6 @@
 ---
 name: Footer
+hide: false
 ---
 
 <!--
