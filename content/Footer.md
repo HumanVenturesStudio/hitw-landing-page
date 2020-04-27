@@ -10,19 +10,8 @@ hide: false               # Hides Element
 
 <section>
 
-## Koala
-
-Just hanging out doing cool stuff.
-
-Koala Company LLC &copy; 2020.
-
-</section>
-
-
-<section>
-
 - [Facebook](#link)
-- [Twitter](#link)
 - [Instagram](#link)
+- [Twitter](#link)
 
 </section>
