@@ -16,7 +16,6 @@
 
   h1,
   h2 {
-    font-weight: bold;
     font-size: var(--hero--heading-size--mobile);
     @media ($mq-desktop) {
       font-size: var(--hero--heading-size);
@@ -24,7 +23,6 @@
   }
 
   p {
-    font-weight: bold;
     line-height: 1.2;
     @media ($mq-desktop) {
       font-size: var(--hero--text-size);
