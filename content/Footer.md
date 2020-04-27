@@ -18,20 +18,11 @@ Koala Company LLC &copy; 2020.
 
 </section>
 
-<section>
-
-- [Link](#link)
-- [Link](#link)
-- [Link](#link)
-- [Link](#link)
-
-</section>
 
 <section>
 
-- [Link](#link)
-- [Link](#link)
-- [Link](#link)
-- [Link](#link)
+- [Facebook](#link)
+- [Twitter](#link)
+- [Instagram](#link)
 
 </section>
