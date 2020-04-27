@@ -22,6 +22,15 @@
   em {
     color: var(--callout--accent-color);
   }
+
+  :global(.callout-cta) {
+    display: inline-block;
+    text-align: center;
+    background: var(--callout--cta--background);
+    color: var(--callout--cta--color);
+    padding: var(--callout--cta--padding);
+    border-radius: var(--callout--cta--radius);
+  }
 }
 
 .CalloutLeft {
@@ -48,9 +57,15 @@
   color: var(--callout--right--color);
 }
 
-.CalloutThree {
-  background: var(--callout--three--background);
-  color: var(--callout--three--color);
+.CalloutCenter {
+  text-align: center;
+  background: var(--callout--center--background);
+  color: var(--callout--center--color);
+}
+
+.CalloutBigNumbers {
+  background: var(--callout--big-numbers--background);
+  color: var(--callout--big-numbers--color);
 
   .Content {
     flex-direction: column;
@@ -87,8 +102,8 @@
 }
 
 .CalloutFull {
-  background: var(--callout--full--background);
-  color: var(--callout--full--color);
+  background: var(--callout--full-bleed--background);
+  color: var(--callout--full-bleed--color);
 
   @media ($mq-desktop) {
     padding: 0;
@@ -99,6 +114,30 @@
     .Content {
       section {
         padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.CalloutFourUp {
+  .Content {
+    & > :not(section) {
+      text-align: center;
+    }
+    & > section {
+      section {
+        padding: calc(2 * var(--callout--cta--padding)) 0;
+      }
+    }
+
+    @media ($mq-desktop) {
+      flex-wrap: wrap;
+      & > :not(section) {
+        width: 100%;
+      }
+      & > section {
+        flex: 1 1 50%;
+        width: 50%;
       }
     }
   }

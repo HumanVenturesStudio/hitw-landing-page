@@ -49,6 +49,7 @@ h5,
 h6 {
   line-height: 1.2;
   margin-bottom: 1rem;
+  font-family: var(--theme--font--heading--family);
   font-weight: var(--theme--font--root--weight);
 }
 
@@ -84,6 +85,13 @@ p {
   &:empty {
     display: none;
   }
+}
+
+blockquote,
+q {
+  font-family: var(--theme--font--heading--family);
+  font-style: italic;
+  quotes: '“' '”' '‘' '’';
 }
 
 img {
@@ -126,10 +134,8 @@ select,
 button,
 textarea {
   -webkit-appearance: none;
-  border-radius: calc(2 * var(--theme--unit--base));
   border: none;
   outline: none;
-  padding: calc(2 * var(--theme--unit--base));
   width: 100%;
   box-shadow: var(--theme--shadow--none);
   transition: box-shadow 200ms ease-out;

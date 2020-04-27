@@ -50,6 +50,9 @@
     svg {
       margin: auto;
       display: block;
+      rect {
+        fill: var(--navigation--mobile-menu--color);
+      }
     }
   }
   .NavLink {

@@ -9,13 +9,17 @@ import styles from './styles.module.scss';
 
 export const CALLOUT_ALIGNED_LEFT = 'left-aligned';
 export const CALLOUT_ALIGNED_RIGHT = 'right-aligned';
+export const CALLOUT_ALIGNED_CENTER = 'center-aligned';
 export const CALLOUT_BIG_NUMBERS = 'big-numbers';
 export const CALLOUT_FULL_BLEED = 'full-bleed';
+export const CALLOUT_FOUR_UP = 'four-up';
 export const CALLOUT_FORMATS = [
   CALLOUT_ALIGNED_LEFT,
   CALLOUT_ALIGNED_RIGHT,
+  CALLOUT_ALIGNED_CENTER,
   CALLOUT_BIG_NUMBERS,
   CALLOUT_FULL_BLEED,
+  CALLOUT_FOUR_UP,
 ];
 
 const Callout = ({ release, name, format = 'left' }) => {
@@ -56,8 +60,10 @@ const Callout = ({ release, name, format = 'left' }) => {
       className={cx('callout', styles.Callout, {
         [styles.CalloutLeft]: calloutFormat === CALLOUT_ALIGNED_LEFT,
         [styles.CalloutRight]: calloutFormat === CALLOUT_ALIGNED_RIGHT,
+        [styles.CalloutCenter]: calloutFormat === CALLOUT_ALIGNED_CENTER,
         [styles.CalloutFull]: calloutFormat === CALLOUT_FULL_BLEED,
-        [styles.CalloutThree]: calloutFormat === CALLOUT_BIG_NUMBERS,
+        [styles.CalloutBigNumbers]: calloutFormat === CALLOUT_BIG_NUMBERS,
+        [styles.CalloutFourUp]: calloutFormat === CALLOUT_FOUR_UP,
         [styles.hasBg]: frontmatter.background,
       })}
       style={inlineStyle}

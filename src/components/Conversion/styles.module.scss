@@ -5,6 +5,14 @@
   background: var(--conversion--form--background);
   color: var(--conversion--form--color);
   padding: calc(2 * var(--conversion--form--padding));
+
+  input,
+  select,
+  button,
+  textarea {
+    border-radius: calc(2 * var(--conversion--form--padding));
+    padding: calc(2 * var(--conversion--form--padding));
+  }
 }
 .CustomForm {
   @include block;
@@ -57,5 +65,6 @@
   display: block;
   margin: auto;
   width: 50%;
+  color: var(--conversion--form-submit--color);
   background: var(--conversion--form-submit--background);
 }
