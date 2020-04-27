@@ -1,9 +1,10 @@
 ---
 name: Callout4
-format: big-numbers       # Callout Format ("left-aligned", "right-aligned", "full-bleed", or "big-numbers")
-hide: false               # Hides Element
+format: four-up
+hide: false                # Hides Element
 # ---------------------------------------------------------
 # Notes:
+#   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
 # ---------------------------------------------------------
 ---
 
@@ -11,36 +12,56 @@ hide: false               # Hides Element
   Notes:
  -->
 
-## How to get started with <em>Koala</em>
+## Checkout All of our chickens
+
+Have a hankering for some wings? Maybe a leg? View and reserve your bird now!
+
 
 <section>
-
   <section>
 
-  ### 1
+  ### Cool
 
-  Fact
+  ![Koala](/images/coop-4.png)
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 
   </section>
 
 
   <section>
 
-  ### 2
+  ### Mean
 
-  Fact
+  ![Koala](/images/coop-4.png)
 
-  </section>
-
-
-  <section>
-
-  ### 3
-
-  Fact
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 
   </section>
-
 </section>
+
+<section>
+  <section>
+
+  ### Young
+
+  ![Koala](/images/coop-4.png)
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+
+  </section>
+
+
+  <section>
+
+  ### Regal
+
+  ![Koala](/images/coop-4.png)
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+
+  </section>
+</section>
+
 
 
