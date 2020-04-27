@@ -1,27 +1,18 @@
 ---
 name: Callout3
-format: full-bleed        # Callout Format ("left-aligned", "right-aligned", "full-bleed", or "big-numbers")
+format: center-aligned
 hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
+#   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
 # ---------------------------------------------------------
 ---
 
 <section>
 
-### Never fear, <br/> we're always here
+Sign up for a coop to stoop today
 
-With <em>Koala</em>, your child will never be bored again
-
-</section>
-
-
-<section>
-
-<br/>
-<br/>
-
-![Koala](/images/art-2.svg)
+<a href="/#get-started" class="callout-cta">Sign Up</a>
 
 </section>
 
