@@ -20,6 +20,7 @@
   // Typography
   // ================================================================== */
   --theme--font--root--family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --theme--font--heading--family: var(--theme--font--root--family);
   --theme--font--root--size: 20px;
   --theme--font--root--weight: bold;
   --theme--font--root--line-height: 1.5;
@@ -40,16 +41,24 @@
 
 
   /* ==================================================================
+  // Radius
+  // ================================================================== */
+  --theme--radius: 3px;
+
+
+  /* ==================================================================
   // Dropshadows
   // ================================================================== */
   --theme--shadow--base: 0 0 4px rgba(0, 0, 0, 0.2);
   --theme--shadow--inset: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
   --theme--shadow--none: 0 0 0 rgba(0, 0, 0, 0);
 
+
   /* ==================================================================
   // Animation
   // ================================================================== */
   --theme--animation-timing: 360ms;
+
 
   /* ==================================================================
   // Page
@@ -62,12 +71,14 @@
   --page--footer--background: var(--theme--color--white);
   --page--footer--padding: var(--theme--unit--base);
 
+
   /* ==================================================================
   // Page
   // ================================================================== */
   --navigation--link--color--active: var(--theme--color--tertiary);
   --navigation--link--color: var(--theme--color--white);
   --navigation--mobile-menu--background: var(--theme--color--secondary);
+  --navigation--mobile-menu--color: var(--theme--color--white);
 
 
   /* ==================================================================
@@ -87,7 +98,7 @@
   // Block: Hero
   // ================================================================== */
   --hero--color: var(--theme--color--white);
-  --hero--background: var(--theme--color--seconary);
+  --hero--background: var(--theme--color--white);
   --hero--heading-size: var(--theme--font--size-xxl);
   --hero--heading-size--mobile: var(--theme--font--size-l);
   --hero--text-size: var(--theme--font--size-xl);
@@ -113,17 +124,25 @@
   --callout--number-bg: var(--theme--color--white);
   --callout--number-text: var(--theme--color--primary);
 
+  --callout--cta--background: var(--theme--color--white);
+  --callout--cta--color: var(--theme--color--primary);
+  --callout--cta--padding: var(--theme--unit--small);
+  --callout--cta--radius: var(--theme--radius);
+
   --callout--left--background: var(--theme--color--tertiary);
   --callout--left--color: var(--theme--color--white);
 
   --callout--right--background: var(--theme--color--quaternary);
   --callout--right--color: var(--theme--color--white);
 
-  --callout--three--background: var(--theme--color--tertiary);
-  --callout--three--color: var(--theme--color--white);
+  --callout--center--background: var(--theme--color--primary);
+  --callout--center--color: var(--theme--color--white);
 
-  --callout--full--background: var(--theme--color--primary);
-  --callout--full--color: var(--theme--color--white);
+  --callout--big-numbers--background: var(--theme--color--tertiary);
+  --callout--big-numbers--color: var(--theme--color--white);
+
+  --callout--full-bleed--background: var(--theme--color--primary);
+  --callout--full-bleed--color: var(--theme--color--white);
 
 
   /* ==================================================================
@@ -133,5 +152,6 @@
   --conversion--form--color: var(--theme--color--white);
   --conversion--form--padding: var(--theme--unit--base);
   --conversion--form-label--color: var(--theme--color--black);
-  --conversion--form-submit--background: var(--theme--color--tertiary);
+  --conversion--form-submit--color: var(--theme--color--white);
+  --conversion--form-submit--background: var(--theme--color--primary);
 }
