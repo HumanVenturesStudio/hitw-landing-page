@@ -20,3 +20,17 @@ export const isInternalUrl = (url) => /^\/(?!\/)/.test(url);
  */
 export const isExternalUrl = (url) =>
   !isInternalUrl(url) && /^https?:\/\//.test(url);
+
+/**
+ * Test if URL is for an image asset
+ * @param {String} url
+ * @returns {Boolean}
+ */
+export const isImageAsset = (url) => /^images\//.test(url);
+
+/**
+ * Test if URL is for an video asset
+ * @param {String} url
+ * @returns {Boolean}
+ */
+export const isVideoAsset = (url) => /^videos\//.test(url);

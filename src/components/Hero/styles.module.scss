@@ -3,7 +3,7 @@
 .Hero {
   @include block;
   @include before-glass;
-
+  position: relative;
   width: 100vw;
   height: 66vh;
   color: var(--hero--color);
@@ -39,6 +39,23 @@
   &.HeroFullScreen {
     height: 100vh;
   }
+
+  &.HeroBgImage {
+  }
+
+  &.HeroBgVideo {
+  }
+}
+
+.HeroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .Content {
