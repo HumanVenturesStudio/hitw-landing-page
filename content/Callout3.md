@@ -2,21 +2,11 @@
 name: Callout3
 config:
   background: ""
-  format: center-aligned
-  hide: false               # Hides Element
+  format: full-bleed
+  hide: true
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
 # ---------------------------------------------------------
 ---
-
-<section>
-
-Sign up for a coop to stoop today
-
-<a href="/#get-started" class="callout-cta">Sign Up</a>
-
-</section>
-
-
 

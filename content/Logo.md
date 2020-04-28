@@ -1,7 +1,7 @@
 ---
 name: Logo
-asset: images/logo.svg           # Logo Image, see: `static/images/logo.svg`
-hide: false               # Hides Element
+asset: logo.svg           # Logo Image, see: `static/images/logo.svg`
+hide: true               # Hides Element
 # ---------------------------------------------------------
 # Notes:
 # ---------------------------------------------------------
