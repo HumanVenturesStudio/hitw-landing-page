@@ -1,16 +1,16 @@
 ---
 name: Hero
-background: images/hero.jpg # Hero Background (Image), see: static/images/hero.jpg
+background: images/hero-boy.jpg                              # Hero Background Image, see: static/images/hero.jpg
 # background: videos/hero.mp4 # Hero Background (Video), see: static/videos/hero.mp4
-ctaLabel: Try Koala Now!  # CTA Label
-ctaUrl: "/#get-started"   # CTA Destination | Defaults to Conversion
-hide: false               # Hides Element
-fullScreen: false         # Sets Hero to full height of screen
+ctaLabel: Tell us what you think.                     # CTA Label
+ctaUrl: "https://johnny274.typeform.com/to/J4mCFm"    # CTA Destination | Defaults to Conversion
+hide: false                                           # Hides Element
+fullScreen: true                                      # Sets Hero to full height of screen
 # ---------------------------------------------------------
 # Notes:
 # ---------------------------------------------------------
 ---
 
-# A new kind of interactive learning experience
+# Super Builder
 
-Kids up to 8 can explore any subject hands-on with <em>Koala</em> in their living room.
+It's going to be huge

@@ -7,11 +7,11 @@
   /* ==================================================================
   // Color Palette
   // ================================================================== */
-  --theme--color--primary: #0065CE;
-  --theme--color--secondary: #FAE632;
-  --theme--color--tertiary: #FD4E1A;
-  --theme--color--quaternary: #FF3172;
-  --theme--color--white: #FFF;
+  --theme--color--primary:rgb(243, 205, 89);
+  --theme--color--secondary: #FAF2E8;
+  --theme--color--tertiary: #FFE2FE;
+  --theme--color--quaternary: #7B8779;
+  --theme--color--white: #fff;
   --theme--color--black: #000;
   --theme--color--transparent: transparent;
   --theme--color--transparent-dark: rgba(0, 0, 0, 0.25);
@@ -99,20 +99,20 @@
   /* ==================================================================
   // Block: Hero
   // ================================================================== */
-  --hero--color: var(--theme--color--white);
-  --hero--background: var(--theme--color--white);
+  --hero--color: var(--theme--color--black);
+  --hero--background: var(--theme--color--secondary);
   --hero--heading-size: var(--theme--font--size-xxl);
   --hero--heading-size--mobile: var(--theme--font--size-l);
   --hero--text-size: var(--theme--font--size-xl);
   --hero--text-size--mobile: var(--theme--font--size-m);
-  --hero--overlay-color: var(--theme--color--transparent-dark);
+  --hero--overlay-color: var(--theme--color--transparent);
 
 
   /* ==================================================================
   // Block: CTA (in Hero)
   // ================================================================== */
   --cta--background: var(--theme--color--primary);
-  --cta--color: var(--theme--color--white);
+  --cta--color: var(--theme--color--black);
   --cta--font-size: var(--theme--font--size-m);
   --cta--size: var(--theme--unit--base);
 
