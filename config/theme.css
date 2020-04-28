@@ -7,11 +7,11 @@
   /* ==================================================================
   // Color Palette
   // ================================================================== */
-  --theme--color--primary: #0065CE;
-  --theme--color--secondary: #FAE632;
-  --theme--color--tertiary: #FD4E1A;
-  --theme--color--quaternary: #FF3172;
-  --theme--color--white: #FFF;
+  --theme--color--primary: #161F21;
+  --theme--color--secondary: #203133;
+  --theme--color--tertiary: #FFE2FE;
+  --theme--color--quaternary: #7B8779;
+  --theme--color--white: #fff;
   --theme--color--black: #000;
   --theme--color--transparent: transparent;
   --theme--color--transparent-dark: rgba(0, 0, 0, 0.25);

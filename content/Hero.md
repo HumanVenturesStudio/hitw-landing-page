@@ -1,16 +1,18 @@
 ---
 name: Hero
-background: images/hero.jpg # Hero Background (Image), see: static/images/hero.jpg
+background: images/hero-water.jpg      # Hero Background Image, see: static/images/hero.jpg
 # background: videos/hero.mp4 # Hero Background (Video), see: static/videos/hero.mp4
-ctaLabel: Try Koala Now!  # CTA Label
+ctaLabel: Join Us.  # CTA Label
 ctaUrl: "/#get-started"   # CTA Destination | Defaults to Conversion
 hide: false               # Hides Element
-fullScreen: false         # Sets Hero to full height of screen
+fullScreen: true         # Sets Hero to full height of screen
 # ---------------------------------------------------------
 # Notes:
 # ---------------------------------------------------------
 ---
 
-# A new kind of interactive learning experience
+<img src="images/logo.svg"/>
 
-Kids up to 8 can explore any subject hands-on with <em>Koala</em> in their living room.
+# Everything is about to happen
+
+It's now or never
