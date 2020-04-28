@@ -26,7 +26,7 @@ export default function Glass({ onClick, isActive, title = 'Close' }) {
 
   return (
     <div
-      className={cx(styles.Glass, {
+      className={cx('glass', styles.Glass, {
         [styles.show]: isActive,
         [styles.hide]: !isActive,
       })}

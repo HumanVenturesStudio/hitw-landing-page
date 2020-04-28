@@ -69,7 +69,7 @@ const Callout = ({ release, name, format = 'left' }) => {
       style={inlineStyle}
     >
       <div
-        className={cx(styles.Content)}
+        className={cx('callout-content', styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>

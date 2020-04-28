@@ -26,9 +26,9 @@ const Footer = ({ release }) => {
 
   return (
     <footer id={`${frontmatter.name}`} className={cx('footer', styles.Footer)}>
-      <Logo className={styles.Logo} />
+      <Logo className={cx('footer--logo', styles.Logo)} />
       <div
-        className={cx(styles.Content)}
+        className={cx('footer--content', styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </footer>

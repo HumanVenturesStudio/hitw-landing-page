@@ -29,7 +29,7 @@ const HeroContainer = ({ background, fullScreen, children }) => {
     videoBg = (
       <video
         id="hero-background-video"
-        className={styles.HeroVideo}
+        className={cx('hero--video', styles.HeroVideo)}
         playsInline
         autoPlay
         muted
@@ -82,7 +82,7 @@ const Hero = ({ release, backgroundImage = '/images/site.png' }) => {
       fullScreen={fullScreen}
     >
       <div
-        className={cx(styles.Content)}
+        className={cx('hero--content', styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
       <CTA label={frontmatter.ctaLabel} url={frontmatter.ctaUrl} />

@@ -25,7 +25,7 @@ const NavLink = ({ release, onClick = null, ...props }) => {
   return (
     <Component
       {...props}
-      className={cx('link', styles.NavLink)}
+      className={cx('nav-link', styles.NavLink)}
       activeClassName={styles.NavLinkCurrent}
       onClick={() => {
         // Track Navigation Click

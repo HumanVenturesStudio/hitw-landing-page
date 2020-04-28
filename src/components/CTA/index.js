@@ -17,7 +17,7 @@ const CTA = ({
 }) => {
   return (
     <a
-      className={cx('call-to-action', styles.CTA)}
+      className={cx('cta', styles.CTA)}
       href={url}
       onClick={(e) => {
         // Track CTA Click

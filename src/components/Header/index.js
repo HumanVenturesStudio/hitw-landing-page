@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header className={cx('header', styles.Header)}>
-      <h1 className={cx('header-h1', styles.HeaderH1)}>
+      <h1 className={cx('header--h1', styles.HeaderH1)}>
         <a href="/">
           <Logo />
         </a>
