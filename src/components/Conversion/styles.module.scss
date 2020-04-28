@@ -71,7 +71,9 @@
 .Submit {
   display: block;
   margin: auto;
-  width: 50%;
   color: var(--conversion--form-submit--color);
   background: var(--conversion--form-submit--background);
+  @media ($mq-desktop) {
+    max-width: calc(0.5 * var(--block--max-width));
+  }
 }
