@@ -6,6 +6,8 @@ import { withPageTracking, trackEvent } from 'common/lib/analytics';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
 import SEO from 'components/SEO';
 import styles from './styles.module.scss';
+import '../../../config/theme.css';
+import '../../../config/styles.css';
 
 const SCROLL_THROTTLE = 500;
 const WINDOW = typeof window !== `undefined` ? window : false;

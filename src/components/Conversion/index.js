@@ -13,16 +13,16 @@ import styles from './styles.module.scss';
 const FormField = ({ name, label, onChange, ...attrs }) => {
   const id = `field[${name}]`;
   return (
-    <label className={cx('form-field--label', styles.Label)} htmlFor={id}>
+    <label className={cx('conversion--label', styles.Label)} htmlFor={id}>
       <input
-        className={cx('form-field--input', styles.Input)}
+        className={cx('conversion--input', styles.Input)}
         id={id}
         name={name}
         onChange={onChange}
         {...attrs}
       />
       {label && (
-        <div className={cx('form-field--label-text', styles.LabelText)}>
+        <div className={cx('conversion--label-text', styles.LabelText)}>
           {label}
         </div>
       )}
@@ -63,17 +63,20 @@ const Conversion = ({ release }) => {
 
   return (
     (frontmatter.useCustom && (
-      <div id="get-started" className={cx('form', styles.CustomForm, {})}>
-        <div className={cx('form--content', styles.Content)}>
+      <div
+        id="get-started"
+        className={cx('conversion--form', styles.CustomForm, {})}
+      >
+        <div className={cx('conversion--content', styles.Content)}>
           <DangerousHTMLContent html={html} />
         </div>
       </div>
     )) ||
     (!frontmatter.useCustom && (
-      <div className={cx('form', styles.Form)}>
-        <div className={cx('form--content', styles.Content)}>
+      <div className={cx('conversion--form', styles.Form)}>
+        <div className={cx('conversion--content', styles.Content)}>
           {!isEmpty(heading) && (
-            <h3 className={cx('form--heading', styles.ConversionHeading)}>
+            <h3 className={cx('conversion--heading', styles.ConversionHeading)}>
               {heading}
             </h3>
           )}
@@ -126,7 +129,10 @@ const Conversion = ({ release }) => {
               value={email}
               required
             />
-            <button className={cx('form--submit', styles.Submit)} type="submit">
+            <button
+              className={cx('conversion--submit', styles.Submit)}
+              type="submit"
+            >
               {frontmatter.submitLabel}
             </button>
           </form>
