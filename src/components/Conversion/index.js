@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import DangerousHTMLContent from 'dangerously-set-html-content';
+import isEmpty from 'lodash.isempty';
 
 import { trackEvent } from 'common/lib/analytics';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
@@ -39,7 +40,7 @@ const Conversion = ({ release }) => {
   `);
 
   const { html, frontmatter } = data.markdownRemark;
-  const { hide, labels } = frontmatter;
+  const { hide, labels, heading } = frontmatter;
 
   const [first, setFirst] = React.useState('');
   const [last, setLast] = React.useState('');
@@ -67,6 +68,11 @@ const Conversion = ({ release }) => {
     (!frontmatter.useCustom && (
       <div className={cx('form', styles.Form)}>
         <div className={cx(styles.Content)}>
+          {!isEmpty(heading) && (
+            <h3 className={cx('conversion-heading', styles.ConversionHeading)}>
+              {heading}
+            </h3>
+          )}
           <form
             method="POST"
             name="mc-embedded-subscribe-form"

@@ -14,6 +14,7 @@
     padding: calc(2 * var(--conversion--form--padding));
   }
 }
+
 .CustomForm {
   @include block;
   background: var(--conversion--form--background);
@@ -21,6 +22,12 @@
 
 .Content {
   @include block-content;
+}
+
+.ConversionHeading {
+  margin: 0 auto calc(2 * var(--conversion--form--padding));
+  text-align: center;
+  color: var(--conversion--form-label--color);
 }
 
 .Label {

@@ -119,6 +119,7 @@ export const ConversionContent = graphql`
       u
       submitLabel
       useCustom
+      heading
       labels {
         first
         last

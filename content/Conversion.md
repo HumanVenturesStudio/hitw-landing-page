@@ -5,7 +5,8 @@ action: https://netlify.us19.list-manage.com/subscribe/post?u=1f28b6be6f07eec266
 honeypot: b_1f28b6be6f07eec26646ad787_4637b5fba8
 id: 4637b5fba8
 u: 1f28b6be6f07eec26646ad787
-# END Mailchimp Fields
+# END Mailchimp Fields]
+heading: ""           # "" Use empty quotes for no heading
 labels:
   first: "Enter your first name"
   last: "Enter your last name"
