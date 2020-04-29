@@ -1,17 +1,18 @@
 import { randomColor } from 'common/lib/random';
+import { DOC } from 'common/lib/global';
 
 /**
  * Console Wrapper
  * - Logs are stripped out in producution builds
  * - Logs prefixed with [SomePrefix] are colorized
  */
-
 const PREFIX_REGEX = /^\[.+\]/;
 const COLORS = {};
 const OUTPUT =
   __DEVELOPMENT__ ||
   (URLSearchParams &&
-    new URLSearchParams(document.location.search).has('debug'));
+    DOC &&
+    new URLSearchParams(DOC.location.search).has('debug'));
 
 /**
  * Randomly and consistently assign a color to a logging key
