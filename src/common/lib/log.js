@@ -8,6 +8,10 @@ import { randomColor } from 'common/lib/random';
 
 const PREFIX_REGEX = /^\[.+\]/;
 const COLORS = {};
+const OUTPUT =
+  __DEVELOPMENT__ ||
+  (URLSearchParams &&
+    new URLSearchParams(document.location.search).has('debug'));
 
 /**
  * Randomly and consistently assign a color to a logging key
@@ -49,47 +53,46 @@ const prepareArgs = (...args) => {
  * Log
  * @param  {...any} args
  */
-export const log = (...args) =>
-  __DEVELOPMENT__ && console.log(...prepareArgs(...args));
+export const log = (...args) => OUTPUT && console.log(...prepareArgs(...args));
 
 /**
  * Info
  * @param  {...any} args
  */
 export const info = (...args) =>
-  __DEVELOPMENT__ && console.info(...prepareArgs(...args));
+  OUTPUT && console.info(...prepareArgs(...args));
 
 /**
  * Warn
  * @param  {...any} args
  */
 export const warn = (...args) =>
-  __DEVELOPMENT__ && console.warn(...prepareArgs(...args));
+  OUTPUT && console.warn(...prepareArgs(...args));
 
 /**
  * Notice
  * @param  {...any} args
  */
 export const notice = (...args) =>
-  __DEVELOPMENT__ && console.notice(...prepareArgs(...args));
+  OUTPUT && console.notice(...prepareArgs(...args));
 
 /**
  * Error
  * @param  {...any} args
  */
 export const error = (...args) =>
-  __DEVELOPMENT__ && console.error(...prepareArgs(...args));
+  OUTPUT && console.error(...prepareArgs(...args));
 
 /**
  * Debug
  * @param  {...any} args
  */
 export const debug = (...args) =>
-  __DEVELOPMENT__ && console.debug(...prepareArgs(...args));
+  OUTPUT && console.debug(...prepareArgs(...args));
 
 /**
  * Table
  * @param  {...any} args
  */
 export const table = (...args) =>
-  __DEVELOPMENT__ && console.table(...prepareArgs(...args));
+  OUTPUT && console.table(...prepareArgs(...args));
