@@ -113,10 +113,6 @@ export const ConversionContent = graphql`
     frontmatter {
       hide
       name
-      action
-      honeypot
-      id
-      u
       submitLabel
       useCustom
       heading
