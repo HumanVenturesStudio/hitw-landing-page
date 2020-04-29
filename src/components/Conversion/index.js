@@ -10,6 +10,28 @@ import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 import styles from './styles.module.scss';
 
+/**
+ * Get Action URL from Mailchimp Embed
+ * @param {string} html
+ * @returns {string|null} "https://netlify.us19.list-manage.com/subscribe/post?u=1f28b6be6f07eec26646ad787&amp;id=4637b5fba8"
+ */
+const getMailchimpAction = (html) => {
+  let chunk = html.split('action="')[1];
+  return (chunk && chunk.split('"')[0]) || null;
+};
+
+/**
+ * Get Honeypot key from Mailchimp Embed
+ * @param {string} html
+ * @returns {string|null} b_1f28b6be6f07eec26646ad787_4637b5fba8
+ */
+const getMailchimpHoneypot = (html) => {
+  let chunk = html.split('tabindex="-1"')[0];
+  let chunk2 = chunk.split('name=');
+
+  return (chunk2.length && chunk2.pop().replace(/\"/g, '')) || null;
+};
+
 const FormField = ({ name, label, onChange, ...attrs }) => {
   const id = `field[${name}]`;
   return (
@@ -46,6 +68,19 @@ const Conversion = ({ release }) => {
   const { html, frontmatter } = data.markdownRemark;
   const { hide, labels, heading } = frontmatter;
 
+  // HACK:
+  // Extract the Action & Honeypot from Mailchimp Embed Code
+  const action = getMailchimpAction(html);
+  const honeypot = getMailchimpHoneypot(html);
+
+  if (!action) {
+    console.warn('Could not find action in Mailchimp embed');
+  }
+
+  if (!honeypot) {
+    console.warn('Could not find honeypot in Mailchimp embed');
+  }
+
   const [first, setFirst] = React.useState('');
   const [last, setLast] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -80,21 +115,14 @@ const Conversion = ({ release }) => {
               {heading}
             </h3>
           )}
-          <form
-            method="POST"
-            name="mc-embedded-subscribe-form"
-            action={frontmatter.action}
-          >
-            <input type="hidden" name="u" value={frontmatter.u} />
-            <input type="hidden" name="id" value={frontmatter.id} />
+          <form method="POST" name="mc-embedded-subscribe-form" action={action}>
             <input
               type="hidden"
-              name={frontmatter.honeypot}
+              name={honeypot}
               tabIndex="-1"
               style={{ position: 'absolute', left: '-200vw' }}
               aria-hidden="true"
             />
-
             <FormField
               label={labels.first || 'Enter your first name'}
               onChange={(e) => {
