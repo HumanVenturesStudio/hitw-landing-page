@@ -46,6 +46,15 @@ const Conversion = ({ release }) => {
   const { html, frontmatter } = data.markdownRemark;
   const { hide, labels, heading } = frontmatter;
 
+  // HACK:
+  // Extra Action & Honeypot from Mailchimp Embed Code
+  const action = html.split('action="')[1].split('"')[0];
+  const honeypot = html
+    .split('tabindex="-1"')[0]
+    .split('name=')
+    .pop()
+    .replace(/\"/g, '');
+
   const [first, setFirst] = React.useState('');
   const [last, setLast] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -80,21 +89,14 @@ const Conversion = ({ release }) => {
               {heading}
             </h3>
           )}
-          <form
-            method="POST"
-            name="mc-embedded-subscribe-form"
-            action={frontmatter.action}
-          >
-            <input type="hidden" name="u" value={frontmatter.u} />
-            <input type="hidden" name="id" value={frontmatter.id} />
+          <form method="POST" name="mc-embedded-subscribe-form" action={action}>
             <input
               type="hidden"
-              name={frontmatter.honeypot}
+              name={honeypot}
               tabIndex="-1"
               style={{ position: 'absolute', left: '-200vw' }}
               aria-hidden="true"
             />
-
             <FormField
               label={labels.first || 'Enter your first name'}
               onChange={(e) => {
