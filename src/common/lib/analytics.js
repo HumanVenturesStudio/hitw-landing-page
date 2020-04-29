@@ -17,10 +17,14 @@ const FN_FALLBACK = (...args) => {
   warn('[analytics]', '[NOT LOADED!!!]', ...args);
 };
 
-const analytics = (typeof window !== `undefined` && window.analytics) || {
-  page: FN_FALLBACK,
-  event: FN_FALLBACK,
-};
+/**
+ * @returns {Object} Segment Analytics.js || Fallback for Dev
+ */
+const analytics = () =>
+  (typeof window !== `undefined` && window.analytics) || {
+    page: FN_FALLBACK,
+    event: FN_FALLBACK,
+  };
 
 /**
  * https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page
@@ -28,7 +32,7 @@ const analytics = (typeof window !== `undefined` && window.analytics) || {
  */
 export const trackPage = (properties) => {
   info('[analytics]', '[page]', properties);
-  analytics && analytics.page(properties);
+  analytics().page(properties);
   return true;
 };
 
@@ -53,7 +57,7 @@ export const withPageTracking = (Layout) => {
  */
 export const trackEvent = (name, properties = {}) => {
   info('[analytics]', '[event]', name, properties);
-  analytics && analytics.track(name, properties /*, [options], [callback] */);
+  analytics().track(name, properties /*, [options], [callback] */);
   return true;
 };
 
