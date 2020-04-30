@@ -3,9 +3,12 @@
   <img alt="web-landing-scaffold" src="./static/images/site.png" width="300" />
 </p>
 
-# Humans in the Wild Landing Page Starter Kit
+# Humans in the Wild
+## Landing Page Starter Kit
 
-## 🧐 What's inside?
+----
+
+### 🧐 What's inside?
 
 A quick look at the files and directories you'll focus on
 
@@ -18,9 +21,8 @@ A quick look at the files and directories you'll focus on
     |       - Theme
     ├── content
     |       - Header
-    |           - Navigation
+    |       - Navigation
     |       - Hero
-    |           - CTA
     |       - Callout 1
     |       - Callout 2
     |       - Callout 3
@@ -36,13 +38,67 @@ A quick look at the files and directories you'll focus on
     └── ...
 ```
 
--  **`/config`**: This directory contains site-wide configuration.
+####  **`/config`**
+This directory contains site-wide configuration.
 
--  **`/content`**: This directory contains content for the blocks on the page. The content is formated in [Markdown](https://www.markdownguide.org/basic-syntax/) and accepts some HTML as well.
+####  **`/config/google-fonts.js`**
+Add Google Fonts here to use them in `theme.css`
 
--  **`/src`**: This directory contains all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+####  **`/config/metadata.js`**
+For SEO, set the landing page title, description, and more.
 
--  **`/static`**: This directory contains image and video assets and the fav icon. Replace the starter kit assets with your own.
+####  **`/config/styles.css`**
+Add custom styles here
+
+####  **`/config/theme.css`**
+Apply colors, fonts, sizing, and more for the landing page. This uses CSS Variables to apply styles across the landing page.
+
+####  **`/content`**
+This directory contains content for the blocks on the page. The content is formated in [Markdown](https://www.markdownguide.org/basic-syntax/) and accepts some HTML as well.
+
+####  **`/content/Header.md`**
+- Hide / Show the Header Block
+
+####  **`/content/Navigation.md`**
+- Add / Remove Navigation Links
+- Hide / Show Navigation inside Header Block
+
+####  **`/content/Hero.md`**
+- Hide / Show Hero Block
+
+####  **`/content/Callout1.md`**
+- Hide / Show Callout Block
+
+####  **`/content/Callout2.md`**
+- Hide / Show Callout Block
+
+####  **`/content/Callout3.md`**
+- Hide / Show Callout Block
+
+####  **`/content/Callout4.md`**
+- Hide / Show Callout Block
+
+####  **`/content/Conversion.md`**
+- Hide / Show Conversion Block
+- This is the Mailchimp Form
+- Replace the built-in form with anything else
+
+####  **`/content/Footer.md`**
+- Hide / Show Footer Block
+
+####  **`/content/Logo.md`**
+- Hide / Show Logo
+- Set Logo Image File
+
+####  **`/content/Success.md`**
+- Content for Success Page
+- Set Redirect Behavior
+
+#### **`/src`**
+Danger Zone. This directory contains all of the code related to what you will see on the front-end of your site. `src` is a convention for “source code”. Make advanced changes in here.
+
+#### **`/static`**
+This directory contains image and video assets and the fav icon. Replace the starter kit assets with your own.
 
 ## 🎓 Powered by Gatsby
 
