@@ -3,8 +3,9 @@
   <img alt="web-landing-scaffold" src="./static/images/site.png" width="300" />
 </p>
 
-# Humans in the Wild
-## Landing Page Starter Kit
+# Humans in the Wild<br/>Landing Page Starter Kit
+
+![Landing Page Architecture](./landing-page-architecture.png)
 
 ----
 
