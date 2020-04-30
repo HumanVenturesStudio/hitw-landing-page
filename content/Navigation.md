@@ -1,9 +1,7 @@
 ---
 name: Navigation
 links:
-  - label: Home
-    url: /
-  - label: Subscribe
+  - label: Sign Up
     url: "/#get-started"
   # - label: FAQ
   #   url: "/faq"

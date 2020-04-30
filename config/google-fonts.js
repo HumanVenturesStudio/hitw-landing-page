@@ -1,10 +1,6 @@
 module.exports = [
   {
-    family: `Roboto Mono`,
-    variants: [`400`, `700`],
-  },
-  {
-    family: `Roboto`,
+    family: `DM Serif Display`,
     subsets: [`latin`],
   },
 ];
