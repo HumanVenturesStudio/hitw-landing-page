@@ -3,74 +3,102 @@
   <img alt="web-landing-scaffold" src="./static/images/site.png" width="300" />
 </p>
 
-# Web Landing Scaffold
+# Humans in the Wild
+## Landing Page Starter Kit
 
-<div>
+----
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/106eb458-0799-4d9d-a2bd-008fd744a6fc/deploy-status)](https://app.netlify.com/sites/suspicious-davinci-51007a/deploys)
+### 🧐 What's inside?
 
-</div>
+A quick look at the files and directories you'll focus on
 
-
-## 🚀 Quick start
-
-
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd web-landing-scaffold/
-    gatsby develop
-    ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
+```
     .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+    ├── config
+    |       - Google Fonts
+    |       - Metadata
+    |       - Styles
+    |       - Theme
+    ├── content
+    |       - Header
+    |       - Navigation
+    |       - Hero
+    |       - Callout 1
+    |       - Callout 2
+    |       - Callout 3
+    |       - Callout 4
+    |       - Conversion
+    |       - Footer
+    |       - Success
+    ├── src ** Danger Zone **
+    ├── static
+    |       - Fav Icon
+    |       - Images
+    |       - Videos
+    └── ...
+```
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+####  **`/config`**
+This directory contains site-wide configuration.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+####  **`/config/google-fonts.js`**
+Add Google Fonts here to use them in `theme.css`
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+####  **`/config/metadata.js`**
+For SEO, set the landing page title, description, and more.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+####  **`/config/styles.css`**
+Add custom styles here
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+####  **`/config/theme.css`**
+Apply colors, fonts, sizing, and more for the landing page. This uses CSS Variables to apply styles across the landing page.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+####  **`/content`**
+This directory contains content for the blocks on the page. The content is formated in [Markdown](https://www.markdownguide.org/basic-syntax/) and accepts some HTML as well.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+####  **`/content/Header.md`**
+- Hide / Show the Header Block
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+####  **`/content/Navigation.md`**
+- Add / Remove Navigation Links
+- Hide / Show Navigation inside Header Block
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+####  **`/content/Hero.md`**
+- Hide / Show Hero Block
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+####  **`/content/Callout1.md`**
+- Hide / Show Callout Block
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+####  **`/content/Callout2.md`**
+- Hide / Show Callout Block
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+####  **`/content/Callout3.md`**
+- Hide / Show Callout Block
+
+####  **`/content/Callout4.md`**
+- Hide / Show Callout Block
+
+####  **`/content/Conversion.md`**
+- Hide / Show Conversion Block
+- This is the Mailchimp Form
+- Replace the built-in form with anything else
+
+####  **`/content/Footer.md`**
+- Hide / Show Footer Block
+
+####  **`/content/Logo.md`**
+- Hide / Show Logo
+- Set Logo Image File
+
+####  **`/content/Success.md`**
+- Content for Success Page
+- Set Redirect Behavior
+
+#### **`/src`**
+Danger Zone. This directory contains all of the code related to what you will see on the front-end of your site. `src` is a convention for “source code”. Make advanced changes in here.
+
+#### **`/static`**
+This directory contains image and video assets and the fav icon. Replace the starter kit assets with your own.
 
 ## 🎓 Powered by Gatsby
 
@@ -79,7 +107,3 @@ Looking for more Gatsby guidance? Full documentation for Gatsby lives [on the we
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)

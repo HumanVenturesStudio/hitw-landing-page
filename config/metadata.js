@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Koala',
-  description: 'Koala Landing Page',
-  twitter: '@Koala',
+  title: 'The Coop',
+  description: 'Farm fresh eggs from coop to stoop',
+  twitter: '@TheCoop',
 };
