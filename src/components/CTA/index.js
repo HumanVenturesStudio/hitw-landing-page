@@ -21,7 +21,9 @@ const CTA = ({
       href={url}
       onClick={(e) => {
         // Track CTA Click
-        trackEvent(trackEvent.EVENT__CONVERSION__CTA__CLICK, { release });
+        trackEvent(trackEvent.EVENT__CONVERSION__CTA__CLICK, {
+          release,
+        });
         // Handle Callback
         onClick && onClick();
       }}
