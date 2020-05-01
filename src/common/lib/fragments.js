@@ -3,12 +3,16 @@ import { graphql } from 'gatsby';
 export const SiteInfo = graphql`
   fragment SiteInfo on Site {
     siteMetadata {
-      defaultTitle: title
-      titleTemplate
-      defaultDescription: description
-      siteUrl: url
-      defaultImage: image
+      url
+      title
+      description
+      keywords
       twitter
+      image {
+        src
+        width
+        height
+      }
     }
   }
 `;

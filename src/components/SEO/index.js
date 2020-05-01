@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useLocation } from '@reach/router';
 
-const SEO = ({ title, description, image, article }) => {
-  const { pathname } = useLocation();
-
-  const {
-    defaultTitle,
-    titleTemplate,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitter,
-  } = useStaticQuery(graphql`
+function SEO({
+  title = null,
+  image = null,
+  description = '',
+  lang = 'en',
+  keywords = [],
+  additionalMeta = [],
+}) {
+  const data = useStaticQuery(graphql`
     query {
       site {
         ...SiteInfo
@@ -22,57 +20,109 @@ const SEO = ({ title, description, image, article }) => {
     }
   `).site.siteMetadata;
 
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
+  const { pathname } = useLocation();
+
+  const meta = {
+    title: title || data.title,
+    template: title ? `%s | ${data.title}` : `%s`,
+    description: description || data.description,
+    keywords: [...data.keywords, ...keywords].join(','),
+    lang: lang || data.lang,
+    twitter: data.twitter,
+    image: {
+      src: `${data.url}${(image && image.src) || data.image.src}`,
+      width: (image && image.width) || data.image.width,
+      height: (image && image.height) || data.image.height,
+    },
+    url: `${data.url}${pathname}`,
   };
 
+  const hasImage = (image && image.src) || (data.image && data.image.src);
+
   return (
-    <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-
-      {seo.url && <meta property="og:url" content={seo.url} />}
-
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-
-      {seo.title && <meta property="og:title" content={seo.title} />}
-
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
-
-      {seo.image && <meta property="og:image" content={seo.image} />}
-
-      <meta name="twitter:card" content="summary_large_image" />
-
-      {twitter && <meta name="twitter:creator" content={twitter} />}
-
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
-
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
-      )}
-
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
-    </Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang: meta.lang,
+      }}
+      title={meta.title}
+      titleTemplate={meta.template}
+      meta={[
+        {
+          name: `description`,
+          content: meta.description,
+        },
+        {
+          name: 'keywords',
+          content: meta.keywords,
+        },
+        {
+          property: `og:title`,
+          content: meta.title,
+        },
+        {
+          property: `og:description`,
+          content: meta.description,
+        },
+        {
+          property: `og:type`,
+          content: 'website',
+        },
+        {
+          name: `twitter:creator`,
+          content: meta.twitter,
+        },
+        {
+          name: `twitter:title`,
+          content: meta.title,
+        },
+        {
+          name: `twitter:description`,
+          content: meta.description,
+        },
+      ]
+        .concat(
+          hasImage
+            ? [
+                {
+                  property: 'og:image',
+                  content: meta.image.src,
+                },
+                {
+                  property: 'og:image:width',
+                  content: meta.image.width,
+                },
+                {
+                  property: 'og:image:height',
+                  content: meta.image.height,
+                },
+                {
+                  name: 'twitter:card',
+                  content: 'summary_large_image',
+                },
+              ]
+            : [
+                {
+                  name: 'twitter:card',
+                  content: 'summary',
+                },
+              ]
+        )
+        .concat(meta)}
+    />
   );
-};
+}
 
 SEO.propTypes = {
-  title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string,
-  article: PropTypes.bool,
-};
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
-  article: false,
+  lang: PropTypes.string,
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  additionalMeta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
 };
 
 export default SEO;
