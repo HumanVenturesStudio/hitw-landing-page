@@ -14,7 +14,7 @@ const withReleaseInfo = (Component) => {
         }
       }
     `);
-    return <Component release={data.gitBranch} {...props} />;
+    return <Component release={data.gitBranch.commit} {...props} />;
   }
   return ReleaseInfoHOC;
 };

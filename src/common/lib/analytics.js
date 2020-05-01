@@ -30,9 +30,9 @@ const analytics = () =>
  * https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#page
  * @param {object} properties
  */
-export const trackPage = (properties) => {
-  info('[analytics]', '[page]', properties);
-  analytics().page(properties);
+export const trackPage = ({ release, ...properties }) => {
+  info(`[analytics:${release}]`, 'page', properties);
+  analytics().page({ release, ...properties });
   return true;
 };
 
@@ -55,9 +55,9 @@ export const withPageTracking = (Layout) => {
  * @param {string} name
  * @param {object} properties
  */
-export const trackEvent = (name, properties = {}) => {
-  info('[analytics]', '[event]', name, properties);
-  analytics().track(name, properties /*, [options], [callback] */);
+export const trackEvent = (name, { release, ...properties }) => {
+  info(`[analytics:${release}]`, name, properties);
+  analytics().track(name, { release, ...properties });
   return true;
 };
 
@@ -67,6 +67,6 @@ export const trackEvent = (name, properties = {}) => {
 trackEvent.EVENT__CONVERSION__CTA__CLICK = 'conversion:cta:click';
 trackEvent.EVENT__CONVERSION__INTENT = 'conversion:intent';
 trackEvent.EVENT__CONVERSION__SUCCESS = 'conversion:success';
-trackEvent.EVENT__CONVERSION__PAGE__SCROLL = 'conversion:page:scroll';
+trackEvent.EVENT__CONVERSION__SCROLL_BOTTOM = 'conversion:scroll:bottom';
 trackEvent.EVENT__CONVERSION__NAV_CLICK = 'conversion:navigation:click';
 trackEvent.EVENT__CONVERSION__NAV_OPEN = 'conversion:navigation:open';
