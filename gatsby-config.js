@@ -1,5 +1,3 @@
-const metadata = require('./config/metadata');
-
 /**
  * Configure your Gatsby site with this file.
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
@@ -11,10 +9,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    ...metadata,
-    titleTemplate: '%s',
+    ...require('./config/metadata'),
     url: `${process.env.URL}`, // No trailing slash allowed!
-    image: '/images/site.png', // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
