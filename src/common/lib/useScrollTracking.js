@@ -44,7 +44,6 @@ export default function useScrollTracking({ release }) {
         setPrevMaxScroll(maxScroll);
         trackEvent(trackEvent.EVENT__CONVERSION__SCROLL_BOTTOM, {
           release,
-          value: maxScroll,
         });
       }
     }
