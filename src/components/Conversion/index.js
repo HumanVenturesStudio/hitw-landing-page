@@ -73,14 +73,6 @@ const Conversion = ({ release }) => {
   const action = getMailchimpAction(html);
   const honeypot = getMailchimpHoneypot(html);
 
-  if (!action) {
-    console.warn('Could not find action in Mailchimp embed');
-  }
-
-  if (!honeypot) {
-    console.warn('Could not find honeypot in Mailchimp embed');
-  }
-
   const [first, setFirst] = React.useState('');
   const [last, setLast] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -94,6 +86,14 @@ const Conversion = ({ release }) => {
 
   if (hide) {
     return null;
+  }
+
+  if (!action) {
+    console.warn('Could not find action in Mailchimp embed');
+  }
+
+  if (!honeypot) {
+    console.warn('Could not find honeypot in Mailchimp embed');
   }
 
   return (

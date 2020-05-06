@@ -31,7 +31,6 @@ const NavLink = ({ release, onClick = null, ...props }) => {
         // Track Navigation Click
         trackEvent(trackEvent.EVENT__CONVERSION__NAV_CLICK, {
           release,
-          value: props.to,
         });
         // Callback
         onClick && onClick();
