@@ -6,7 +6,7 @@ labels:
   last: "Enter your last name"
   email: "Enter your email"
 submitLabel: Submit		# Label for Submit Button
-useCustom: false			# Replaces Built-in Form with any HTML pasted below
+useCustom: true			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 # ---------------------------------------------------------
 # Video: https://www.loom.com/share/f73ecc8c3ae54e1f9e8182bf1bce5682
