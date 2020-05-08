@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
+import slugify from 'slugify';
 
 function SEO({
   title = null,
@@ -39,10 +40,16 @@ function SEO({
 
   const hasImage = (image && image.src) || (data.image && data.image.src);
 
+  // HTML Class Name
+  // page--index
+  // page--success
+  const htmlClassName = `page--${slugify(`${pathname.substr(1) || 'index'}`)}`;
+
   return (
     <Helmet
       htmlAttributes={{
         lang: meta.lang,
+        class: htmlClassName,
       }}
       title={meta.title}
       titleTemplate={meta.template}
