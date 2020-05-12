@@ -31,7 +31,7 @@
     "gatsby-plugin-segment-js": "^3.1.0",
     "gatsby-remark-responsive-iframe": "^2.3.1",
     "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-source-local-git": "^0.2.2",
+    "gatsby-source-local-git": "^1.0.0",
     "gatsby-transformer-remark": "^2.7.1",
     "humps": "^2.0.1",
     "jquery": "^3.5.1",
