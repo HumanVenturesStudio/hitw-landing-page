@@ -12,10 +12,9 @@ hide: false                # Hides Element
   Notes:
  -->
 
-## Checkout All of our chickens
+## Dogs, we got yours, we get yours, we inject yours
 
-Have a hankering for some wings? Maybe a leg? View and reserve your bird now!
-
+If your dog needs injections, we're certified to provide them.
 
 <section>
   <section>
