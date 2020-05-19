@@ -18,9 +18,9 @@ hide: false               # Hides Element
 
 <section>
 
-### World class chickens from coop to stoop
+### Big dog daycare, for real big dogs
 
-Some people like chickens, we do too. So much in fact that we put them on our farm to grow fat and delicious until delivered to your stoop.
+A new daycare service for at home workers in NYC. Need your dog socialized? Need to get out of the city and your dog receive their injections? We got you.
 
 </section>
 
