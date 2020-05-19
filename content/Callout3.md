@@ -10,9 +10,9 @@ hide: false               # Hides Element
 
 <section>
 
-Sign up for a coop to stoop today
+Book daycare today!
 
-<a href="/#get-started" class="callout-cta">Sign Up</a>
+<a href="/#get-started" class="callout-cta">Book!</a>
 
 </section>
 
