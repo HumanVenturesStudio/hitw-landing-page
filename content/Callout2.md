@@ -17,10 +17,10 @@ hide: false               # Hides Element
 
 <section>
 
-### We love eggs too
+### We love your dog more than you 
 
-Right before we catch these juicy little birds, we take their eggs. We love eggs so we put them in recycled boxes with beautiful branding, pair them with your chickens, and deliver them to you too. Everybody loves them. So much in fact that Brenda from Queens, who’s definitely real, said this:
+Your dog can be such a pain the ass! All you do is work work work and all they do is bark bark bark. They stink, they break all your shit. They piss on you. You need to get rid of that thing, bring them to daycare for the day! Or the week! Or forever - but you gotta pay!
 
-> "Eggs give me life!"
+> "I hate my dog!"
 
 </section>
