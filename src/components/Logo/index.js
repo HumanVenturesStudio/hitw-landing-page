@@ -25,7 +25,7 @@ const Logo = ({ release, className }) => {
     return null;
   }
 
-  const src = `/images/${frontmatter.asset || 'logo.svg'}`;
+  const src = `/${frontmatter.asset || 'logo.svg'}`;
 
   return (
     <img
