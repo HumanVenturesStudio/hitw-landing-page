@@ -11,6 +11,7 @@ import styles from './styles.module.scss';
 import '../../../config/fonts-local.css'; // Import Config CSS to ensure build as CSS (not SCSS)
 import '../../../config/theme.css'; // Import Config CSS to ensure build as CSS (not SCSS)
 import '../../../config/styles.css'; // Import Config CSS to ensure build as CSS (not SCSS)
+import '../../../config/scripts.js';
 
 const Layout = ({ release, children }) => {
   useScrollTracking({ release });
