@@ -17,7 +17,10 @@ A quick look at the files and directories you'll focus on
     .
     ├── config
     |       - Google Fonts
+    |       - Local Fonts
+    |       - Manifest
     |       - Metadata
+    |       - Scripts
     |       - Styles
     |       - Theme
     ├── content
@@ -35,15 +38,24 @@ A quick look at the files and directories you'll focus on
     ├── static
     |       - Fav Icon
     |       - Images
+    |       - Fonts
     |       - Videos
     └── ...
 ```
+
+### Landing Page Configuation
 
 ####  **`/config`**
 This directory contains site-wide configuration.
 
 ####  **`/config/google-fonts.js`**
-Add Google Fonts here to use them in `theme.css`
+Add Google Fonts here and use them in `theme.css`
+
+####  **`/config/local-fonts.css`**
+Define `@font-face` definitions here that reference font files stored in `/static/fonts/` and use them in `theme.css`
+
+####  **`/config/manifest.js`**
+For native-app-like behavior (Progress Web App), similarly to SEO, customize this to affect how your landing page behaves on some mobile devices when using "Add to Homescreen".
 
 ####  **`/config/metadata.js`**
 For SEO, set the landing page title, description, and more.
@@ -51,8 +63,13 @@ For SEO, set the landing page title, description, and more.
 ####  **`/config/styles.css`**
 Add custom styles here
 
+####  **`/config/styles.css`**
+Add custom javascript here
+
 ####  **`/config/theme.css`**
 Apply colors, fonts, sizing, and more for the landing page. This uses CSS Variables to apply styles across the landing page.
+
+### Landing Page Content
 
 ####  **`/content`**
 This directory contains content for the blocks on the page. The content is formated in [Markdown](https://www.markdownguide.org/basic-syntax/) and accepts some HTML as well.
@@ -95,15 +112,19 @@ This directory contains content for the blocks on the page. The content is forma
 - Content for Success Page
 - Set Redirect Behavior
 
+### Landing Page Source Code
+
 #### **`/src`**
-Danger Zone. This directory contains all of the code related to what you will see on the front-end of your site. `src` is a convention for “source code”. Make advanced changes in here.
+Danger Zone. This directory contains all of the code for pulling in your content and applying functionality to it. `src` is a convention for “source code”. Make advanced changes in here or no changes at all!
+
+### Landing Page Static Files
 
 #### **`/static`**
-This directory contains image and video assets and the fav icon. Replace the starter kit assets with your own.
+This directory contains *images*, *videos*, *fonts*, and the fav icon. Replace any "starter kit" assets with your own. Make sure they have the same case-sensitive file names!
 
 ## 🎓 Powered by Gatsby
 
-Looking for more Gatsby guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+These landing pages are built using the Gatsby framework. For a deeper dive into the source code and underlying framework, find full documentation for Gatsby here, [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 

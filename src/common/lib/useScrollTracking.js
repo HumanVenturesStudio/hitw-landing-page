@@ -19,6 +19,7 @@ const calculateScrollPercentage = (offset, max) => {
 export default function useScrollTracking({ release }) {
   const [maxScroll, setMaxScroll] = React.useState(0);
   const [prevMaxScroll, setPrevMaxScroll] = React.useState(0);
+  const [tracked, setTracked] = React.useState(false);
   const bodyRect = (BODY && BODY.getClientRects()[0]) || false;
   const endScroll = BODY && bodyRect.height - WIN.innerHeight;
 
@@ -40,12 +41,13 @@ export default function useScrollTracking({ release }) {
 
   React.useEffect(() => {
     if (bodyRect && endScroll) {
-      if (maxScroll > SCROLL_BOTTOM_THRESHOLD) {
+      if (!tracked && maxScroll > SCROLL_BOTTOM_THRESHOLD) {
+        setTracked(true);
         setPrevMaxScroll(maxScroll);
         trackEvent(trackEvent.EVENT__CONVERSION__SCROLL_BOTTOM, {
           release,
         });
       }
     }
-  }, [bodyRect, endScroll, maxScroll, prevMaxScroll, release]);
+  }, [bodyRect, endScroll, maxScroll, prevMaxScroll, release, tracked]);
 }
