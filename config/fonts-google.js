@@ -13,7 +13,7 @@
 
 module.exports = [
   {
-    family: `Roboto`,
+    family: `playfair display`,
     subsets: [`latin`],
   },
 ];
