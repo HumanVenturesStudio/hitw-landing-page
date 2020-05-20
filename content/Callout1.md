@@ -1,25 +1,26 @@
 ---
 name: Callout1
-format: left-aligned      # Callout Format ("left-aligned", "right-aligned", "full-bleed", or "big-numbers")
+format: left-aligned
 hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
+#   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
 #   - Add any video from YouTube, Vimeo, Twitter, Instagram with `embed: <URL TO VIDEO>`
 # ---------------------------------------------------------
 ---
 
 <section>
 
-### With <em>Koala</em>, your child can:
-
-- Do this
-- Do that
-- Do this too
+![The Coop](/images/coop-2.png)
 
 </section>
+
 
 <section>
 
-`embed: https://www.youtube.com/watch?v=k5veb0wZas0`
+### World class chickens from coop to stoop
+
+Some people like chickens, we do too. So much in fact that we put them on our farm to grow fat and delicious until delivered to your stoop.
 
 </section>
+
