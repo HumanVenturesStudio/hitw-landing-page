@@ -26,16 +26,13 @@ function index() {
   /**
    * Your JS
    */
-  const accordion = $('.accordion');
-  accordion
-    .find('dt')
-    .off('click')
-    .on('click', function(event) {
-      const label = $(event.currentTarget).text();
-      window.LandingPage.track('nume:learn', {
-        label: label,
-      });
+  const items = $('.accordion dt');
+  items.off('click.nume').on('click.nume', function(event) {
+    const label = $(event.target).text();
+    window.LandingPage.track('nume:learn', {
+      label: label,
     });
+  });
 }
 
 /**
@@ -45,5 +42,4 @@ function success() {
   /**
    * Your JS
    */
-  console.log('ready', 'Success Page!');
 }
