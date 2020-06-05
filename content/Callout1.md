@@ -13,16 +13,16 @@ config:
 
 <section>
 
-![The Coop](/images/coop-2.png)
+![nu me &mdash; Morning Munchies Power Powder 01](/images/nume-kit.png)
 
 </section>
 
 
 <section>
 
-### World class chickens from coop to stoop
+### Healing nutrients for postpartum women, made easy.
 
-Some people like chickens, we do too. So much in fact that we put them on our farm to grow fat and delicious until delivered to your stoop.
+**nu me** is a morning powder blend, designed for better, faster postpartum recovery, based on ancient healing recipes from around the world.
 
 </section>
 
