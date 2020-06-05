@@ -1,6 +1,6 @@
 module.exports = {
-  name: `Foundation`,
-  short_name: `Foundation`,
+  name: `nu me`,
+  short_name: `nu me`,
   start_url: `/`,
   background_color: `#000000`,
   theme_color: `#000000`,

@@ -11,6 +11,8 @@ hide: false                # Hides Element
 
 <section class="mama-and-baby">
 
+![Safe for mama & baby](/images/graphic-mother.png)
+
 ####  Safe for mama & baby
 
 Carefully selected ingredients used for generations to heal moms and promote healthy milk.
@@ -20,6 +22,8 @@ Carefully selected ingredients used for generations to heal moms and promote hea
 
 <section class="global">
 
+![Globally formulated](/images/graphic-earth.png)
+
 ####  Globally formulated
 
 With the highest quality of proven medicinal herbs & spices. Tested & safe, because you don’t need one more thing to worry about.
@@ -28,6 +32,8 @@ With the highest quality of proven medicinal herbs & spices. Tested & safe, beca
 
 
 <section class="whole-foods">
+
+![Made with whole foods](/images/graphic-wholefood.png)
 
 ####  Made with whole foods
 

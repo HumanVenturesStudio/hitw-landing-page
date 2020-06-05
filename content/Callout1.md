@@ -22,5 +22,7 @@ hide: false               # Hides Element
 
 **nu me** is a morning powder blend, designed for better, faster postpartum recovery, based on ancient healing recipes from around the world.
 
+<a href="/#get-started" class="callout-cta">Check Availability</a>
+
 </section>
 
