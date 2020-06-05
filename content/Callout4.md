@@ -2,7 +2,7 @@
 name: Callout4
 config:
   background: ""
-  format: four-up
+  format: center-aligned
   hide: false                # Hides Element
 # ---------------------------------------------------------
 # Notes:
@@ -10,60 +10,19 @@ config:
 # ---------------------------------------------------------
 ---
 
-<!--
-  Notes:
- -->
-
-## Checkout All of our chickens
-
-Have a hankering for some wings? Maybe a leg? View and reserve your bird now!
-
 
 <section>
-  <section>
 
-  ### Cool
+### What to expect
 
-  ![Koala](/images/coop-4.png)
+#### A difference you can feel from the inside out, thanks to  tried-and-true foods & herbs from generations of mothers.
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+- Accelerate Healing
+- Debloat &amp; Detox
+- Protect Joints
+- Build Collagen
+- Easily Digest
+- Replenish Iron &amp; Nutrients
+- Engergize &amp; Rejuvenate
 
-  </section>
-
-
-  <section>
-
-  ### Mean
-
-  ![Koala](/images/coop-4.png)
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-
-  </section>
 </section>
-
-<section>
-  <section>
-
-  ### Young
-
-  ![Koala](/images/coop-4.png)
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-
-  </section>
-
-
-  <section>
-
-  ### Regal
-
-  ![Koala](/images/coop-4.png)
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-
-  </section>
-</section>
-
-
-

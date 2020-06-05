@@ -45,13 +45,9 @@
   left: 0;
   bottom: 0;
 
-<<<<<<< HEAD
   background-color: var(--conversion--form-input--background);
   color: var(--conversion--form-input--color);
   border: var(--conversion--form-input--border);
-=======
-  background-color: var(--conversion--form-label--background);
->>>>>>> Add theme variable for form input background color
 
   &:focus + .LabelText,
   &:valid + .LabelText,
