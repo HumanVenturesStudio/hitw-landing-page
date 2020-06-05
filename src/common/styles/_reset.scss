@@ -77,6 +77,10 @@ strong {
   font-style: inherit;
 }
 
+strong {
+  font-weight: var(--theme--font--root--weight-heavy);
+}
+
 p {
   &:not(:last-child) {
     margin-bottom: 1rem;

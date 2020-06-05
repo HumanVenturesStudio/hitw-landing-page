@@ -1,9 +1,7 @@
 ---
-name: Callout2
-config:
-  background: ""
-  format: center-aligned
-  hide: false               # Hides Element
+name: Callout7
+format: center-aligned
+hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
@@ -13,6 +11,6 @@ config:
 
 <section>
 
-### Because a mother’s job isn’t done after 40 weeks.
+### It’s about time we took care of new mothers,  as cultures around the world have for centuries.
 
 </section>
