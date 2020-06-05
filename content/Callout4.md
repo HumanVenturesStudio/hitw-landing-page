@@ -1,6 +1,6 @@
 ---
 name: Callout4
-format: four-up
+format: center-aligned
 hide: false                # Hides Element
 # ---------------------------------------------------------
 # Notes:
@@ -8,60 +8,21 @@ hide: false                # Hides Element
 # ---------------------------------------------------------
 ---
 
-<!--
-  Notes:
- -->
-
-## Checkout All of our chickens
-
-Have a hankering for some wings? Maybe a leg? View and reserve your bird now!
-
 
 <section>
-  <section>
 
-  ### Cool
+### What to expect
 
-  ![Koala](/images/coop-4.png)
+#### A difference you can feel from the inside out,<br/>thanks to tried-and-true foods & herbs from generations of mothers.
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+<ul class="benefits-list">
+  <li class="healing"> Accelerate Healing </li>
+  <li class="detox"> Debloat &amp; Detox </li>
+  <li class="joints"> Protect Joints </li>
+  <li class="collagen"> Build Collagen </li>
+  <li class="digestion"> Easily Digest </li>
+  <li class="nutrients"> Replenish Iron &amp; Nutrients </li>
+  <!-- <li class="rejuvenate"> Engergize &amp; Rejuvenate </li> -->
+</ul>
 
-  </section>
-
-
-  <section>
-
-  ### Mean
-
-  ![Koala](/images/coop-4.png)
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-
-  </section>
 </section>
-
-<section>
-  <section>
-
-  ### Young
-
-  ![Koala](/images/coop-4.png)
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-
-  </section>
-
-
-  <section>
-
-  ### Regal
-
-  ![Koala](/images/coop-4.png)
-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-
-  </section>
-</section>
-
-
-

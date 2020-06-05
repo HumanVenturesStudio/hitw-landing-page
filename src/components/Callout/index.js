@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
 
 import styles from './styles.module.scss';
+import Conversion from '../Conversion';
 
 export const CALLOUT_ALIGNED_LEFT = 'left-aligned';
 export const CALLOUT_ALIGNED_RIGHT = 'right-aligned';
@@ -46,6 +47,9 @@ const Callout = ({ release, name, format = 'left' }) => {
   const calloutFormat = frontmatter.format || format;
   const inlineStyle = {};
 
+  let includeConversion = html && html.match(/%CONVERSION_FORM%/);
+  includeConversion = includeConversion && includeConversion.length === 1;
+
   if (frontmatter.background) {
     inlineStyle.backgroundImage = `url("${`/images/${frontmatter.background}`}")`;
   }
@@ -72,6 +76,7 @@ const Callout = ({ release, name, format = 'left' }) => {
         className={cx('callout-content', styles.Content)}
         dangerouslySetInnerHTML={{ __html: html }}
       />
+      {includeConversion && <Conversion id="callout-conversion" />}
     </div>
   );
 };

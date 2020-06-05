@@ -45,6 +45,10 @@
   left: 0;
   bottom: 0;
 
+  background-color: var(--conversion--form-input--background);
+  color: var(--conversion--form-input--color);
+  border: var(--conversion--form-input--border);
+
   &:focus + .LabelText,
   &:valid + .LabelText,
   &:not([value='']) + .LabelText {
