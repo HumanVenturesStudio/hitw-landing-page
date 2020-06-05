@@ -153,6 +153,9 @@
   --conversion--form--background: var(--theme--color--tertiary);
   --conversion--form--color: var(--theme--color--white);
   --conversion--form--padding: var(--theme--unit--small);
+  --conversion--form-input--background: var(--theme--color--white);
+  --conversion--form-input--color: var(--theme--color--black);
+  --conversion--form-input--border: none;
   --conversion--form-label--color: var(--theme--color--black);
   --conversion--form-submit--color: var(--theme--color--white);
   --conversion--form-submit--background: var(--theme--color--primary);
