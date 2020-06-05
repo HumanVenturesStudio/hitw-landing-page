@@ -5,7 +5,9 @@
 
 // import $ from 'jquery';
 
-// $(function() {
+// const Events = window.LandingPage.Events;
+
+// Events.once(Events.EVENT.Ready, function() {
 //   const $html = $('html');
 //   switch ($html.get(0).className) {
 //     case 'page--index':
@@ -24,6 +26,7 @@
 //   /**
 //    * Your JS
 //    */
+//   console.log('ready', 'Index Page!');
 // }
 
 // /**
@@ -33,4 +36,5 @@
 //   /**
 //    * Your JS
 //    */
+//   console.log('ready', 'Success Page!');
 // }

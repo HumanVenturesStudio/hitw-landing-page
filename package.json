@@ -37,6 +37,7 @@
     "jquery": "^3.5.1",
     "lodash.isempty": "^4.4.0",
     "lodash.isobject": "^3.0.2",
+    "nanobus": "^4.4.0",
     "netlify-cli": "^2.48.0",
     "node-sass": "^4.13.1",
     "query-string": "^6.12.0",
