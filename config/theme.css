@@ -7,10 +7,10 @@
   /* ==================================================================
   // Color Palette
   // ================================================================== */
-  --theme--color--primary: #FFc09F;
+  --theme--color--primary: #EEE1C3;
   --theme--color--secondary: #676a73;
-  --theme--color--tertiary: #fcf7e6;
-  --theme--color--quaternary: #fcf7e6;
+  --theme--color--tertiary: #e5e5e5;
+  --theme--color--quaternary: #EEE1C3;
   --theme--color--white: #FFF;
   --theme--color--black: #000;
   --theme--color--transparent: transparent;
@@ -21,14 +21,15 @@
   /* ==================================================================
   // Typography
   // ================================================================== */
-  --theme--font--root--family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --theme--font--root--family: 'Canela', serif;
   --theme--font--heading--family: 'Canela', serif;
   --theme--font--root--size: 20px;
-  --theme--font--root--weight: 400;
+  --theme--font--root--weight: 300;
+  --theme--font--root--weight-heavy: 500;
   --theme--font--root--line-height: 1.5;
   --theme--font--size-xxl: 5rem;
-  --theme--font--size-xl: 3rem;
-  --theme--font--size-l: 2.5rem;
+  --theme--font--size-xl: 4rem;
+  --theme--font--size-l: 3rem;
   --theme--font--size-m: 1.75rem;
   --theme--font--size: 1.25rem;
 
@@ -66,11 +67,11 @@
   // Page
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
-  --page--background: var(--theme--color--white);
-  --page--link-active--color: var(--theme--color--black);
+  --page--background: var(--theme--color--black);
+  --page--link-active--color: var(--theme--color--primary);
   --page--link-hover--color: var(--theme--color--secondary);
-  --page--link--color: var(--theme--color--black);
-  --page--footer--background: var(--theme--color--white);
+  --page--link--color: var(--theme--color--primary);
+  --page--footer--background: var(--theme--color--black);
   --page--footer--padding: var(--theme--unit--base);
 
 
@@ -86,13 +87,13 @@
   /* ==================================================================
   // Logo
   // ================================================================== */
-  --logo--height: var(--theme--unit--medium);
+  --logo--height: 5rem;
 
 
   /* ==================================================================
   // Blocks
   // ================================================================== */
-  --block--max-width: 1080px;
+  --block--max-width: 1200px;
   --block--padding: var(--theme--unit--base);
 
 
@@ -126,19 +127,19 @@
   --callout--number-bg: var(--theme--color--white);
   --callout--number-text: var(--theme--color--primary);
 
-  --callout--cta--background: var(--theme--color--white);
-  --callout--cta--color: var(--theme--color--primary);
+  --callout--cta--background: var(--theme--color--primary);
+  --callout--cta--color: var(--theme--color--black);
   --callout--cta--padding: var(--theme--unit--small);
   --callout--cta--radius: var(--theme--radius);
 
-  --callout--left--background: var(--theme--color--white);
-  --callout--left--color: var(--theme--color--black);
+  --callout--left--background: var(--theme--color--black);
+  --callout--left--color: var(--theme--color--primary);
 
   --callout--right--background: var(--theme--color--quaternary);
   --callout--right--color: var(--theme--color--black);
 
-  --callout--center--background: var(--theme--color--primary);
-  --callout--center--color: var(--theme--color--white);
+  --callout--center--background: var(--theme--color--white);
+  --callout--center--color: var(--theme--color--black);
 
   --callout--big-numbers--background: var(--theme--color--white);
   --callout--big-numbers--color: var(--theme--color--black);
@@ -150,10 +151,13 @@
   /* ==================================================================
   // Block: Conversion
   // ================================================================== */
-  --conversion--form--background: var(--theme--color--tertiary);
-  --conversion--form--color: var(--theme--color--white);
+  --conversion--form--background: var(--theme--color--black);
+  --conversion--form--color: var(--theme--color--primary);
   --conversion--form--padding: var(--theme--unit--small);
-  --conversion--form-label--color: var(--theme--color--black);
-  --conversion--form-submit--color: var(--theme--color--white);
+  --conversion--form-input--background: var(--theme--color--black);
+  --conversion--form-input--color: var(--theme--color--white);
+  --conversion--form-input--border: 1px solid var(--theme--color--primary);
+  --conversion--form-label--color: var(--theme--color--primary);
+  --conversion--form-submit--color: var(--theme--color--black);
   --conversion--form-submit--background: var(--theme--color--primary);
 }

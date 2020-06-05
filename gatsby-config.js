@@ -16,10 +16,11 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-source-local-git`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: require('./config/fonts-google'),
       },
+      display: 'swap',
     },
     {
       resolve: `gatsby-transformer-remark`,

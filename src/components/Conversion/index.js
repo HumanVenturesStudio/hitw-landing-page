@@ -56,7 +56,7 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const Conversion = ({ release }) => {
+const Conversion = ({ release, id = 'get-started' }) => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Conversion" } }) {
@@ -98,10 +98,7 @@ const Conversion = ({ release }) => {
 
   return (
     (frontmatter.useCustom && (
-      <div
-        id="get-started"
-        className={cx('conversion--form', styles.CustomForm, {})}
-      >
+      <div id={id} className={cx('conversion--form', styles.CustomForm, {})}>
         <div className={cx('conversion--content', styles.Content)}>
           <DangerousHTMLContent html={html} />
         </div>
@@ -132,7 +129,7 @@ const Conversion = ({ release }) => {
               type="text"
               name="MERGE1"
               value={first}
-              id="get-started"
+              id={id}
               required
             />
             <FormField
