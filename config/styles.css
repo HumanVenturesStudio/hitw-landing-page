@@ -2,6 +2,23 @@
 // Landing Page Styles -- Add any custom styles here
 // ================================================================== */
 
+input {
+  border: 1px solid var(--theme--color--white);
+  border-radius: var(--theme--radius);
+}
+
+#Callout1 {
+  display: flex;
+  min-height: calc(100vh - 3 * var(--block--padding));
+  flex-direction: column;
+}
+
+#Callout1 > .callout-content {
+  position: relative;
+  margin: auto;
+  top: calc(-2 * var(--block--padding));
+}
+
 #Callout7,
 #Callout2 {
   position: relative;
@@ -44,6 +61,10 @@
 }
 
 
+#Callout6 > .callout-content section {
+  padding: var(--theme--unit--base);
+}
+
 .accordion {
   text-align: left;
 }
@@ -52,6 +73,7 @@
   position: relative;
   font-size: var(--theme--font--size-m);
   padding: var(--theme--unit--base);
+  cursor: pointer;
 }
 
 .accordion dt::after {

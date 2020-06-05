@@ -1,17 +1,22 @@
 ---
 name: Conversion
+heading: "See if nu me is available in your area!"           # "" Use empty quotes for no heading
+labels:
+  first: "Enter your first name"
+  last: "Enter your last name"
+  email: "Enter your email"
 submitLabel: Submit		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
 	heading: "See if nu me is available in your area!",
 	first: {
-		label: "Enter your first name",
+		label: "Enter your zip code",
 		hide: false,
 	},
 	last: {
 		label: "Enter your last name",
-		hide: false,
+		hide: true,
 	},
 	email: {
 		label: "Enter your email",

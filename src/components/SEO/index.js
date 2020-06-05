@@ -115,7 +115,9 @@ function SEO({
               ]
         )
         .concat(meta)}
-    />
+    >
+      <link rel="icon" href={'/favicon.ico'} />
+    </Helmet>
   );
 }
 
