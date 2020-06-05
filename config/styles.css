@@ -1,3 +1,109 @@
 /* ==================================================================
 // Landing Page Styles -- Add any custom styles here
 // ================================================================== */
+
+#Callout7,
+#Callout2 {
+  position: relative;
+  padding: calc( 2 * var(--theme--unit--base));
+  overflow: hidden;
+}
+
+#Callout7::before,
+#Callout7::after,
+#Callout2::before,
+#Callout2::after {
+  content: '';
+  position: absolute;
+  top: -0.5rem; bottom: -0.5rem;
+  width: 100rem;
+  background: url('/images/mark.svg') 50% 50% no-repeat;
+  background-size: contain;
+}
+
+#Callout7::before,
+#Callout2::before {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+#Callout7::after,
+#Callout2::after {
+  right: 0;
+  transform: translateX(50%) rotate(180deg);
+}
+
+#Callout7 {
+  --callout--center--background: var(--theme--color--black);
+  --callout--center--color: var(--theme--color--white);
+}
+
+#Callout7::before,
+#Callout7::after {
+  filter: invert();
+}
+
+
+.accordion {
+  text-align: left;
+}
+
+.accordion dt {
+  position: relative;
+  font-size: var(--theme--font--size-m);
+  padding: var(--theme--unit--base);
+}
+
+.accordion dt::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAzNSAyMCI+CiAgPHBhdGggc3Ryb2tlPSIjRTVFNUU1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi45MTUiIGQ9Ik0yIDJsMTUuMzA0IDE1LjMwNEwzMi42MDggMiIvPgo8L3N2Zz4=') 50% 50% no-repeat;
+  width: 35px;
+  height: 20px;
+  background-size: contain;
+  margin-right: var(--theme--unit--base);
+  transition: transform 250ms ease-in-out;
+}
+.accordion dt:focus::after {
+  transform: translateY(-50%) rotate(0);
+}
+
+.accordion dt:not(:first-of-type) {
+  border-top: 1px solid var(--theme--color--tertiary);
+}
+
+.accordion dt:focus {
+  outline: none;
+  /* border: none; */
+}
+
+.accordion dt + dd {
+  display: none;
+}
+
+.accordion dt:focus + dd {
+  display: block;
+}
+
+.accordion dd {
+  margin: calc(-0.5 * var(--theme--unit--base)) var(--theme--unit--base) var(--theme--unit--base);
+  animation-name: showDefinition;
+  animation-duration: 350ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showDefinition {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
