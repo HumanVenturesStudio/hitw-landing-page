@@ -2,11 +2,26 @@
 // Landing Page Styles -- Add any custom styles here
 // ================================================================== */
 
+
+/* Elements
+  ------------------------------------------------------------------- */
 input {
   border: 1px solid var(--theme--color--white);
   border-radius: var(--theme--radius);
 }
 
+blockquote,
+q {
+  font-style: normal;
+  text-align: center;
+}
+
+blockquote footer {
+  padding: var(--theme--unit--small);
+}
+
+/* Callouts
+  ------------------------------------------------------------------- */
 #Callout1 {
   display: flex;
   min-height: calc(100vh - 3 * var(--block--padding));
@@ -50,6 +65,17 @@ input {
   transform: translateX(50%) rotate(180deg);
 }
 
+@media (max-width: 767px) {
+  #Callout7,
+  #Callout2 {
+    padding: var(--theme--unit--base);
+  }
+  #Callout7::after,
+  #Callout2::before {
+    display: none;
+  }
+}
+
 #Callout7 {
   --callout--center--background: var(--theme--color--black);
   --callout--center--color: var(--theme--color--white);
@@ -60,11 +86,136 @@ input {
   filter: invert();
 }
 
-
 #Callout6 > .callout-content section {
   padding: var(--theme--unit--base);
 }
 
+#Callout3 .callout-cta {
+  --callout--cta--background: var(--theme--color--black);
+  --callout--cta--color: var(--theme--color--primary);
+}
+
+#Callout5 blockquote {
+padding: 0 0 var(--theme--unit--base);
+}
+
+#Callout5 ul {
+  display: flex;
+}
+
+#Callout5 ul li {
+  width: 50%;
+  padding: 0 var(--theme--unit--base);
+}
+#Callout5 ul li::before {
+  display: none;
+}
+
+#Callout5 blockquote footer {
+  font-size: var(--theme--font--size-m);
+  padding: var(--theme--unit--small);
+}
+
+#Callout5 ul li blockquote footer {
+  font-size: var(--theme--font--size);
+}
+
+#Callout5 ul li blockquote {
+  font-size: var(--theme--font--size);
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  #Callout5 ul {
+    display: block;
+  }
+  #Callout5 ul li {
+    width: auto;
+  }
+  #Callout5 blockquote footer,
+  #Callout5 blockquote,
+  #Callout5 blockquote h3,
+  #Callout5 blockquote p,
+  #Callout5 ul li,
+  #Callout5 blockquote ul li blockquote {
+    line-height: inherit;
+    font-size: var(--theme--font--size);
+    padding: 0;
+    margin: 0;
+  }
+  #Callout5 blockquote footer {
+    padding: calc(0.5 * var(--theme--unit--base)) 0 var(--theme--unit--base);
+  }
+}
+
+
+@media (max-width: 767px) {
+  #Callout8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #Callout8 .callout-content section {
+    padding: 0;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  #Footer {
+    text-align: center;
+  }
+}
+/* Custom Benefits UI
+  ------------------------------------------------------------------- */
+  .benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .benefits-list li {
+    padding: var(--theme--unit--base);
+    margin: auto;
+    width: 20rem;
+  }
+.benefits-list .collagen::before,
+.benefits-list .detox::before,
+.benefits-list .digestion::before,
+.benefits-list .healing::before,
+.benefits-list .joints::before,
+.benefits-list .nutrients::before,
+.benefits-list .rejuvenate::before {
+  content: '';
+  background: 50% 50% no-repeat;
+  background-size: contain;
+  display: block;
+  margin: auto;
+  padding: var(--theme--unit--base);
+}
+.benefits-list .collagen::before {
+  background-image: url('/images/icon-collagen.svg');
+}
+.benefits-list .detox::before {
+  background-image: url('/images/icon-detox.svg');
+}
+.benefits-list .digestion::before {
+  background-image: url('/images/icon-digestion.svg');
+}
+.benefits-list .healing::before {
+  background-image: url('/images/icon-healing.svg');
+}
+.benefits-list .joints::before {
+  background-image: url('/images/icon-joints.svg');
+}
+.benefits-list .nutrients::before {
+  background-image: url('/images/icon-nutrients.svg');
+}
+.benefits-list .rejuvenate::before {
+  background-image: url('/images/icon-rejuvenate.svg');
+}
+
+
+/* Custom Accordion UI
+  ------------------------------------------------------------------- */
 .accordion {
   text-align: left;
 }
@@ -81,16 +232,16 @@ input {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(0deg);
   background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAzNSAyMCI+CiAgPHBhdGggc3Ryb2tlPSIjRTVFNUU1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi45MTUiIGQ9Ik0yIDJsMTUuMzA0IDE1LjMwNEwzMi42MDggMiIvPgo8L3N2Zz4=') 50% 50% no-repeat;
   width: 35px;
   height: 20px;
   background-size: contain;
   margin-right: var(--theme--unit--base);
-  transition: transform 250ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 .accordion dt:focus::after {
-  transform: translateY(-50%) rotate(0);
+  transform: translateY(-50%) rotate(-180deg);
 }
 
 .accordion dt:not(:first-of-type) {

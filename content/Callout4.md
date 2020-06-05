@@ -13,14 +13,16 @@ hide: false                # Hides Element
 
 ### What to expect
 
-#### A difference you can feel from the inside out, thanks to  tried-and-true foods & herbs from generations of mothers.
+#### A difference you can feel from the inside out,<br/>thanks to tried-and-true foods & herbs from generations of mothers.
 
-- Accelerate Healing
-- Debloat &amp; Detox
-- Protect Joints
-- Build Collagen
-- Easily Digest
-- Replenish Iron &amp; Nutrients
-- Engergize &amp; Rejuvenate
+<ul class="benefits-list">
+  <li class="healing"> Accelerate Healing </li>
+  <li class="detox"> Debloat &amp; Detox </li>
+  <li class="joints"> Protect Joints </li>
+  <li class="collagen"> Build Collagen </li>
+  <li class="digestion"> Easily Digest </li>
+  <li class="nutrients"> Replenish Iron &amp; Nutrients </li>
+  <!-- <li class="rejuvenate"> Engergize &amp; Rejuvenate </li> -->
+</ul>
 
 </section>
