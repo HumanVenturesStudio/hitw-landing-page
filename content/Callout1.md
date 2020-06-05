@@ -20,7 +20,7 @@ config:
 
 <section>
 
-### Healing nutrients for postpartum women, made easy.
+### Healing nutrients for postpartum women,<br/>made easy.
 
 **nu me** is a morning powder blend, designed for better, faster postpartum recovery, based on ancient healing recipes from around the world.
 
