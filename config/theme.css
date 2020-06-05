@@ -127,8 +127,8 @@
   --callout--number-bg: var(--theme--color--white);
   --callout--number-text: var(--theme--color--primary);
 
-  --callout--cta--background: var(--theme--color--black);
-  --callout--cta--color: var(--theme--color--primary);
+  --callout--cta--background: var(--theme--color--primary);
+  --callout--cta--color: var(--theme--color--black);
   --callout--cta--padding: var(--theme--unit--small);
   --callout--cta--radius: var(--theme--radius);
 
@@ -151,13 +151,13 @@
   /* ==================================================================
   // Block: Conversion
   // ================================================================== */
-  --conversion--form--background: var(--theme--color--tertiary);
-  --conversion--form--color: var(--theme--color--white);
+  --conversion--form--background: var(--theme--color--black);
+  --conversion--form--color: var(--theme--color--primary);
   --conversion--form--padding: var(--theme--unit--small);
-  --conversion--form-input--background: var(--theme--color--white);
-  --conversion--form-input--color: var(--theme--color--black);
-  --conversion--form-input--border: none;
-  --conversion--form-label--color: var(--theme--color--black);
-  --conversion--form-submit--color: var(--theme--color--white);
+  --conversion--form-input--background: var(--theme--color--black);
+  --conversion--form-input--color: var(--theme--color--white);
+  --conversion--form-input--border: 1px solid var(--theme--color--primary);
+  --conversion--form-label--color: var(--theme--color--primary);
+  --conversion--form-submit--color: var(--theme--color--black);
   --conversion--form-submit--background: var(--theme--color--primary);
 }
