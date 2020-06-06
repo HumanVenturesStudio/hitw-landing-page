@@ -35,6 +35,7 @@
     "gatsby-source-local-git": "^1.0.0",
     "gatsby-transformer-remark": "^2.7.1",
     "humps": "^2.0.1",
+    "immutable": "^4.0.0-rc.12",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
     "lodash.isempty": "^4.4.0",
@@ -46,6 +47,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-measure": "^2.3.0",
     "react-responsive": "^8.0.3",
     "sass": "^1.26.5",
     "slugify": "^1.4.0"
