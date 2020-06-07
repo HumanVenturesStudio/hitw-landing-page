@@ -7,10 +7,10 @@
   /* ==================================================================
   // Color Palette
   // ================================================================== */
-  --theme--color--primary: #DC5960;
-  --theme--color--secondary: #676a73;
-  --theme--color--tertiary: #fcf7e6;
-  --theme--color--quaternary: #fcf7e6;
+  --theme--color--primary: #BFA1FF;
+  --theme--color--secondary: #A1D2FF;
+  --theme--color--tertiary: #E7FFA1;
+  --theme--color--quaternary: #FFC3EE;
   --theme--color--white: #FFF;
   --theme--color--black: #000;
   --theme--color--transparent: transparent;
@@ -66,9 +66,9 @@
   // Page
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
-  --page--background: var(--theme--color--white);
-  --page--color: var(--theme--color--black);
-  --page--link-active--color: var(--theme--color--primary);
+  --page--background: var(--theme--color--primary);
+  --page--color: var(--theme--color--primary);
+  --page--link-active--color: var(--theme--color--black);
   --page--link-hover--color: var(--theme--color--secondary);
   --page--link--color: var(--theme--color--black);
   --page--footer--background: var(--theme--color--white);

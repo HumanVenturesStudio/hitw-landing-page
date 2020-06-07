@@ -15,7 +15,7 @@ const SIZES = ['10px', '20px', '30px', '40px'];
 const Draw = React.forwardRef(({ className, pathProps }, ref) => {
   const [lines, setLines] = React.useState([]);
   const [isDrawing, setIsDrawing] = React.useState(false);
-  const [color, setColor] = React.useState('red');
+  const [color, setColor] = React.useState(randomColor());
   const [size, setSize] = React.useState('10px');
   const [coordinates, setCoordinates] = React.useState({ x: 0, y: 0 });
   const drawRef = React.useRef();
