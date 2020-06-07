@@ -10,8 +10,9 @@ export default function useUserMedia(requestedMedia) {
           requestedMedia
         );
         setMediaStream(stream);
+        console.log(stream);
       } catch (err) {
-        // Removed for brevity
+        console.error(err);
       }
     }
 

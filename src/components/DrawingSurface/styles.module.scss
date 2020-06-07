@@ -14,11 +14,14 @@
   position: relative;
 }
 
-.Container {
+.VideoContainer {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  flex: 1;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 250px;
 }
 
 .Canvas {
@@ -29,35 +32,18 @@
 
 .Video {
   position: absolute;
-
+  display: block;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 250px;
   &::-webkit-media-controls-play-button {
     display: none !important;
     -webkit-appearance: none;
   }
-}
-
-.Overlay {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
-  box-shadow: 0px 0px 20px 56px rgba(0, 0, 0, 0.6);
-  border: 1px solid #ffffff;
-  border-radius: 10px;
-}
-
-.Flash {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  background-color: #ffffff;
-}
-.FlashOn {
-  animation: flash 750ms ease-out;
 }
 
 .Button {
@@ -67,6 +53,8 @@
   margin-top: 24px;
   padding: 12px 24px;
   background: silver;
+  position: relative;
+  z-index: 2;
 }
 
 @keyframes flash {
@@ -78,21 +66,21 @@
   }
 }
 
-.Draw {
-  cursor: crosshair;
-}
-
 .Drawing {
   display: block;
   width: 100%;
   height: 100%;
+  cursor: crosshair;
 }
 
-.DrawOverVideo {
+.DrawContainer {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2;
+  border: 10px solid #f00;
+  overflow: hidden;
+  border-radius: 250px;
 }
