@@ -1,6 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+import { randomColor, sample } from '../../common/lib/random';
+import throttle from 'lodash.throttle';
+import Cursor from './Cursor';
+
+const SIZES = ['10px', '20px', '30px', '40px'];
 
 /**
  * Drawing SVG Surface
@@ -10,6 +15,9 @@ import styles from './styles.module.scss';
 const Draw = React.forwardRef(({ className, pathProps }, ref) => {
   const [lines, setLines] = React.useState([]);
   const [isDrawing, setIsDrawing] = React.useState(false);
+  const [color, setColor] = React.useState('red');
+  const [size, setSize] = React.useState('10px');
+  const [coordinates, setCoordinates] = React.useState({ x: 0, y: 0 });
   const drawRef = React.useRef();
 
   React.useEffect(() => {
@@ -25,23 +33,41 @@ const Draw = React.forwardRef(({ className, pathProps }, ref) => {
     const point = relativeCoordinatesForEvent(mouseEvent);
 
     setIsDrawing(true);
-    setLines([...lines, [point]]);
+    setLines([
+      ...lines,
+      {
+        style: {
+          color,
+          size,
+        },
+        points: [point],
+      },
+    ]);
   }
 
   function handleMouseMove(mouseEvent) {
+    setCoordinates({
+      x: mouseEvent.nativeEvent.offsetX,
+      y: mouseEvent.nativeEvent.offsetY,
+    });
+
+    // console.log(mouseEvent.nativeEvent);
+
     if (!isDrawing) {
       return;
     }
 
     const point = relativeCoordinatesForEvent(mouseEvent);
     const line = lines.pop();
-    line.push(point);
+    line.points.push(point);
 
     setLines([...lines, line]);
   }
 
   function handleMouseUp() {
     setIsDrawing(false);
+    setColor(randomColor());
+    setSize(sample(SIZES));
   }
 
   function relativeCoordinatesForEvent(mouseEvent) {
@@ -53,42 +79,37 @@ const Draw = React.forwardRef(({ className, pathProps }, ref) => {
   }
 
   return (
-    <div
-      ref={drawRef}
-      className={cx(className, styles.Draw)}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-    >
-      <Drawing svgRef={ref} lines={lines} pathProps={pathProps} />
-    </div>
+    <>
+      <div
+        ref={drawRef}
+        className={cx(className, styles.Draw)}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+      >
+        <svg
+          ref={ref}
+          className={styles.Drawing}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {lines.map((line, index) => (
+            <DrawingLine {...pathProps} key={index} line={line} />
+          ))}
+        </svg>
+      </div>
+      <Cursor {...coordinates} color={color} />
+    </>
   );
 });
 
-function Drawing({ svgRef, pathProps, lines = [] }) {
-  return (
-    <svg
-      ref={svgRef}
-      className={styles.Drawing}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {lines.map((line, index) => (
-        <DrawingLine {...pathProps} key={index} line={line} />
-      ))}
-    </svg>
-  );
-}
-
 function DrawingLine({
   fill = 'none',
-  strokeWidth = '10px',
-  stroke = 'red',
   strokeLinejoin = 'round',
   strokeLinecap = 'round',
   line = [],
 }) {
   const pathData =
     'M ' +
-    line
+    line.points
       .map((point) => {
         return `${point.x} ${point.y}`;
       })
@@ -97,8 +118,8 @@ function DrawingLine({
   return (
     <path
       fill={fill}
-      strokeWidth={strokeWidth}
-      stroke={stroke}
+      strokeWidth={line.style.size}
+      stroke={line.style.color}
       strokeLinejoin={strokeLinejoin}
       strokeLinecap={strokeLinecap}
       className={styles.DrawPath}
