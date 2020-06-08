@@ -69,9 +69,11 @@ export const CalloutContent = graphql`
     frontmatter {
       hide
       name
-      background
-      format
       hide
+      config {
+        background
+        format
+      }
     }
   }
 `;

@@ -20,7 +20,21 @@ export const CALLOUT_FORMATS = [
   CALLOUT_FOUR_UP,
 ];
 
-const Callout = ({ release, name, format = 'left', children }) => {
+const calloutStyle = {
+  [CALLOUT_ALIGNED_LEFT]: styles.CalloutLeft,
+  [CALLOUT_ALIGNED_RIGHT]: styles.CalloutRight,
+  [CALLOUT_ALIGNED_CENTER]: styles.CalloutCenter,
+  [CALLOUT_FULL_BLEED]: styles.CalloutFull,
+  [CALLOUT_BIG_NUMBERS]: styles.CalloutBigNumbers,
+  [CALLOUT_FOUR_UP]: styles.CalloutFourUp,
+};
+
+export const CONFIG = {
+  format: CALLOUT_FULL_BLEED,
+  background: null,
+};
+
+const Callout = ({ release, name, children, config = {} }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -41,11 +55,17 @@ const Callout = ({ release, name, format = 'left', children }) => {
   const { html, frontmatter } = data.allMarkdownRemark.edges.find(
     (edge) => edge.node.frontmatter.name === name
   ).node;
-  const calloutFormat = frontmatter.format || format;
+
+  const configuration = {
+    ...CONFIG,
+    ...frontmatter.config,
+    ...config,
+  };
+
   const inlineStyle = {};
 
-  if (frontmatter.background) {
-    inlineStyle.backgroundImage = `url("${`/images/${frontmatter.background}`}")`;
+  if (configuration.background) {
+    inlineStyle.backgroundImage = `url("${`/images/${configuration.background}`}")`;
   }
 
   if (frontmatter.hide === true) {
@@ -55,15 +75,14 @@ const Callout = ({ release, name, format = 'left', children }) => {
   return (
     <div
       id={`${frontmatter.name}`}
-      className={cx('callout', styles.Callout, {
-        [styles.CalloutLeft]: calloutFormat === CALLOUT_ALIGNED_LEFT,
-        [styles.CalloutRight]: calloutFormat === CALLOUT_ALIGNED_RIGHT,
-        [styles.CalloutCenter]: calloutFormat === CALLOUT_ALIGNED_CENTER,
-        [styles.CalloutFull]: calloutFormat === CALLOUT_FULL_BLEED,
-        [styles.CalloutBigNumbers]: calloutFormat === CALLOUT_BIG_NUMBERS,
-        [styles.CalloutFourUp]: calloutFormat === CALLOUT_FOUR_UP,
-        [styles.hasBg]: frontmatter.background,
-      })}
+      className={cx(
+        'callout',
+        styles.Callout,
+        calloutStyle[configuration.format],
+        {
+          [styles.hasBg]: frontmatter.background,
+        }
+      )}
       style={inlineStyle}
     >
       {html && html.length && (
@@ -83,7 +102,10 @@ const Callout = ({ release, name, format = 'left', children }) => {
 
 Callout.propTypes = {
   name: PropTypes.string,
-  format: PropTypes.oneOf(CALLOUT_FORMATS),
+  config: PropTypes.shape({
+    background: PropTypes.string,
+    format: PropTypes.oneOf(CALLOUT_FORMATS),
+  }),
 };
 
 export default withReleaseInfo(Callout);

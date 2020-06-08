@@ -1,7 +1,9 @@
 ---
 name: Callout1
-format: left-aligned
-hide: false               # Hides Element
+config:
+  background: ""
+  format: left-aligned
+  hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers

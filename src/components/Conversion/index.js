@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 
-export const CONVERSION_CONFIG = {
+export const CONFIG = {
   heading: null,
   first: {
     hide: false,
@@ -78,7 +78,7 @@ const Conversion = ({ release, id, config = {} }) => {
   const { html, frontmatter } = data.markdownRemark;
 
   const configuration = {
-    ...CONVERSION_CONFIG,
+    ...CONFIG,
     ...frontmatter.config,
     ...config,
   };

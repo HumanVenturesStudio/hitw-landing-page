@@ -1,7 +1,9 @@
 ---
 name: Callout4
-format: four-up
-hide: false                # Hides Element
+config:
+  background: ""
+  format: four-up
+  hide: false                # Hides Element
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
