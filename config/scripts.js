@@ -5,19 +5,22 @@
 
 // import $ from 'jquery';
 
-// const Events = window.LandingPage.Events;
+// const WIN = typeof window !== `undefined` ? window : null;
 
-// Events.once(Events.EVENT.Ready, function() {
-//   const $html = $('html');
-//   switch ($html.get(0).className) {
-//     case 'page--index':
-//       return index();
-//     case 'page--success':
-//       return success();
-//     default:
-//       break;
-//   }
-// });
+// const Events = WIN && WIN.LandingPage.Events;
+
+// Events &&
+//   Events.once(Events.EVENT.Ready, function() {
+//     const $html = $('html');
+//     switch ($html.get(0).className) {
+//       case 'page--index':
+//         return index();
+//       case 'page--success':
+//         return success();
+//       default:
+//         break;
+//     }
+//   });
 
 // /**
 //  * Index Page JS
