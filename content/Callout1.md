@@ -11,8 +11,6 @@ config:
 # ---------------------------------------------------------
 ---
 
-<<<<<<< HEAD
-=======
 <section>
 
 <img src="/images/nume-kit.png" class="nume-kit" alt="nu me &mdash; Morning Munchies Power Powder 01" />
@@ -29,5 +27,3 @@ config:
 <a href="/#get-started" class="callout-cta">Check Availability</a>
 
 </section>
-
->>>>>>> Setup Accordion and Badgelist components for Nume
