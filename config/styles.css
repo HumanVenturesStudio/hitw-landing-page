@@ -104,13 +104,18 @@ blockquote footer {
   cursor: pointer;
 }
 
+#Callout6 > .callout-content section {
+  padding: var(--theme--unit--base);
+  cursor: pointer;
+}
+
 #Callout3 .callout-cta {
   --callout--cta--background: var(--theme--color--black);
   --callout--cta--color: var(--theme--color--primary);
 }
 
 #Callout5 blockquote {
-padding: 0 0 var(--theme--unit--base);
+  padding: 0 0 var(--theme--unit--base);
 }
 
 #Callout5 ul {
