@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { trackEvent } from 'common/lib/analytics';
-import LandingPage from 'common/lib/LandingPage';
+import LandingPage from 'common/lib/landingPage';
 import { parseEntities } from 'common/lib/strings';
 import React from 'react';
 import { withParagraphs } from '../../common/lib/strings';
