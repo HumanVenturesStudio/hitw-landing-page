@@ -1,7 +1,7 @@
-import React from 'react';
 import LandingPage from 'common/lib/landingPage';
 import { info, warn } from 'common/lib/log';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
+import React from 'react';
 
 /**
  * ============================================================================
@@ -70,6 +70,7 @@ trackEvent.EVENT__CONVERSION__SUCCESS = 'conversion:success';
 trackEvent.EVENT__CONVERSION__SCROLL_BOTTOM = 'conversion:scroll:bottom';
 trackEvent.EVENT__CONVERSION__NAV_CLICK = 'conversion:navigation:click';
 trackEvent.EVENT__CONVERSION__NAV_OPEN = 'conversion:navigation:open';
+trackEvent.EVENT__CONVERSION__ACCORDION_OPEN = 'conversion:accordion:open';
 
 /**
  * Expose Track Event to Theme Javascript

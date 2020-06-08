@@ -1,10 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useStaticQuery, graphql } from 'gatsby';
-
 import withReleaseInfo from 'common/lib/withReleaseInfo';
-
+import { graphql, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './styles.module.scss';
 
 export const CALLOUT_ALIGNED_LEFT = 'left-aligned';
@@ -22,7 +20,7 @@ export const CALLOUT_FORMATS = [
   CALLOUT_FOUR_UP,
 ];
 
-const Callout = ({ release, name, format = 'left' }) => {
+const Callout = ({ release, name, format = 'left', children }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -68,10 +66,17 @@ const Callout = ({ release, name, format = 'left' }) => {
       })}
       style={inlineStyle}
     >
-      <div
-        className={cx('callout-content', styles.Content)}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {html && html.length && (
+        <div
+          className={cx('callout-content', styles.Content)}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      )}
+      {children && (
+        <div className={cx('callout-content', styles.Content)}>
+          <section>{children}</section>
+        </div>
+      )}
     </div>
   );
 };
