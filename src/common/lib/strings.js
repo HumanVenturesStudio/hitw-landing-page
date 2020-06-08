@@ -1,4 +1,5 @@
 import React from 'react';
+import { DOC } from './global';
 
 /**
  * Convert "&amp;" to "&"
@@ -7,8 +8,8 @@ import React from 'react';
 export const parseEntities = (str) => {
   // TODO: Clean this up
   // Hack for Gatsby SSR
-  if (document) {
-    const textarea = document.createElement('textarea');
+  if (DOC) {
+    const textarea = DOC.createElement('textarea');
     textarea.innerHTML = str;
     return textarea.value;
   }
