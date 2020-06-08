@@ -4,7 +4,7 @@ submitLabel: Submit		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
-	heading: "",
+	heading: "See if nu me is available in your area!",
 	first: {
 		label: "Enter your first name",
 		hide: false,

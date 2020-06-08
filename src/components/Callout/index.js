@@ -32,6 +32,7 @@ const calloutStyle = {
 export const CONFIG = {
   format: CALLOUT_FULL_BLEED,
   background: null,
+  wrap: true,
 };
 
 const Callout = ({ release, name, children, config = {} }) => {
@@ -93,7 +94,7 @@ const Callout = ({ release, name, children, config = {} }) => {
       )}
       {children && (
         <div className={cx('callout-content', styles.Content)}>
-          <section>{children}</section>
+          {configuration.wrap ? <section>{children}</section> : children}
         </div>
       )}
     </div>
