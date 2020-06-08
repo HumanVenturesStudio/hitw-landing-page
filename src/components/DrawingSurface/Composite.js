@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react';
-import useUserMedia from './useUserMedia';
-import styles from './styles.module.scss';
+import React, { useRef, useState } from 'react';
 import Draw from './Draw';
+import styles from './styles.module.scss';
+import useUserMedia from './useUserMedia';
+import watermark from './watermark.svg';
 
 const CAPTURE_OPTIONS = {
   audio: false,
@@ -27,9 +28,35 @@ function handleDownload(fileContents, fileName = FILE_NAME) {
   return true;
 }
 
+const drawSVG = ({ ctx, svg, width, height, x = 0, y = 0 }) => {
+  return new Promise((resolve, reject) => {
+    // Draw SVG Sketch into Canvas
+    const img = new Image();
+    img.width = width;
+    img.height = height;
+    img.style.position = 'absolute';
+    img.style.zIndex = '-1';
+    img.style.top = '-100vh';
+    img.style.left = '-100vw';
+    img.onload = function() {
+      ctx.drawImage(img, x, y, width, height);
+      resolve(ctx);
+    };
+    img.src =
+      typeof svg === 'string'
+        ? svg
+        : `data:image/svg+xml;utf8,${svg.outerHTML}`;
+
+    // Append image to DOM to trigger load event
+    // Some browsers weren't loading the image without this
+    document.body.appendChild(img);
+    img.remove();
+  });
+};
+
 function handleCapture(video, drawing) {
   const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
+  let ctx = canvas.getContext('2d');
 
   // Video orientation
   const orientation =
@@ -45,7 +72,7 @@ function handleCapture(video, drawing) {
   ctx.drawImage(
     video,
     orientation === 'landscape' ? video.videoWidth / 2 - size / 2 : 0,
-    orientation === 'portrait' ? video.videoWidth / 2 - size / 2 : 0,
+    orientation === 'portrait' ? video.videoHeight / 2 - size / 2 : 0,
     size,
     size,
     0,
@@ -54,71 +81,63 @@ function handleCapture(video, drawing) {
     size
   );
 
-  // Draw SVG Sketch into Canvas
-  const img = new Image();
-  img.width = size;
-  img.height = size;
-  img.style.position = 'absolute';
-  img.style.zIndex = '-1';
-  img.style.top = '-100vh';
-  img.style.left = '-100vw';
-  img.onload = function() {
-    ctx.drawImage(img, 0, 0, size, size);
+  // Draw Drawing into Canvas
+  drawSVG({
+    ctx,
+    svg: drawing,
+    width: size,
+    height: size,
+  }).then((ctx) => {
+    drawSVG({
+      ctx,
+      svg: watermark,
+      width: 82,
+      height: 25,
+      y: size - 25 - 20,
+      x: size / 2 - 82 / 2,
+    }).then((ctx) => {
+      // Mask Canvas into Circle
+      // Change Composite behavior to only draw image where mask is
+      ctx.globalCompositeOperation = 'destination-in';
 
-    // Mask Canvas into Circle
-    // Change Composite behavior to only draw image where mask is
-    ctx.globalCompositeOperation = 'destination-in';
+      // Creat Circle Mask
+      ctx.fillStyle = '#000';
+      ctx.beginPath();
+      ctx.arc(
+        size * 0.5, // x
+        size * 0.5, // y
+        size * 0.48, // radius
+        0, // start angle
+        2 * Math.PI // end angle
+      );
+      ctx.fill();
 
-    // Creat Circle Mask
-    ctx.fillStyle = '#000';
-    ctx.beginPath();
-    ctx.arc(
-      size * 0.5, // x
-      size * 0.5, // y
-      size * 0.48, // radius
-      0, // start angle
-      2 * Math.PI // end angle
-    );
-    ctx.fill();
+      // Restore to default composite operation (is draw over current image)
+      ctx.globalCompositeOperation = 'source-over';
 
-    // Restore to default composite operation (is draw over current image)
-    ctx.globalCompositeOperation = 'source-over';
+      // Create Border / Stroke around circle
+      var gradient = ctx.createLinearGradient(0, 0, size, 0);
+      gradient.addColorStop('0', 'magenta');
+      gradient.addColorStop('0.5', 'blue');
+      gradient.addColorStop('1.0', 'red');
 
-    // Create Border / Stroke around circle
-    var gradient = ctx.createLinearGradient(0, 0, size, 0);
-    gradient.addColorStop('0', 'magenta');
-    gradient.addColorStop('0.5', 'blue');
-    gradient.addColorStop('1.0', 'red');
+      ctx.beginPath();
+      ctx.arc(
+        size * 0.5, // x
+        size * 0.5, // y
+        size * 0.49, // radius
+        0, // start angle
+        2 * Math.PI // end angle
+      );
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = gradient;
+      ctx.stroke();
 
-    ctx.beginPath();
-    ctx.arc(
-      size * 0.5, // x
-      size * 0.5, // y
-      size * 0.49, // radius
-      0, // start angle
-      2 * Math.PI // end angle
-    );
-    ctx.lineWidth = 10;
-    ctx.strokeStyle = gradient;
-    ctx.stroke();
-
-    // Download Image!
-    setTimeout(
-      () =>
-        handleDownload(
-          canvas
-            .toDataURL(FILE_FORMAT)
-            .replace(FILE_FORMAT, 'image/octet-stream')
-        ),
-      0
-    );
-  };
-  img.src = `data:image/svg+xml;utf8,${drawing.outerHTML}`;
-
-  // Append image to DOM to trigger load event
-  // Some browsers weren't loading the image without this
-  document.body.appendChild(img);
-  setTimeout(img.remove, 0);
+      handleDownload(
+        canvas.toDataURL(FILE_FORMAT).replace(FILE_FORMAT, 'image/octet-stream')
+      );
+    });
+  });
 }
 
 /**

@@ -1,9 +1,8 @@
-import React from 'react';
 import cx from 'classnames';
-import styles from './styles.module.scss';
+import React from 'react';
 import { randomColor, sample } from '../../common/lib/random';
-import throttle from 'lodash.throttle';
 import Cursor from './Cursor';
+import styles from './styles.module.scss';
 
 const SIZES = ['10px', '20px', '30px', '40px'];
 
