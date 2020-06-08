@@ -3,6 +3,7 @@ import { trackEvent } from 'common/lib/analytics';
 import LandingPage from 'common/lib/LandingPage';
 import { parseEntities } from 'common/lib/strings';
 import React from 'react';
+import { withParagraphs } from '../../common/lib/strings';
 import styles from './styles.module.scss';
 
 const AccordionItem = ({ id, heading, content, isActive, setActive }) => {
@@ -37,7 +38,9 @@ const AccordionItem = ({ id, heading, content, isActive, setActive }) => {
       >
         {parseEntities(heading)}
       </dt>
-      <dd className={styles.ItemContent}>{parseEntities(content)}</dd>
+      <dd className={styles.ItemContent}>
+        {withParagraphs(parseEntities(content))}
+      </dd>
     </>
   );
 };
