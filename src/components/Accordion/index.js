@@ -36,7 +36,7 @@ const AccordionItem = ({ id, heading, content, isActive, setActive }) => {
           });
         }}
       >
-        {parseEntities(heading)}
+        <span>{parseEntities(heading)}</span>
       </dt>
       <dd className={styles.ItemContent}>
         {withParagraphs(parseEntities(content))}
