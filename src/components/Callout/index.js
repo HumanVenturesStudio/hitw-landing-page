@@ -33,6 +33,7 @@ export const CONFIG = {
   format: CALLOUT_FULL_BLEED,
   background: null,
   wrap: true,
+  hide: false,
 };
 
 const Callout = ({ release, name, children, config = {} }) => {
@@ -63,13 +64,7 @@ const Callout = ({ release, name, children, config = {} }) => {
     ...config,
   };
 
-  const inlineStyle = {};
-
-  if (configuration.background) {
-    inlineStyle.backgroundImage = `url("${`/images/${configuration.background}`}")`;
-  }
-
-  if (frontmatter.hide === true) {
+  if (configuration.hide === true) {
     return null;
   }
 
@@ -81,10 +76,16 @@ const Callout = ({ release, name, children, config = {} }) => {
         styles.Callout,
         calloutStyle[configuration.format],
         {
-          [styles.hasBg]: frontmatter.background,
+          [styles.hasBg]: configuration.background,
         }
       )}
-      style={inlineStyle}
+      style={
+        !!configuration.background
+          ? {
+              backgroundImage: `url("${`/images/${configuration.background}`}")`,
+            }
+          : null
+      }
     >
       {html && html.length && (
         <div
