@@ -182,6 +182,7 @@ blockquote footer {
     text-align: center;
   }
 }
+<<<<<<< HEAD
 
 #Footer .logo {
   display: block;
@@ -191,3 +192,5 @@ blockquote footer {
 #Footer .footer--content {
   display: none;
 }
+=======
+>>>>>>> Setup Accordion and Badgelist components for Nume
