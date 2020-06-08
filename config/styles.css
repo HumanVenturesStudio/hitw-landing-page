@@ -180,3 +180,12 @@ padding: 0 0 var(--theme--unit--base);
     text-align: center;
   }
 }
+
+#Footer .logo {
+  display: block;
+  margin: auto;
+}
+
+#Footer .footer--content {
+  display: none;
+}
