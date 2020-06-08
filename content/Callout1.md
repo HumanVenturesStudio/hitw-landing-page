@@ -13,7 +13,7 @@ config:
 
 <section>
 
-![nu me &mdash; Morning Munchies Power Powder 01](/images/nume-kit.png)
+<img src="/images/nume-kit.png" class="nume-kit" alt="nu me &mdash; Morning Munchies Power Powder 01" />
 
 </section>
 
