@@ -3,46 +3,41 @@
 // Note: This is loaded on every page.
 // ================================================================== */
 
-import $ from 'jquery';
+// import $ from 'jquery';
 
-const WIN = typeof window !== `undefined` ? window : null;
+// const WIN = typeof window !== `undefined` ? window : null;
 
-const Events = WIN && WIN.LandingPage.Events;
+// const Events = WIN && WIN.LandingPage.Events;
 
-Events &&
-  Events.once(Events.EVENT.Ready, function() {
-    const $html = $('html');
-    switch ($html.get(0).className) {
-      case 'page--index':
-        return index();
-      case 'page--success':
-        return success();
-      default:
-        break;
-    }
-  });
+// Events &&
+//   Events.once(Events.EVENT.Ready, function() {
+//     const $html = $('html');
+//     switch ($html.get(0).className) {
+//       case 'page--index':
+//         return index();
+//       case 'page--success':
+//         return success();
+//       default:
+//         break;
+//     }
+//   });
 
-/**
- * Index Page JS
- */
-function index() {
-  /**
-   * Your JS
-   */
-  const items = $('.accordion dt');
-  items.off('click.nume').on('click.nume', function(event) {
-    const label = $(event.target).text();
-    WIN.LandingPage.track('nume:learn', {
-      label: label,
-    });
-  });
-}
+// /**
+//  * Index Page JS
+//  */
+// function index() {
+//   /**
+//    * Your JS
+//    */
+//   console.log('ready', 'Index Page!');
+// }
 
-/**
- * Success Page JS
- */
-function success() {
-  /**
-   * Your JS
-   */
-}
+// /**
+//  * Success Page JS
+//  */
+// function success() {
+//   /**
+//    * Your JS
+//    */
+//   console.log('ready', 'Success Page!');
+// }

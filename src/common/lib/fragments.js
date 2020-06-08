@@ -69,9 +69,11 @@ export const CalloutContent = graphql`
     frontmatter {
       hide
       name
-      background
-      format
       hide
+      config {
+        background
+        format
+      }
     }
   }
 `;
@@ -118,11 +120,20 @@ export const ConversionContent = graphql`
       name
       submitLabel
       useCustom
-      heading
-      labels {
-        first
-        last
-        email
+      config {
+        heading
+        first {
+          label
+          hide
+        }
+        last {
+          label
+          hide
+        }
+        email {
+          label
+          hide
+        }
       }
     }
   }

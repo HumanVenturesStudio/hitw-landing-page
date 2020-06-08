@@ -1,14 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useStaticQuery, graphql } from 'gatsby';
-import DangerousHTMLContent from 'dangerously-set-html-content';
-import isEmpty from 'lodash.isempty';
-
 import { trackEvent } from 'common/lib/analytics';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
-
+import DangerousHTMLContent from 'dangerously-set-html-content';
+import { graphql, useStaticQuery } from 'gatsby';
+import isEmpty from 'lodash.isempty';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './styles.module.scss';
+
+export const CONFIG = {
+  heading: null,
+  first: {
+    hide: false,
+    label: null,
+  },
+  last: {
+    hide: false,
+    label: null,
+  },
+  email: {
+    hide: false,
+    label: null,
+  },
+};
 
 /**
  * Get Action URL from Mailchimp Embed
@@ -52,11 +66,7 @@ const FormField = ({ name, label, onChange, ...attrs }) => {
   );
 };
 
-FormField.propTypes = {
-  name: PropTypes.string.isRequired,
-};
-
-const Conversion = ({ release, id = 'get-started' }) => {
+const Conversion = ({ release, id, config = {} }) => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Conversion" } }) {
@@ -66,7 +76,12 @@ const Conversion = ({ release, id = 'get-started' }) => {
   `);
 
   const { html, frontmatter } = data.markdownRemark;
-  const { hide, labels, heading } = frontmatter;
+
+  const configuration = {
+    ...CONFIG,
+    ...frontmatter.config,
+    ...config,
+  };
 
   // HACK:
   // Extract the Action & Honeypot from Mailchimp Embed Code
@@ -84,7 +99,7 @@ const Conversion = ({ release, id = 'get-started' }) => {
     }
   }, [hasIntent, release]);
 
-  if (hide) {
+  if (frontmatter.hide) {
     return null;
   }
 
@@ -107,9 +122,9 @@ const Conversion = ({ release, id = 'get-started' }) => {
     (!frontmatter.useCustom && (
       <div className={cx('conversion--form', styles.Form)}>
         <div className={cx('conversion--content', styles.Content)}>
-          {!isEmpty(heading) && (
+          {!isEmpty(configuration.heading) && (
             <h3 className={cx('conversion--heading', styles.ConversionHeading)}>
-              {heading}
+              {configuration.heading}
             </h3>
           )}
           <form method="POST" name="mc-embedded-subscribe-form" action={action}>
@@ -120,40 +135,46 @@ const Conversion = ({ release, id = 'get-started' }) => {
               style={{ position: 'absolute', left: '-200vw' }}
               aria-hidden="true"
             />
-            <FormField
-              label={labels.first || 'Enter your first name'}
-              onChange={(e) => {
-                setHasIntent(true);
-                setFirst(e.target.value);
-              }}
-              type="text"
-              name="MERGE1"
-              value={first}
-              id={id}
-              required
-            />
-            <FormField
-              label={labels.last || 'Enter your last name'}
-              onChange={(e) => {
-                setHasIntent(true);
-                setLast(e.target.value);
-              }}
-              type="text"
-              name="MERGE2"
-              value={last}
-              required
-            />
-            <FormField
-              label={labels.email || 'Enter your email'}
-              onChange={(e) => {
-                setHasIntent(true);
-                setEmail(e.target.value);
-              }}
-              type="email"
-              name="MERGE0"
-              value={email}
-              required
-            />
+            {!configuration.first.hide && (
+              <FormField
+                label={configuration.first.label || 'Enter your first name'}
+                onChange={(e) => {
+                  setHasIntent(true);
+                  setFirst(e.target.value);
+                }}
+                type="text"
+                name="MERGE1"
+                value={first}
+                id={id}
+                required
+              />
+            )}
+            {!configuration.last.hide && (
+              <FormField
+                label={configuration.last.label || 'Enter your last name'}
+                onChange={(e) => {
+                  setHasIntent(true);
+                  setLast(e.target.value);
+                }}
+                type="text"
+                name="MERGE2"
+                value={last}
+                required
+              />
+            )}
+            {!configuration.email.hide && (
+              <FormField
+                label={configuration.email.label || 'Enter your email'}
+                onChange={(e) => {
+                  setHasIntent(true);
+                  setEmail(e.target.value);
+                }}
+                type="email"
+                name="MERGE0"
+                value={email}
+                required
+              />
+            )}
             <button
               className={cx('conversion--submit', styles.Submit)}
               type="submit"
@@ -165,6 +186,16 @@ const Conversion = ({ release, id = 'get-started' }) => {
       </div>
     ))
   );
+};
+
+Conversion.propTypes = {
+  release: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  config: PropTypes.object,
+};
+
+FormField.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default withReleaseInfo(Conversion);

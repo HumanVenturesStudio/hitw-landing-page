@@ -95,6 +95,7 @@
   // ================================================================== */
   --block--max-width: 1200px;
   --block--padding: var(--theme--unit--base);
+  --block--padding--mobile: var(--theme--unit--small);
 
 
   /* ==================================================================
@@ -145,7 +146,7 @@
   --callout--big-numbers--color: var(--theme--color--black);
 
   --callout--full-bleed--background: var(--theme--color--primary);
-  --callout--full-bleed--color: var(--theme--color--white);
+  --callout--full-bleed--color: var(--theme--color--black);
 
 
   /* ==================================================================

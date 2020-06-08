@@ -15,7 +15,7 @@ const Header = () => {
     }
   `);
 
-  const { frontmatter } = data.markdownRemark;
+  const { html, frontmatter } = data.markdownRemark;
   const { hide } = frontmatter;
 
   if (hide) {
@@ -30,6 +30,12 @@ const Header = () => {
         </a>
       </h1>
       <Navigation />
+      {html && (
+        <div
+          className={cx('header--content', styles.Content)}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      )}
     </header>
   );
 };

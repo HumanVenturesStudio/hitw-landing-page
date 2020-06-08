@@ -1,0 +1,37 @@
+@import 'common/styles';
+
+.BadgeList {
+  display: flex;
+  flex-wrap: wrap;
+
+  .Badge {
+    padding: var(--theme--unit--base);
+    margin: auto;
+    width: 20rem;
+    &::before {
+      display: none;
+    }
+    @media ($mq-mobile) {
+      width: 50%;
+      padding: var(--theme--unit--small);
+    }
+  }
+  .BadgeIcon {
+    background: 50% 50% no-repeat;
+    background-size: contain;
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    @media ($mq-mobile) {
+      // width: 75px;
+      // height: 75px;
+    }
+  }
+  .BadgeLabel {
+    display: block;
+    @media ($mq-mobile) {
+      font-size: var(--theme--font--size);
+    }
+  }
+}

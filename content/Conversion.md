@@ -1,13 +1,28 @@
 ---
 name: Conversion
-heading: "See if nu me is available in your area!"           # "" Use empty quotes for no heading
 labels:
   first: "Enter your first name"
   last: "Enter your last name"
   email: "Enter your email"
-submitLabel: Submit		# Label for Submit Button
+submitLabel: "Check Availability"		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
+config: {
+	heading: "See if nu me is available in your area!",
+	first: {
+		label: "Enter your zip code",
+		hide: false,
+	},
+	last: {
+		label: "Enter your last name",
+		hide: true,
+	},
+	email: {
+		label: "Enter your email",
+		hide: false,
+	}
+}
+
 # ---------------------------------------------------------
 # Video: https://www.loom.com/share/f73ecc8c3ae54e1f9e8182bf1bce5682
 # Notes:
@@ -41,8 +56,8 @@ hide: false						# Hides Element
 <div class="mc-field-group size1of2">
 	<label for="mce-BIRTHDAY-month">Birthday </label>
 	<div class="datefield">
-		<span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> / 
-		<span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span> 
+		<span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="BIRTHDAY[month]" id="mce-BIRTHDAY-month"></span> /
+		<span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="BIRTHDAY[day]" id="mce-BIRTHDAY-day"></span>
 		<span class="small-meta nowrap">( mm / dd )</span>
 	</div>
 </div>	<div id="mce-responses" class="clear">

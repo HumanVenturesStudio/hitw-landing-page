@@ -1,7 +1,9 @@
 ---
 name: Callout3
-format: right-aligned
-hide: false               # Hides Element
+config:
+  background: ""
+  format: right-aligned
+  hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
@@ -25,6 +27,6 @@ Enjoy this morning bowl of porridge, made from nutrient-dense whole foods, prote
 
 The easiest way to single-handedly nourish yourself AND the babe.
 
-<a href="/#get-started" class="callout-cta">Tell me more</a>
+<a href="/#tell-me-more" class="callout-cta">Tell me more</a>
 
 </section>

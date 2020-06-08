@@ -1,12 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { useStaticQuery, graphql } from 'gatsby';
-
 import withReleaseInfo from 'common/lib/withReleaseInfo';
-
+import { graphql, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './styles.module.scss';
-import Conversion from '../Conversion';
 
 export const CALLOUT_ALIGNED_LEFT = 'left-aligned';
 export const CALLOUT_ALIGNED_RIGHT = 'right-aligned';
@@ -23,7 +20,23 @@ export const CALLOUT_FORMATS = [
   CALLOUT_FOUR_UP,
 ];
 
-const Callout = ({ release, name, format = 'left' }) => {
+const calloutStyle = {
+  [CALLOUT_ALIGNED_LEFT]: styles.CalloutLeft,
+  [CALLOUT_ALIGNED_RIGHT]: styles.CalloutRight,
+  [CALLOUT_ALIGNED_CENTER]: styles.CalloutCenter,
+  [CALLOUT_FULL_BLEED]: styles.CalloutFull,
+  [CALLOUT_BIG_NUMBERS]: styles.CalloutBigNumbers,
+  [CALLOUT_FOUR_UP]: styles.CalloutFourUp,
+};
+
+export const CONFIG = {
+  format: CALLOUT_FULL_BLEED,
+  background: null,
+  wrap: true,
+  hide: false,
+};
+
+const Callout = ({ release, name, children, config = {} }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -44,46 +57,57 @@ const Callout = ({ release, name, format = 'left' }) => {
   const { html, frontmatter } = data.allMarkdownRemark.edges.find(
     (edge) => edge.node.frontmatter.name === name
   ).node;
-  const calloutFormat = frontmatter.format || format;
-  const inlineStyle = {};
 
-  let includeConversion = html && html.match(/%CONVERSION_FORM%/);
-  includeConversion = includeConversion && includeConversion.length === 1;
+  const configuration = {
+    ...CONFIG,
+    ...frontmatter.config,
+    ...config,
+  };
 
-  if (frontmatter.background) {
-    inlineStyle.backgroundImage = `url("${`/images/${frontmatter.background}`}")`;
-  }
-
-  if (frontmatter.hide === true) {
+  if (configuration.hide === true) {
     return null;
   }
 
   return (
     <div
       id={`${frontmatter.name}`}
-      className={cx('callout', styles.Callout, {
-        [styles.CalloutLeft]: calloutFormat === CALLOUT_ALIGNED_LEFT,
-        [styles.CalloutRight]: calloutFormat === CALLOUT_ALIGNED_RIGHT,
-        [styles.CalloutCenter]: calloutFormat === CALLOUT_ALIGNED_CENTER,
-        [styles.CalloutFull]: calloutFormat === CALLOUT_FULL_BLEED,
-        [styles.CalloutBigNumbers]: calloutFormat === CALLOUT_BIG_NUMBERS,
-        [styles.CalloutFourUp]: calloutFormat === CALLOUT_FOUR_UP,
-        [styles.hasBg]: frontmatter.background,
-      })}
-      style={inlineStyle}
+      className={cx(
+        'callout',
+        styles.Callout,
+        calloutStyle[configuration.format],
+        {
+          [styles.hasBg]: configuration.background,
+        }
+      )}
+      style={
+        !!configuration.background
+          ? {
+              backgroundImage: `url("${`/images/${configuration.background}`}")`,
+            }
+          : null
+      }
     >
-      <div
-        className={cx('callout-content', styles.Content)}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-      {includeConversion && <Conversion id="callout-conversion" />}
+      {html && html.length && (
+        <div
+          className={cx('callout-content', styles.Content)}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      )}
+      {children && (
+        <div className={cx('callout-content', styles.Content)}>
+          {configuration.wrap ? <section>{children}</section> : children}
+        </div>
+      )}
     </div>
   );
 };
 
 Callout.propTypes = {
   name: PropTypes.string,
-  format: PropTypes.oneOf(CALLOUT_FORMATS),
+  config: PropTypes.shape({
+    background: PropTypes.string,
+    format: PropTypes.oneOf(CALLOUT_FORMATS),
+  }),
 };
 
 export default withReleaseInfo(Callout);

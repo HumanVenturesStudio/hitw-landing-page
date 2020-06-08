@@ -5,6 +5,9 @@
 // ==================================================================
 @mixin block() {
   padding: var(--block--padding);
+  @media ($mq-mobile) {
+    padding: calc(var(--block--padding--mobile));
+  }
 }
 
 @mixin block-content() {
@@ -44,7 +47,7 @@
       }
     }
     @media ($mq-mobile) {
-      padding: calc(var(--block--padding));
+      padding: calc(var(--block--padding--mobile));
     }
   }
 }
