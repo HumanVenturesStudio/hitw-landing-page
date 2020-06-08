@@ -19,20 +19,26 @@
   font-size: var(--theme--font--size-m);
   padding: var(--theme--unit--base);
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    padding-right: var(--theme--unit--base);
+    @media ($mq-mobile) {
+      padding-right: var(--block--padding--mobile);
+    }
+  }
 
   &::after {
     content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
+    transform: rotate(0deg);
     background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAzNSAyMCI+CiAgPHBhdGggc3Ryb2tlPSIjRTVFNUU1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMi45MTUiIGQ9Ik0yIDJsMTUuMzA0IDE1LjMwNEwzMi42MDggMiIvPgo8L3N2Zz4=')
       50% 50% no-repeat;
     width: 35px;
     height: 20px;
     background-size: contain;
-    margin-right: var(--theme--unit--base);
     transition: transform 500ms ease-in-out;
+    margin: auto 0 auto auto;
   }
 
   &:focus {
@@ -41,13 +47,13 @@
 
   &:target::after,
   &.active::after {
-    transform: translateY(-50%) rotate(-180deg);
+    transform: rotate(-180deg);
   }
 }
 
 .ItemContent {
   display: none;
-  margin: calc(-0.5 * var(--theme--unit--base)) var(--theme--unit--base)
+  padding: calc(-0.5 * var(--theme--unit--base)) var(--theme--unit--base)
     var(--theme--unit--base);
   animation-name: showDefinition;
   animation-duration: 350ms;
