@@ -1,13 +1,24 @@
 ---
 name: Conversion
-heading: ""           # "" Use empty quotes for no heading
-labels:
-  first: "Enter your first name"
-  last: "Enter your last name"
-  email: "Enter your email"
 submitLabel: Submit		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
+config: {
+	heading: "",
+	first: {
+		label: "Enter your first name",
+		hide: false,
+	},
+	last: {
+		label: "Enter your last name",
+		hide: false,
+	},
+	email: {
+		label: "Enter your email",
+		hide: false,
+	}
+}
+
 # ---------------------------------------------------------
 # Video: https://www.loom.com/share/f73ecc8c3ae54e1f9e8182bf1bce5682
 # Notes:
