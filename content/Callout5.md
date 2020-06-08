@@ -1,7 +1,10 @@
 ---
 name: Callout5
-format: right-aligned
-hide: false                # Hides Element
+config:
+  background: ""
+  format: right-aligned
+  hide: false               # Hides Element
+
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers
