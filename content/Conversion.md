@@ -1,6 +1,5 @@
 ---
 name: Conversion
-heading: "See if nu me is available in your area!"           # "" Use empty quotes for no heading
 labels:
   first: "Enter your first name"
   last: "Enter your last name"
