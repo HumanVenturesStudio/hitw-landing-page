@@ -4,7 +4,7 @@ labels:
   first: "Enter your first name"
   last: "Enter your last name"
   email: "Enter your email"
-submitLabel: Submit		# Label for Submit Button
+submitLabel: "Check Availability"		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
