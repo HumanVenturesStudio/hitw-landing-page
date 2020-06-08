@@ -8,6 +8,22 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './styles.module.scss';
 
+export const CONVERSION_CONFIG = {
+  heading: null,
+  first: {
+    hide: false,
+    label: null,
+  },
+  last: {
+    hide: false,
+    label: null,
+  },
+  email: {
+    hide: false,
+    label: null,
+  },
+};
+
 /**
  * Get Action URL from Mailchimp Embed
  * @param {string} html
@@ -50,27 +66,7 @@ const FormField = ({ name, label, onChange, ...attrs }) => {
   );
 };
 
-FormField.propTypes = {
-  name: PropTypes.string.isRequired,
-};
-
-const CONFIG = {
-  heading: null,
-  first: {
-    hide: false,
-    label: null,
-  },
-  last: {
-    hide: false,
-    label: null,
-  },
-  email: {
-    hide: false,
-    label: null,
-  },
-};
-
-const Conversion = ({ release, id = 'get-started', config = CONFIG }) => {
+const Conversion = ({ release, id, config = {} }) => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Conversion" } }) {
@@ -81,7 +77,11 @@ const Conversion = ({ release, id = 'get-started', config = CONFIG }) => {
 
   const { html, frontmatter } = data.markdownRemark;
 
-  const configuration = { ...config, ...frontmatter.config };
+  const configuration = {
+    ...CONVERSION_CONFIG,
+    ...frontmatter.config,
+    ...config,
+  };
 
   // HACK:
   // Extract the Action & Honeypot from Mailchimp Embed Code
@@ -191,7 +191,11 @@ const Conversion = ({ release, id = 'get-started', config = CONFIG }) => {
 Conversion.propTypes = {
   release: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  config: PropTypes.object.isRequired,
+  config: PropTypes.object,
+};
+
+FormField.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default withReleaseInfo(Conversion);
