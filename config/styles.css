@@ -96,6 +96,9 @@ blockquote footer {
   filter: invert();
 }
 
+#Callout6 {
+}
+
 #Callout6 > .callout-content section {
   padding: var(--theme--unit--base);
 }
