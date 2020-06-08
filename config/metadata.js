@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'nu me | 2020',
+  title: 'nu me = nutrition for women | 2020',
   description:
     'Healing nutrients for postpartum women, made easy. nu me is a morning powder blend, designed for better, faster postpartum recovery, based on ancient healing recipes from around the world.',
-  twitter: '@nume',
+  twitter: '@lovenume',
   keywords: [
     'nu me',
     'nume',
@@ -10,6 +10,9 @@ module.exports = {
     'recovery',
     'nutrition',
     'wellness',
+    'postnatal',
+    'new mom',
+    'new born',
   ],
   lang: 'en',
   image: {

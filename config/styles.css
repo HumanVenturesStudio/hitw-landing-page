@@ -101,6 +101,12 @@ blockquote footer {
 
 #Callout6 > .callout-content section {
   padding: var(--theme--unit--base);
+  cursor: pointer;
+}
+
+#Callout6 > .callout-content section {
+  padding: var(--theme--unit--base);
+  cursor: pointer;
 }
 
 #Callout3 .callout-cta {
@@ -109,7 +115,7 @@ blockquote footer {
 }
 
 #Callout5 blockquote {
-padding: 0 0 var(--theme--unit--base);
+  padding: 0 0 var(--theme--unit--base);
 }
 
 #Callout5 ul {

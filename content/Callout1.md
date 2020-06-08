@@ -10,4 +10,3 @@ config:
 #   - Add any video from YouTube, Vimeo, Twitter, Instagram with `embed: <URL TO VIDEO>`
 # ---------------------------------------------------------
 ---
-
