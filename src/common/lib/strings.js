@@ -5,9 +5,14 @@ import React from 'react';
  * @param {String} str A string containing html entities like &amp; &ellip; etc
  */
 export const parseEntities = (str) => {
-  const textarea = document.createElement('textarea');
-  textarea.innerHTML = str;
-  return textarea.value;
+  // TODO: Clean this up
+  // Hack for Gatsby SSR
+  if (document) {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = str;
+    return textarea.value;
+  }
+  return str;
 };
 
 /**
