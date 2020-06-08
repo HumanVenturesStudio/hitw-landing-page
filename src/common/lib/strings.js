@@ -1,13 +1,19 @@
 import React from 'react';
+import { DOC } from './global';
 
 /**
  * Convert "&amp;" to "&"
  * @param {String} str A string containing html entities like &amp; &ellip; etc
  */
 export const parseEntities = (str) => {
-  const textarea = document.createElement('textarea');
-  textarea.innerHTML = str;
-  return textarea.value;
+  // TODO: Clean this up
+  // Hack for Gatsby SSR
+  if (DOC) {
+    const textarea = DOC.createElement('textarea');
+    textarea.innerHTML = str;
+    return textarea.value;
+  }
+  return str;
 };
 
 /**
