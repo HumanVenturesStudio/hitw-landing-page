@@ -1,11 +1,13 @@
 ---
 name: Success
 config: {
-  redirect: true,
+  redirect: false,
   redirect_in_seconds: 5
 }
 ---
 
-# Thank You!
+# Thank You {{CONVERSION__FNAME}}!
 
-Please check your email for further instructions
+Please check your email {{CONVERSION__EMAIL}} for further instructions
+
+

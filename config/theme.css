@@ -66,8 +66,8 @@
   // Page
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
-  --page--background: var(--theme--color--black);
-  --page--color: var(--theme--color--primary);
+  --page--background: var(--theme--color--white);
+  --page--color: var(--theme--color--black);
   --page--link-active--color: var(--theme--color--primary);
   --page--link-hover--color: var(--theme--color--secondary);
   --page--link--color: var(--theme--color--black);
