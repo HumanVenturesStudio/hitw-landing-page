@@ -16,7 +16,7 @@ config: {
 
 <section>
 
-### Bad news first.
+### We're sorry - 
 
 Due to current pandemic conditions, our production is not able to service <span class="zipcode">{{CONVERSION__ZIPCODE}}</span>! We're looking forward to shipping nationwide soon.
 
@@ -24,9 +24,9 @@ Due to current pandemic conditions, our production is not able to service <span 
 
 <section>
 
-### The good news.
+### But here's the good news...
 
-We tailor each assortment based on your health, diet, and birth, so please sign up for early access below to better customize your unique kit for when we are available in your area. Definitely some beta-testing perks involved, too, by signing up!
+You can sign up for early access below to better customize your unique kit, tailored to your health needs & birth, for when we are available in your area. Definitely some beta-testing perks involved, too, by signing up!
 
 We’d love if you could answer a few questions.
 
