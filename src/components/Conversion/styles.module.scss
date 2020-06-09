@@ -71,6 +71,7 @@
   transform: translate(0, -50%);
   padding: 0 calc(2 * var(--conversion--form--padding));
   color: var(--conversion--form-label--color);
+  pointer-events: none;
 }
 
 .LabelRequired {
