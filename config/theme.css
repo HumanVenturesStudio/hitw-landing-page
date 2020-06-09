@@ -67,8 +67,8 @@
   // Page
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
-  --page--background: var(--theme--color--white);
-  --page--color: var(--theme--color--black);
+  --page--background: var(--theme--color--black);
+  --page--color: var(--theme--color--primary);
   --page--link-active--color: var(--theme--color--primary);
   --page--link-hover--color: var(--theme--color--secondary);
   --page--link--color: var(--theme--color--primary);
@@ -160,7 +160,7 @@
   --conversion--form-input--background: var(--theme--color--black);
   --conversion--form-input--color: var(--theme--color--white);
   --conversion--form-input--border: 1px solid var(--theme--color--primary);
-  --conversion--form-label--color: var(--theme--color--black);
+  --conversion--form-label--color: var(--theme--color--primary);
   --conversion--form-submit--color: var(--theme--color--black);
   --conversion--form-submit--background: var(--theme--color--primary);
 }
