@@ -10,7 +10,7 @@
   select,
   button,
   textarea {
-    border-radius: calc(2 * var(--conversion--form--padding));
+    border-radius: var(--conversion--form--radius);
     padding: calc(2 * var(--conversion--form--padding));
   }
 }

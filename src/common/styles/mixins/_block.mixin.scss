@@ -23,7 +23,16 @@
 
   a {
     display: inline-block;
-    padding: var(--theme--unit--small) var(--theme--unit--small) 0 0;
+    text-decoration: underline;
+  }
+
+  :global(.callout-cta) {
+    display: inline-block;
+    text-align: center;
+    background: var(--callout--cta--background);
+    color: var(--callout--cta--color);
+    padding: var(--callout--cta--padding);
+    border-radius: var(--callout--cta--radius);
     text-decoration: none;
   }
 }

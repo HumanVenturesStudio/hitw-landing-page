@@ -26,15 +26,6 @@
   em {
     color: var(--callout--accent-color);
   }
-
-  :global(.callout-cta) {
-    display: inline-block;
-    text-align: center;
-    background: var(--callout--cta--background);
-    color: var(--callout--cta--color);
-    padding: var(--callout--cta--padding);
-    border-radius: var(--callout--cta--radius);
-  }
 }
 
 .CalloutLeft {
