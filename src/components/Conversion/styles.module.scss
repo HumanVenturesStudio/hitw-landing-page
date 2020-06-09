@@ -12,6 +12,8 @@
   textarea {
     border-radius: var(--conversion--form--radius);
     padding: calc(2 * var(--conversion--form--padding));
+    max-width: calc(0.5 * var(--block--max-width));
+    margin: auto;
   }
 }
 
@@ -34,6 +36,9 @@
   display: block;
   position: relative;
   padding: calc(2 * var(--conversion--form--padding));
+  max-width: calc(0.5 * var(--block--max-width));
+  margin: auto;
+
   &:not(:last-child) {
     margin-bottom: var(--conversion--form--padding);
   }
