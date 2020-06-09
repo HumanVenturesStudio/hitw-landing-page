@@ -1,12 +1,16 @@
 import cx from 'classnames';
 import { trackEvent } from 'common/lib/analytics';
+import LandingPage from 'common/lib/landingPage';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
 import DangerousHTMLContent from 'dangerously-set-html-content';
 import { graphql, useStaticQuery } from 'gatsby';
 import isEmpty from 'lodash.isempty';
 import PropTypes from 'prop-types';
 import React from 'react';
+import persist from '../../common/lib/persist';
 import styles from './styles.module.scss';
+
+LandingPage.persistKey = 'conversion:values';
 
 export const CONFIG = {
   heading: null,
@@ -122,6 +126,10 @@ const Conversion = ({ release, id, config = {} }) => {
       trackEvent(trackEvent.EVENT__CONVERSION__INTENT, { release });
     }
   }, [hasIntent, release]);
+
+  React.useEffect(() => {
+    persist.session.write(LandingPage.persistKey, values);
+  }, [values]);
 
   if (frontmatter.hide) {
     return null;
