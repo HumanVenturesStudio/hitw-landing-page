@@ -18,7 +18,7 @@ config: {
 
 ### Bad news first.
 
-Due to current pandemic conditions, our production is not able to service {{CONVERSION__ZIPCODE}}! We're looking forward to shipping nationwide soon.
+Due to current pandemic conditions, our production is not able to service <span class="zipcode">{{CONVERSION__ZIPCODE}}</span>! We're looking forward to shipping nationwide soon.
 
 </section>
 

@@ -226,3 +226,7 @@ blockquote footer {
     margin-right: calc(-1 * var(--block--padding--mobile));
   }
 }
+
+.zipcode {
+  color: var(--theme--color--white);
+}
