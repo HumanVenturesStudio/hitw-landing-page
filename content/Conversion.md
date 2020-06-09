@@ -9,20 +9,21 @@ useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
 	heading: "See if nu me is available in your area!",
-	first: {
-		label: "Enter your zip code",
-		hide: false,
-	},
-	last: {
-		label: "Enter your last name",
-		hide: true,
-	},
-	email: {
-		label: "Enter your email",
-		hide: false,
-	}
+	fields:  [
+		{
+			label: "Enter your zip code",
+			hide: false,
+			name: "ZIPCODE",
+			type: "text"
+		},
+		{
+			label: "Enter your email",
+			hide: false,
+			name: "EMAIL",
+			type: "email"
+		}
+	]
 }
-
 # ---------------------------------------------------------
 # Video: https://www.loom.com/share/f73ecc8c3ae54e1f9e8182bf1bce5682
 # Notes:
