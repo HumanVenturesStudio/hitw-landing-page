@@ -119,6 +119,7 @@ blockquote footer {
 }
 
 #Callout5 blockquote {
+  font-style: normal;
   padding: 0 0 var(--theme--unit--base);
 }
 
