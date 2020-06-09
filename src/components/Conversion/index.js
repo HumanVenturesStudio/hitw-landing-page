@@ -10,18 +10,44 @@ import styles from './styles.module.scss';
 
 export const CONFIG = {
   heading: null,
-  first: {
-    hide: false,
-    label: null,
-  },
-  last: {
-    hide: false,
-    label: null,
-  },
-  email: {
-    hide: false,
-    label: null,
-  },
+  fields: [
+    {
+      label: 'Enter your first name',
+      hide: false,
+      type: 'text',
+      name: 'FNAME',
+    },
+    {
+      label: 'Enter your last name',
+      hide: false,
+      type: 'text',
+      name: 'LNAME',
+    },
+    {
+      label: 'Enter your email',
+      hide: false,
+      type: 'text',
+      name: 'EMAIL',
+    },
+    {
+      label: 'Enter your phone',
+      type: 'tel',
+      hide: true,
+      name: 'PHONE',
+    },
+    {
+      label: 'Enter your birthday',
+      type: 'text',
+      hide: true,
+      name: 'BIRTHDAY',
+    },
+    {
+      label: 'Enter your zip code',
+      type: 'text',
+      hide: true,
+      name: 'ZIPCODE',
+    },
+  ],
 };
 
 /**
@@ -88,9 +114,7 @@ const Conversion = ({ release, id, config = {} }) => {
   const action = getMailchimpAction(html);
   const honeypot = getMailchimpHoneypot(html);
 
-  const [first, setFirst] = React.useState('');
-  const [last, setLast] = React.useState('');
-  const [email, setEmail] = React.useState('');
+  const [values, setValues] = React.useState({});
   const [hasIntent, setHasIntent] = React.useState();
 
   React.useEffect(() => {
@@ -135,46 +159,28 @@ const Conversion = ({ release, id, config = {} }) => {
               style={{ position: 'absolute', left: '-200vw' }}
               aria-hidden="true"
             />
-            {!configuration.first.hide && (
-              <FormField
-                label={configuration.first.label || 'Enter your first name'}
-                onChange={(e) => {
-                  setHasIntent(true);
-                  setFirst(e.target.value);
-                }}
-                type="text"
-                name="MERGE1"
-                value={first}
-                id={id}
-                required
-              />
-            )}
-            {!configuration.last.hide && (
-              <FormField
-                label={configuration.last.label || 'Enter your last name'}
-                onChange={(e) => {
-                  setHasIntent(true);
-                  setLast(e.target.value);
-                }}
-                type="text"
-                name="MERGE2"
-                value={last}
-                required
-              />
-            )}
-            {!configuration.email.hide && (
-              <FormField
-                label={configuration.email.label || 'Enter your email'}
-                onChange={(e) => {
-                  setHasIntent(true);
-                  setEmail(e.target.value);
-                }}
-                type="email"
-                name="MERGE0"
-                value={email}
-                required
-              />
-            )}
+            {configuration.fields.map((field) => {
+              return (
+                !field.hide && (
+                  <FormField
+                    key={field.name}
+                    label={
+                      field.label ||
+                      CONFIG.fields.find((f) => f.name === field.name)
+                    }
+                    onChange={(e) => {
+                      setHasIntent(true);
+                      setValues({ ...values, [field.name]: e.target.value });
+                    }}
+                    type="text"
+                    name={field.name}
+                    value={values[field.name] || ''}
+                    id={id}
+                    required
+                  />
+                )
+              );
+            })}
             <button
               className={cx('conversion--submit', styles.Submit)}
               type="submit"
