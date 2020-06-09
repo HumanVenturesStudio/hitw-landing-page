@@ -34,6 +34,10 @@ blockquote footer {
   top: calc(-2 * var(--block--padding));
 }
 
+#Callout1 .conversion--form  {
+  padding-left: 0;
+}
+
 @media (max-width: 767px) {
   .nume-kit {
     max-height: 30vh;

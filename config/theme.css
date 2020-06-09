@@ -156,7 +156,7 @@
   --conversion--form--background: var(--theme--color--black);
   --conversion--form--color: var(--theme--color--primary);
   --conversion--form--padding: var(--theme--unit--small);
-  --conversion--form--radius: calc(2 * var(--conversion--form--padding));
+  --conversion--form--radius: 5px;
   --conversion--form-input--background: var(--theme--color--black);
   --conversion--form-input--color: var(--theme--color--white);
   --conversion--form-input--border: 1px solid var(--theme--color--primary);
