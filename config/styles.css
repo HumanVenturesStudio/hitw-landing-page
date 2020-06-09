@@ -201,8 +201,31 @@ blockquote footer {
   display: none;
 }
 
-#Success {
+#Success .success--container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#Success .success--container section {
+  padding: var(--theme--unit--base);
+}
+
+#Success .success--container:last-child {
   text-align: center;
+}
+#Success .success--container:last-child section {
+  width: 100%;
+}
+#Success .success--left,
+#Success .success--right {
+  width: 50%;
+}
+@media (max-width: 767px) {
+#Success .success--container section,
+#Success .success--left,
+#Success .success--right {
+  width: 100%;
+  padding-bottom: 0;
+}
 }
 
 #Success .callout-cta {

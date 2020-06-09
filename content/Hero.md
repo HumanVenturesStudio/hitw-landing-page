@@ -3,7 +3,7 @@ name: Hero
 background: images/hero.jpg # Hero Background (Image), see: static/images/hero.jpg
 # background: videos/hero.mp4 # Hero Background (Video), see: static/videos/hero.mp4
 ctaLabel: Try Koala Now!  # CTA Label
-ctaUrl: "/#get-started"   # CTA Destination | Defaults to Conversion
+ctaUrl: "#get-started"   # CTA Destination | Defaults to Conversion
 hide: true               # Hides Element
 fullScreen: false         # Sets Hero to full height of screen
 # ---------------------------------------------------------
