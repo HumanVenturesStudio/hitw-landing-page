@@ -34,6 +34,10 @@ blockquote footer {
   top: calc(-2 * var(--block--padding));
 }
 
+#Callout1 .conversion--form  {
+  padding-left: 0;
+}
+
 @media (max-width: 767px) {
   .nume-kit {
     max-height: 30vh;
@@ -194,4 +198,30 @@ blockquote footer {
 
 #Footer .footer--content {
   display: none;
+}
+
+#Success {
+  text-align: center;
+}
+
+#Success .callout-cta {
+  --callout--cta--background: var(--theme--color--primary);
+  --callout--cta--color: var(--theme--color--black);
+}
+
+.typeform-widget {
+  min-height: 600px;
+  height: 80vh;
+  margin: var(--block--padding);
+  margin-left: calc(-1 * var(--block--padding));
+  margin-right: calc(-1 * var(--block--padding));
+}
+
+@media (max-width: 767px) {
+  .typeform-widget {
+    height: 100vh;
+    margin: var(--block--padding--mobile);
+    margin-left: calc(-1 * var(--block--padding--mobile));
+    margin-right: calc(-1 * var(--block--padding--mobile));
+  }
 }

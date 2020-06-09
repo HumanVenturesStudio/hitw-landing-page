@@ -68,6 +68,7 @@
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
   --page--background: var(--theme--color--black);
+  --page--color: var(--theme--color--primary);
   --page--link-active--color: var(--theme--color--primary);
   --page--link-hover--color: var(--theme--color--secondary);
   --page--link--color: var(--theme--color--primary);
@@ -155,6 +156,7 @@
   --conversion--form--background: var(--theme--color--black);
   --conversion--form--color: var(--theme--color--primary);
   --conversion--form--padding: var(--theme--unit--small);
+  --conversion--form--radius: 5px;
   --conversion--form-input--background: var(--theme--color--black);
   --conversion--form-input--color: var(--theme--color--white);
   --conversion--form-input--border: 1px solid var(--theme--color--primary);

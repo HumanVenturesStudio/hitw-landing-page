@@ -84,7 +84,10 @@ export const SuccessContent = graphql`
     html
     frontmatter {
       name
-      redirect
+      config {
+        redirect
+        redirect_in_seconds
+      }
     }
   }
 `;

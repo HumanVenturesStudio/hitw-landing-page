@@ -1,3 +1,14 @@
+@import 'common/styles';
+
 .ConversionSuccess {
-  padding: var(--theme--unit--base);
+  @include block;
+}
+
+.Content {
+  @include block-content;
+  @include block-content-columns;
+
+  & section:not(:last-of-type) {
+    padding-bottom: var(--theme--unit--base);
+  }
 }
