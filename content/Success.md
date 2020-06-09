@@ -2,7 +2,15 @@
 name: Success
 config: {
   redirect: false,
-  redirect_in_seconds: 5
+  redirectInSeconds: 5,
+  tokens: {
+    FNAME: '',
+    LNAME: '',
+    EMAIL: '',
+    PHONE: '',
+    ZIPCODE: '',
+    BIRTHDAY: '',
+  }
 }
 ---
 
