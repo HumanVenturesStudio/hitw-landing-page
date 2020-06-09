@@ -195,3 +195,8 @@ blockquote footer {
 #Footer .footer--content {
   display: none;
 }
+
+
+.typeform-widget {
+  min-height: 500px;
+}
