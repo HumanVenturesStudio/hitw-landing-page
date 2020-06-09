@@ -8,7 +8,7 @@ submitLabel: "Check Availability"		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
-	heading: "See if nu me is available in your area!",
+	heading: "Join The Coop, it's eggs-cellent :)",
 	fields:  [
 		{
 			label: "Enter your zip code",

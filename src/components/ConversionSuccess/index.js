@@ -5,32 +5,31 @@ import persist from 'common/lib/persist';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
 import DangerousHTMLContent from 'dangerously-set-html-content';
 import { graphql, useStaticQuery } from 'gatsby';
-import Cookies from 'js-cookie';
 import React from 'react';
 import styles from './styles.module.scss';
 
 const COOKIE_KEY = 'success';
 
-const CONFIG = {
-  redirect: true,
-  redirect_in_seconds: 5,
-};
-
-const FALLBACK_VALUES = {
+const TOKENS = {
   FNAME: '',
   LNAME: '',
   PHONE: '',
+  EMAIL: '',
   ZIPCODE: '',
   BIRTHDAY: '',
 };
 
+const CONFIG = {
+  redirect: true,
+  redirectInSeconds: 5,
+  tokens: TOKENS,
+};
+
 const ConversionSuccess = ({ release, config = {} }) => {
   const [successTracked, setSuccessTracked] = React.useState(
-    Cookies.get(COOKIE_KEY) || false
+    persist.session.read(COOKIE_KEY) || false
   );
 
-  const conversionValues = persist.session.read(CONVERSION_SESSION_KEY) || {};
-  const conversionKeys = Object.keys(conversionValues);
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Success" } }) {
@@ -47,35 +46,74 @@ const ConversionSuccess = ({ release, config = {} }) => {
     ...config,
   };
 
-  const matches = html.match(/{{(CONVERSION__[A-z]+)}}/gi) || [];
-  let cleanMarkup = html;
-  matches.forEach((match) => {
-    const token = match
+  const conversionValue = persist.session.read(CONVERSION_SESSION_KEY) || {};
+
+  /**
+   * Get Token from Token Match
+   * @param {string} tokenMatchStr "{{CONVERSION__FNAME}}"
+   * @returns {string} "FNAME"
+   */
+  const getToken = (tokenMatchStr) =>
+    tokenMatchStr
       .replace(/{/g, '')
       .replace(/}/g, '')
-      .split('__')[1];
-    if (token) {
-      cleanMarkup = cleanMarkup.replace(
-        `{{CONVERSION__${token}}}`,
-        conversionValues[token] || FALLBACK_VALUES[token] || ''
-      );
-    }
-  });
+      .split('__')[1] || null;
 
+  /**
+   * Get Token Value
+   * 1. From Conversion Submission (Session Storage)
+   * 2. From Theme Code (Frontmatter, Component Props)
+   * 3. From Component DEFAULTS
+   * 4. Empty String (Null Safe)
+   * @param {string} token
+   */
+  const getTokenValue = (token) =>
+    conversionValue[token] ||
+    configuration.tokens[token] ||
+    TOKENS[token] ||
+    '';
+
+  /**
+   * Replace {{CONVERSION__TOKEN}} from Raw HTML with values before it's parsed and rendered
+   * @param {string} rawHtml
+   */
+  const applyTokenValues = (rawHtml) => {
+    let updatedHtml = rawHtml;
+    const tokenMatches = updatedHtml.match(/{{(CONVERSION__[A-z]+)}}/gi) || [];
+    tokenMatches.forEach((tokenMatch) => {
+      const token = getToken(tokenMatch);
+      if (token) {
+        updatedHtml = updatedHtml.replace(
+          `{{CONVERSION__${token}}}`,
+          getTokenValue(token)
+        );
+      }
+    });
+    return updatedHtml;
+  };
+
+  /**
+   * Effect:
+   * Redirect after Success
+   */
   React.useEffect(() => {
     if (configuration.redirect === true) {
       setTimeout(() => {
         document.location.href = '/';
-      }, configuration.redirect_in_seconds * 1000);
+      }, configuration.redirectInSeconds * 1000);
     }
-  }, [configuration.redirect, configuration.redirect_in_seconds]);
+  }, [configuration.redirect, configuration.redirectInSeconds]);
 
+  /**
+   * Effect:
+   * Track Success Once
+   */
   React.useEffect(() => {
     if (!successTracked) {
       trackEvent(trackEvent.EVENT__CONVERSION__SUCCESS, {
         release,
       });
-      Cookies.set(COOKIE_KEY, true);
+      persist.session.write(COOKIE_KEY, true);
       setSuccessTracked(true);
     }
   }, [release, successTracked]);
@@ -86,7 +124,7 @@ const ConversionSuccess = ({ release, config = {} }) => {
       className={cx('success', styles.ConversionSuccess)}
     >
       <div className={cx('success--content', styles.Content)}>
-        <DangerousHTMLContent html={cleanMarkup} />
+        <DangerousHTMLContent html={applyTokenValues(html)} />
       </div>
     </div>
   );

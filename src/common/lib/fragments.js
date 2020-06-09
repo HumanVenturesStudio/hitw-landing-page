@@ -86,7 +86,15 @@ export const SuccessContent = graphql`
       name
       config {
         redirect
-        redirect_in_seconds
+        redirectInSeconds
+        tokens {
+          FNAME
+          LNAME
+          EMAIL
+          PHONE
+          ZIPCODE
+          BIRTHDAY
+        }
       }
     }
   }
