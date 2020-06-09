@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import { trackEvent } from 'common/lib/analytics';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
+import DangerousHTMLContent from 'dangerously-set-html-content';
 import { graphql, useStaticQuery } from 'gatsby';
 import Cookies from 'js-cookie';
 import React from 'react';
@@ -57,10 +58,9 @@ const ConversionSuccess = ({ release, config = {} }) => {
       id={`${frontmatter.name}`}
       className={cx('success', styles.ConversionSuccess)}
     >
-      <div
-        className={cx('success--content', styles.Content)}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className={cx('success--content', styles.Content)}>
+        <DangerousHTMLContent html={html} />
+      </div>
     </div>
   );
 };

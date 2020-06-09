@@ -36,9 +36,9 @@ module.exports = {
                 // Full list of Providers can be found here: https://oembed.com/providers.json
                 include: [
                   'YouTube',
-                  'Vimeo',
-                  'Twitter',
-                  'Instagram',
+                  // 'Vimeo',
+                  // 'Twitter',
+                  // 'Instagram',
                   // 'Twitch',
                   // 'TED',
                   // 'The New York Times',
