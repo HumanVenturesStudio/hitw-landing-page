@@ -1,11 +1,13 @@
-.hidden--mobile {
-  @media ($mq-mobile) {
-    display: none;
+:global {
+  .hidden--mobile {
+    @media ($mq-mobile) {
+      display: none;
+    }
   }
-}
 
-.hidden--desktop {
-  @media ($mq-desktop) {
-    display: none;
+  .hidden--desktop {
+    @media ($mq-desktop) {
+      display: none;
+    }
   }
 }
