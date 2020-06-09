@@ -26,11 +26,11 @@ Due to current pandemic conditions, our production is not able to service <span 
 
 ### But here's the good news...
 
-You can sign up for early access below to better customize your unique kit, tailored to your health needs & birth, for when we are available in your area. Definitely some beta-testing perks involved, too, by signing up!
+You can sign up for early access in your area below.  By completing this customization questionnaire, we can better tailor nu me to your health needs when we launch near you.  And yes - definitely some beta-testing perks involved, too!
 
-We’d love if you could answer a few questions.
 
-<a href="/sign-up" class="callout-cta">Sign me up!</a>
+
+<a href="/sign-up" class="callout-cta">customize my nu me!</a>
 
 </section>
 
