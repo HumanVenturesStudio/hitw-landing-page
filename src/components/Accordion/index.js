@@ -6,17 +6,28 @@ import React from 'react';
 import { withParagraphs } from '../../common/lib/strings';
 import styles from './styles.module.scss';
 
-const AccordionItem = ({ id, heading, content, isActive, setActive }) => {
+const AccordionItem = ({
+  id,
+  heading,
+  content,
+  active,
+  isActive,
+  setActive,
+}) => {
   const itemRef = React.useRef();
 
   React.useEffect(() => {
     if (document.location.hash === `#${id}`) {
+      // Set AccordionItem active if ID matches URL Hash
       setTimeout(() => {
         itemRef.current.focus();
         setActive(id);
       }, 100);
+    } else if (active) {
+      // Set AccordionItem active if it's configured to be active
+      setActive(id);
     }
-  }, [id, setActive]);
+  }, [active, id, setActive]);
 
   return (
     <>
