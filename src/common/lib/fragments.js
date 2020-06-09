@@ -122,17 +122,11 @@ export const ConversionContent = graphql`
       useCustom
       config {
         heading
-        first {
+        fields {
           label
           hide
-        }
-        last {
-          label
-          hide
-        }
-        email {
-          label
-          hide
+          name
+          type
         }
       }
     }
