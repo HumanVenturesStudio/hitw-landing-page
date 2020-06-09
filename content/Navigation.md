@@ -2,7 +2,7 @@
 name: Navigation
 links:
   - label: Sign Up
-    url: "/#get-started"
+    url: "#get-started"
   # - label: FAQ
   #   url: "/faq"
   # - label: External Link

@@ -1,5 +1,7 @@
 import cx from 'classnames';
 import { trackEvent } from 'common/lib/analytics';
+import { CONVERSION_SESSION_KEY } from 'common/lib/data';
+import persist from 'common/lib/persist';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
 import DangerousHTMLContent from 'dangerously-set-html-content';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -122,6 +124,10 @@ const Conversion = ({ release, id, config = {} }) => {
       trackEvent(trackEvent.EVENT__CONVERSION__INTENT, { release });
     }
   }, [hasIntent, release]);
+
+  React.useEffect(() => {
+    persist.session.write(CONVERSION_SESSION_KEY, values);
+  }, [values]);
 
   if (frontmatter.hide) {
     return null;

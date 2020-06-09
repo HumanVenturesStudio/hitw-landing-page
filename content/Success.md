@@ -2,36 +2,49 @@
 name: Success
 config: {
   redirect: false,
-  redirect_in_seconds: 5
+  redirectInSeconds: 5,
+  tokens: {
+    FNAME: '',
+    LNAME: '',
+    EMAIL: '',
+    PHONE: '',
+    ZIPCODE: 'your area',
+    BIRTHDAY: '',
+  }
 }
 ---
 
-<section>
+<section class="success--container">
+  <section class="success--left">
 
-### We're sorry - 
+  ### We're sorry -
 
-Due to current pandemic conditions, our production is not able to service your area (yet)! We're looking forward to shipping nationwide soon.
+  #### Due to current pandemic conditions, our production is not able to service to <span class="zipcode">{{CONVERSION__ZIPCODE}}</span> (yet)!
 
+  #### We're looking forward to shipping nationwide soon.
+
+  </section>
+
+  <section class="success--right">
+
+  ### But here's the good news...
+
+  You can sign up for early access in your area below.  By completing this customization questionnaire, we can better tailor nu me to your health needs when we launch near you. And yes&mdash;definitely some beta-testing perks involved, too!
+
+  <br/>
+
+  <a href="/customize-nu-me" class="callout-cta">customize my nu me!</a>
+
+  </section>
 </section>
 
-<section>
+<section class="success--container">
+  <section>
 
-### But here's the good news...
+  <br/>
+  <br/>
 
-You can sign up for early access below to better customize your unique kit, tailored to your health needs & birth, for when we are available in your area. Definitely some beta-testing perks involved, too, by signing up!
+  #### You can drop us a line anytime at [hello@lovenume.com](mailto:hello@lovenume.com)
 
-We’d love if you could answer a few questions.
-
-<a href="/sign-up" class="callout-cta">Sign me up!</a>
-
-</section>
-
-
-<section>
-
-<br/>
-<br/>
-
-#### You can drop us a line anytime at [hello@lovenume.com](mailto:hello@lovenume.com)
-
+  </section>
 </section>
