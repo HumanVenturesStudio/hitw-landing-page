@@ -1,11 +1,9 @@
 ---
 name: Success
-redirect: true    # Set `redirect` to false to remain on this page.
-                  # Otherwise it will send the user back to the
-                  # landing page after five seconds.
-# ---------------------------------------------------------
-# Notes:
-# ---------------------------------------------------------
+config: {
+  redirect: true,
+  redirect_in_seconds: 5
+}
 ---
 
 # Thank You!
