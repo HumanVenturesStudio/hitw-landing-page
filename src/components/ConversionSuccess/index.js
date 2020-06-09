@@ -1,13 +1,23 @@
-import React from 'react';
 import cx from 'classnames';
-import { useStaticQuery, graphql } from 'gatsby';
-
 import { trackEvent } from 'common/lib/analytics';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
-
+import { graphql, useStaticQuery } from 'gatsby';
+import Cookies from 'js-cookie';
+import React from 'react';
 import styles from './styles.module.scss';
 
-const ConversionSuccess = ({ release }) => {
+const COOKIE_KEY = 'success';
+
+const CONFIG = {
+  redirect: true,
+  redirect_in_seconds: 5,
+};
+
+const ConversionSuccess = ({ release, config = {} }) => {
+  const [successTracked, setSuccessTracked] = React.useState(
+    Cookies.get(COOKIE_KEY) || false
+  );
+
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Success" } }) {
@@ -18,17 +28,29 @@ const ConversionSuccess = ({ release }) => {
 
   const { html, frontmatter } = data.markdownRemark;
 
-  React.useEffect(() => {
-    if (frontmatter.redirect === true) {
-      setTimeout(() => {
-        document.location.href = '/';
-      }, 5000);
-    }
-  }, [frontmatter.redirect]);
+  const configuration = {
+    ...CONFIG,
+    ...frontmatter.config,
+    ...config,
+  };
 
   React.useEffect(() => {
-    trackEvent(trackEvent.EVENT__CONVERSION__SUCCESS, { release });
-  }, [release]);
+    if (configuration.redirect === true) {
+      setTimeout(() => {
+        document.location.href = '/';
+      }, configuration.redirect_in_seconds * 1000);
+    }
+  }, [configuration.redirect, configuration.redirect_in_seconds]);
+
+  React.useEffect(() => {
+    if (!successTracked) {
+      trackEvent(trackEvent.EVENT__CONVERSION__SUCCESS, {
+        release,
+      });
+      Cookies.set(COOKIE_KEY, true);
+      setSuccessTracked(true);
+    }
+  }, [release, successTracked]);
 
   return (
     <div
