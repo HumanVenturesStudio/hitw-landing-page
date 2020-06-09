@@ -22,12 +22,15 @@ We tailor each assortment based on your health, diet, and birth, so please sign 
 
 We’d love if you could answer a few questions.
 
-<a href="/#get-started" class="callout-cta">Sign me up!</a>
+<a href="/sign-up" class="callout-cta">Sign me up!</a>
 
 </section>
 
 
 <section>
+
+<br/>
+<br/>
 
 #### You can drop us a line anytime at [hello@lovenume.com](mailto:hello@lovenume.com)
 
