@@ -21,6 +21,7 @@
     "classnames": "^2.2.6",
     "css-loader": "^3.5.1",
     "dangerously-set-html-content": "^1.0.3",
+    "express": "^4.17.1",
     "gatsby": "^2.20.12",
     "gatsby-cli": "^2.12.26",
     "gatsby-plugin-google-fonts": "^1.0.1",

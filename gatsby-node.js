@@ -1,3 +1,4 @@
+const express = require(`express`);
 const path = require('path');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions, getConfig }) => {
@@ -10,4 +11,9 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions, getConfig }) => {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   };
   actions.replaceWebpackConfig(config);
+};
+
+// Enable development support for serving HTML from `./static` folder
+exports.onCreateDevServer = ({ app }) => {
+  app.use(express.static(`public`));
 };
