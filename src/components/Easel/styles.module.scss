@@ -198,7 +198,13 @@
   z-index: 999;
   transform: translate(0, -100px);
   transition: opacity var(--theme--animation-timing)
-    var(--theme--animation-ease);
+      var(--theme--animation-ease),
+    height calc(0.5 * var(--theme--animation-timing))
+      var(--theme--animation-ease),
+    width calc(0.5 * var(--theme--animation-timing))
+      var(--theme--animation-ease),
+    transform calc(0.5 * var(--theme--animation-timing))
+      var(--theme--animation-ease);
 }
 
 .CursorSmall {

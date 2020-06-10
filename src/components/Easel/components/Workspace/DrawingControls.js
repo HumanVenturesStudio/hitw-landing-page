@@ -19,6 +19,7 @@ export default function DrawingControls({
         fill="none"
         viewBox="0 0 112 112"
       >
+        <title>🖍 Go Go Tiny Crayon!</title>
         <rect width="112" height="112" fill="#7EEEA4" rx="56" />
         <rect
           width="66"
@@ -38,6 +39,7 @@ export default function DrawingControls({
         fill="none"
         viewBox="0 0 112 112"
       >
+        <title>🖍 Pow! Bigger Crayon.</title>
         <rect width="112" height="112" fill="#E7FFA1" rx="56" />
         <rect
           width="66"

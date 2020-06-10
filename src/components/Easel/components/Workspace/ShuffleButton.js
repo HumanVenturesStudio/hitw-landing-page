@@ -11,6 +11,7 @@ export default function ShuffleButton({ onClick }) {
       fill="none"
       viewBox="0 0 62 62"
     >
+      <title>🔀 Switch It Up!</title>
       <rect width="62" height="62" fill="#FFC3EE" rx="31" />
       <path
         fill="#A77DFF"

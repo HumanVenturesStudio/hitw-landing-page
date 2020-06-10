@@ -11,7 +11,7 @@ export default function ClearButton({ onClick }) {
       fill="none"
       viewBox="0 0 51 51"
     >
-      >
+      <title>🗑 Start Over!</title>
       <rect
         width="35.95"
         height="35.95"
