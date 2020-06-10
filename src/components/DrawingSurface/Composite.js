@@ -1,15 +1,8 @@
 import React, { useRef, useState } from 'react';
 import Draw from './Draw';
 import styles from './styles.module.scss';
-import useUserMedia from './useUserMedia';
 import watermark from './watermark.svg';
 
-const CAPTURE_OPTIONS = {
-  audio: false,
-  video: {
-    facingMode: 'user', // Front Camera
-  },
-};
 const FILE_FORMAT = 'image/png';
 const FILE_NAME = 'your-easel-artwork.png';
 
@@ -144,16 +137,14 @@ function handleCapture(video, drawing) {
  * @link Responsive Video: https://blog.logrocket.com/responsive-camera-component-react-hooks/
  */
 export default function Composite({
+  mediaStream,
   onCapture = handleDownload,
-  captureOptions = CAPTURE_OPTIONS,
   videoRatio = 1920 / 1080,
 }) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const videoRef = useRef();
   const drawRef = useRef();
-
-  const mediaStream = useUserMedia(captureOptions);
 
   React.useEffect(() => {
     const video = videoRef.current;

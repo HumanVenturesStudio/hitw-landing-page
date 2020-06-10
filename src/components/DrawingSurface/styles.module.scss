@@ -98,3 +98,15 @@
   z-index: 999;
   transform: translate(0, -100px);
 }
+
+.CompositeLoader {
+  height: inherit;
+  width: inherit;
+  cursor: pointer;
+  background: var(--theme--color--quaternary);
+}
+.CompositeLoaderArt {
+  display: block;
+  width: 100%;
+  height: auto;
+}
