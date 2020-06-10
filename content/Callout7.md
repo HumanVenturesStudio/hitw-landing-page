@@ -13,6 +13,6 @@ config:
 
 <section>
 
-### It’s about time we took care of new mothers,  as cultures around the world have for centuries.
+### It’s about time we took care of new mothers, as cultures around the world have for centuries.
 
 </section>
