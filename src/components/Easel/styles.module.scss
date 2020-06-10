@@ -20,7 +20,9 @@
 }
 
 @mixin button-hover {
-  transition: transform 150ms ease-in-out;
+  transition: transform calc(0.5 * var(--theme--animation-timing))
+    var(--theme--animation-ease);
+
   cursor: pointer;
   &:focus,
   &:hover {
@@ -62,19 +64,21 @@
 }
 
 .PreviewButton {
+  display: block;
   position: absolute;
   top: calc(100% + var(--theme--unit--base));
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  cursor: pointer;
-
-  transition: transform var(--theme--animation-timing)
-    var(--theme--animation-ease);
-
-  &:focus,
-  &:hover {
-    transform: scale(1.5);
+  left: calc(50% - 100px);
+  margin: auto;
+  height: auto;
+  width: 200px;
+  @include button-hover;
+  transition: transform calc(0.5 * var(--theme--animation-timing))
+      var(--theme--animation-ease),
+    box-shadow var(--theme--animation-timing) var(--theme--animation-ease);
+  box-shadow: 0 0 0 var(--theme--color--secondary);
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 30px var(--theme--color--secondary);
   }
 }
 
