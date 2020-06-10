@@ -21,9 +21,9 @@ config:
 
 ### **Let us take care of you.**
 
-Just add hot water, stir, and eat.  It's that easy.
+Just add hot water, stir, and sip.  
 
-Enjoy this morning bowl of nourishing broth, made from nutrient-dense whole foods, protein, and healing herbs, formulated uniquely for your body’s recovery needs.
+Enjoy this nourishing broth, made from nutrient-dense whole foods, protein, and healing herbs, formulated uniquely for your body’s recovery needs.
 
 The easiest way to single-handedly nourish yourself AND the baby.
 
