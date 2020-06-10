@@ -13,7 +13,7 @@ config:
 
 <section>
 
-![nu me &mdash; Morning Munchies Power Powder 01](/images/nume-package.png)
+![nu me nutritional broth for postpartum women](/images/sequence.svg)
 
 </section>
 
@@ -21,11 +21,11 @@ config:
 
 ### **Let us take care of you.**
 
-Just add hot water, stir, and eat.
+Just add hot water, stir, and eat.  It's that easy.
 
-Enjoy this morning bowl of porridge, made from nutrient-dense whole foods, protein, and healing herbs, formulated uniquely your body’s recovery needs.
+Enjoy this morning bowl of nourishing broth, made from nutrient-dense whole foods, protein, and healing herbs, formulated uniquely for your body’s recovery needs.
 
-The easiest way to single-handedly nourish yourself AND the babe.
+The easiest way to single-handedly nourish yourself AND the baby.
 
 <a href="#tell-me-more" class="callout-cta">Tell me more</a>
 
