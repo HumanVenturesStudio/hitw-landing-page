@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: -1;
 }
 
 .header .header--h1 {
@@ -15,4 +16,16 @@
 
 body {
   background-size: cover !important;
+}
+
+#Callout1 h2 {
+  /* font-size: var(--theme--font--size-xl); */
+}
+#Callout1 p {
+  /* font-size: var(--theme--font--size-m); */
+}
+
+
+#Footer .logo {
+  filter: invert();
 }

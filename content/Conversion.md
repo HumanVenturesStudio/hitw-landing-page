@@ -1,25 +1,25 @@
 ---
 name: Conversion
-submitLabel: Submit		# Label for Submit Button
+submitLabel: "easel me"		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
-	heading: "Join The Coop, it's eggs-cellent :)",
+	heading: "sign up now for early access.",
 	fields:  [
 		{
-			label: "Enter your first name",
+			label: "first name",
 			hide: false,
 			name: "FNAME",
 			type: "text"
 		},
 		{
-			label: "Enter your last name",
+			label: "last name",
 			hide: false,
 			name: "LNAME",
 			type: "text"
 		},
 		{
-			label: "Enter your email",
+			label: "favorite email",
 			hide: false,
 			name: "EMAIL",
 			type: "email"
