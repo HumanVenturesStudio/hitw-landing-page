@@ -2,7 +2,7 @@
 name: Callout3
 config:
   background: ""
-  format: center-aligned
+  format: right-aligned
   hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
@@ -12,9 +12,22 @@ config:
 
 <section>
 
-Sign up for a coop to stoop today
+![Koala](/images/coop-1.png)
 
-<a href="/#get-started" class="callout-cta">Sign Up</a>
+</section>
+
+
+<section>
+
+### Science-backed methodology
+
+Live human interaction develops language and social skills
+
+Standing position keeps your child active
+
+Usage of stylus and other materials promotes motor skills
+
+Controlled environment prevents your child from accessing other content on the internet
 
 </section>
 

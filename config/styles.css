@@ -5,3 +5,7 @@
   margin: auto;
   text-align: center;
 }
+
+body {
+  background-size: cover !important;
+}

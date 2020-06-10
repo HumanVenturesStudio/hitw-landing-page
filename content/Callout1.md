@@ -2,7 +2,7 @@
 name: Callout1
 config:
   background: ""
-  format: left-aligned
+  format: center-aligned
   hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
@@ -13,16 +13,13 @@ config:
 
 <section>
 
-![The Coop](/images/coop-2.png)
+## Introducing The Easel
 
-</section>
+Your child can create beautiful things
 
+$599 + $29/month
 
-<section>
-
-### World class chickens from coop to stoop
-
-Some people like chickens, we do too. So much in fact that we put them on our farm to grow fat and delicious until delivered to your stoop.
+Earn 50% off by joining the waitlist
 
 </section>
 

@@ -13,16 +13,22 @@ config:
 
 <section>
 
-![Koala](/images/coop-1.png)
+### Give the gift of modern art
+
+Live and on-demand classes delivered by trained instructors
+
+Real-time feedback
+
+1-on-1 and group instruction
+
+Download, share and print your childrens’  artwork
+
+All ages and skill levels
 
 </section>
 
 <section>
 
-### We love eggs too
-
-Right before we catch these juicy little birds, we take their eggs. We love eggs so we put them in recycled boxes with beautiful branding, pair them with your chickens, and deliver them to you too. Everybody loves them. So much in fact that Brenda from Queens, who’s definitely real, said this:
-
-> "Eggs give me life!"
+![Koala](/images/coop-1.png)
 
 </section>

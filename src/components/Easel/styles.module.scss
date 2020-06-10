@@ -1,0 +1,14 @@
+@import 'common/styles';
+
+.Easel {
+  flex: 1;
+  // Hack: 128px is header height
+  min-height: calc(-128px + 100vh);
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
