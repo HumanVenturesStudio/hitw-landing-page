@@ -13,30 +13,30 @@ export default function ClearButton({ onClick }) {
     >
       <title>🗑 Start Over!</title>
       <rect
-        width="35.95"
-        height="35.95"
-        x="25.42"
+        width="50"
+        height="50"
+        x="50.355"
         fill="#FF8A00"
-        rx="17.975"
-        transform="rotate(45 25.42 0)"
+        rx="25"
+        transform="rotate(90 50.355 0)"
       />
       <rect
-        width="21.185"
-        height="2.395"
-        x="18.777"
-        y="17.084"
+        width="29.464"
+        height="3.331"
+        x="16.116"
+        y="13.405"
         fill="#FFC3EE"
-        rx="1.197"
-        transform="rotate(45 18.777 17.084)"
+        rx="1.665"
+        transform="rotate(45 16.116 13.405)"
       />
       <rect
-        width="21.185"
-        height="2.395"
-        x="33.757"
-        y="18.777"
+        width="29.464"
+        height="3.331"
+        x="36.95"
+        y="15.76"
         fill="#FFC3EE"
-        rx="1.197"
-        transform="rotate(135 33.757 18.777)"
+        rx="1.665"
+        transform="rotate(135 36.95 15.76)"
       />
     </svg>
   );
