@@ -13,7 +13,7 @@ config:
 
 <section>
 
-![nu me &mdash; Morning Munchies Power Powder 01](/images/nume-package.png)
+![nu me nutritional broth for postpartum women](/images/sequence.svg)
 
 </section>
 
