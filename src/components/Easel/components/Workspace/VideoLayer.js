@@ -10,9 +10,14 @@ const CAPTURE_OPTIONS = {
   },
 };
 
+/**
+ * Note: Safari doesn't support navigator.permissions
+ * @param {function} callback
+ */
 function getCameraPermissions(callback) {
   return (
     NAVIGATOR &&
+    NAVIGATOR.permissions &&
     NAVIGATOR.permissions
       .query({ name: 'camera' })
       .then(callback)
