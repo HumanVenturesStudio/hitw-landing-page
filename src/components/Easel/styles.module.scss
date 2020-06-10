@@ -6,8 +6,19 @@
   height: 500px;
   margin: auto;
   border-radius: 50%;
-  overflow: hidden;
   border: 20px solid white;
+}
+
+@mixin button-hover {
+  transition: transform 150ms ease-in-out;
+  cursor: pointer;
+  &:focus,
+  &:hover {
+    transform: scale(1.15);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .Easel {
@@ -29,7 +40,6 @@
 
 .Preview {
   @include workspace;
-  overflow: visible;
 }
 
 .PreviewHeading {
@@ -76,15 +86,13 @@
   @include workspace;
 }
 
-.Button {
-  width: 75%;
-  min-width: 100px;
-  max-width: 250px;
-  margin-top: 24px;
-  padding: 12px 24px;
-  background: silver;
-  position: relative;
-  z-index: 2;
+.CaptureButton {
+  position: absolute;
+  top: calc(100% - 20px);
+  left: calc(50% - 37px);
+  width: 75px;
+  height: 75px;
+  @include button-hover;
 }
 
 /**
@@ -99,6 +107,13 @@
  * -------------------------------------------------------------- */
 
 .VideoLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .PreviewVideo,
@@ -150,4 +165,40 @@
   height: auto;
   z-index: 999;
   transform: translate(0, -100px);
+  transition: opacity var(--theme--animation-timing)
+    var(--theme--animation-ease);
+}
+
+.CursorSmall {
+  width: 100px;
+  transform: translate(0, -70px);
+}
+.CursorNormal {
+  width: 120px;
+  transform: translate(0, -82px);
+}
+.CursorMedium {
+  width: 150px;
+  transform: translate(0, -100px);
+}
+.CursorLarge {
+  width: 200px;
+  transform: translate(0, -130px);
+}
+
+.DrawingControl {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+  @include button-hover;
+}
+.DrawingControlSmaller {
+  left: 0;
+  margin-left: -75px;
+}
+.DrawingControlBigger {
+  right: 0;
+  margin-right: -75px;
 }

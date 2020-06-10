@@ -1,6 +1,7 @@
 import React from 'react';
 import watermark from '../../art/watermark.svg';
 import styles from '../../styles.module.scss';
+import CaptureButton from './CaptureButton';
 import ColoringBookLayer from './ColoringBookLayer';
 import DrawingLayer from './DrawingLayer';
 import VideoLayer from './VideoLayer';
@@ -153,10 +154,7 @@ export default function Workspace({ release }) {
       <ColoringBookLayer />
       <VideoLayer ref={videoRef} />
       <DrawingLayer ref={drawRef} />
-
-      <button className={styles.Button} onClick={captureWorkspace}>
-        Take a picture
-      </button>
+      <CaptureButton onClick={captureWorkspace} />
     </div>
   );
 }

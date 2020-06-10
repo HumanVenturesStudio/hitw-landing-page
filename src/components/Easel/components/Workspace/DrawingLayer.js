@@ -1,10 +1,13 @@
 import cx from 'classnames';
-import { randomColor, sample } from 'common/lib/random';
+import { randomColor } from 'common/lib/random';
 import React from 'react';
 import styles from '../../styles.module.scss';
 import Cursor from './Cursor';
+import DrawingControls from './DrawingControls';
 
-const SIZES = ['10px', '20px', '30px', '40px'];
+const SIZE_INCREMENT = 10;
+const MIN_SIZE = 10;
+const MAX_SIZE = 40;
 
 /**
  * Drawing SVG Surface
@@ -14,8 +17,9 @@ const SIZES = ['10px', '20px', '30px', '40px'];
 const DrawingLayer = React.forwardRef(({ className, pathProps }, ref) => {
   const [lines, setLines] = React.useState([]);
   const [isDrawing, setIsDrawing] = React.useState(false);
+  const [hideCursor, setHideCursor] = React.useState(false);
   const [color, setColor] = React.useState(randomColor());
-  const [size, setSize] = React.useState('10px');
+  const [size, setSize] = React.useState(MIN_SIZE);
   const [coordinates, setCoordinates] = React.useState({ x: 0, y: 0 });
   const drawRef = React.useRef();
 
@@ -23,6 +27,9 @@ const DrawingLayer = React.forwardRef(({ className, pathProps }, ref) => {
     document.addEventListener('mouseup', handleMouseUp);
     return () => document.removeEventListener('mouseup', handleMouseUp);
   }, []);
+
+  const incrementSize = () => size < MAX_SIZE && setSize(size + SIZE_INCREMENT);
+  const decrementSize = () => size > MIN_SIZE && setSize(size - SIZE_INCREMENT);
 
   function handleMouseDown(mouseEvent) {
     if (mouseEvent.button !== 0) {
@@ -64,7 +71,6 @@ const DrawingLayer = React.forwardRef(({ className, pathProps }, ref) => {
   function handleMouseUp() {
     setIsDrawing(false);
     setColor(randomColor());
-    setSize(sample(SIZES));
   }
 
   function relativeCoordinatesForEvent(mouseEvent) {
@@ -95,7 +101,13 @@ const DrawingLayer = React.forwardRef(({ className, pathProps }, ref) => {
           ))}
         </svg>
       </div>
-      <Cursor {...coordinates} color={color} />
+      <Cursor {...coordinates} color={color} size={size} hide={hideCursor} />
+      <DrawingControls
+        onSmaller={decrementSize}
+        onBigger={incrementSize}
+        onMouseEnterControls={() => setHideCursor(true)}
+        onMouseLeaveControls={() => setHideCursor(false)}
+      />
     </>
   );
 });
@@ -117,7 +129,7 @@ function DrawingLine({
   return (
     <path
       fill={fill}
-      strokeWidth={line.style.size}
+      strokeWidth={`${line.style.size}px`}
       stroke={line.style.color}
       strokeLinejoin={strokeLinejoin}
       strokeLinecap={strokeLinecap}

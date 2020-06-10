@@ -1,7 +1,15 @@
+import cx from 'classnames';
 import React from 'react';
 import styles from '../../styles.module.scss';
 
-export default function Cursor({ x, y, color }) {
+const CURSOR_SCALE = {
+  10: styles.CursorSmall,
+  20: styles.CursorNormal,
+  30: styles.CursorMedium,
+  40: styles.CursorLarge,
+};
+
+export default function Cursor({ x, y, color, size, hide }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,8 +18,9 @@ export default function Cursor({ x, y, color }) {
       style={{
         top: y,
         left: x,
+        opacity: hide ? 0.5 : 1,
       }}
-      className={styles.Cursor}
+      className={cx(styles.Cursor, CURSOR_SCALE[size])}
     >
       <path
         fill={color || '#F9C0F0'}
