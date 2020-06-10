@@ -10,6 +10,7 @@ import YouAreHere from './YouAreHere';
 
 const FILE_FORMAT = 'image/png';
 const FILE_NAME = 'your-easel-artwork.png';
+const FILE_DIMENSION = 500; //Default -- Tries to use
 
 /**
  * Workaround for browsers that can't set Filenames for Globs
@@ -52,32 +53,38 @@ const drawSVG = ({ ctx, svg, width, height, x = 0, y = 0 }) => {
   });
 };
 
-function handleCapture(video, drawing) {
+function handleCapture(video, drawing, coloringBook) {
   const canvas = document.createElement('canvas');
   let ctx = canvas.getContext('2d');
 
   // Video orientation
-  const orientation =
-    video.videoWidth < video.videoHeight ? 'portrait' : 'landscape';
+  const orientation = video
+    ? video.videoWidth < video.videoHeight
+      ? 'portrait'
+      : 'landscape'
+    : 'landscape';
   // Video short side is size of square/circle
-  const size =
-    video.videoWidth < video.videoHeight ? video.videoWidth : video.videoHeight;
+  const size = video
+    ? video.videoWidth < video.videoHeight
+      ? video.videoWidth
+      : video.videoHeight
+    : FILE_DIMENSION;
 
   canvas.width = size;
   canvas.height = size;
-
   // Draw Video into Canvas
-  ctx.drawImage(
-    video,
-    orientation === 'landscape' ? video.videoWidth / 2 - size / 2 : 0,
-    orientation === 'portrait' ? video.videoHeight / 2 - size / 2 : 0,
-    size,
-    size,
-    0,
-    0,
-    size,
-    size
-  );
+  video &&
+    ctx.drawImage(
+      video,
+      orientation === 'landscape' ? video.videoWidth / 2 - size / 2 : 0,
+      orientation === 'portrait' ? video.videoHeight / 2 - size / 2 : 0,
+      size,
+      size,
+      0,
+      0,
+      size,
+      size
+    );
 
   // Draw Drawing into Canvas
   drawSVG({
@@ -94,6 +101,9 @@ function handleCapture(video, drawing) {
       y: size - 25 - 40,
       x: size / 2 - 82 / 2,
     }).then((ctx) => {
+      // Add Coloring Book
+      coloringBook && ctx.drawImage(coloringBook, 0, 0, size, size);
+
       // Mask Canvas into Circle
       // Change Composite behavior to only draw image where mask is
       ctx.globalCompositeOperation = 'destination-in';
@@ -164,13 +174,11 @@ export default function Workspace({ release }) {
         handleIsDisabled={() => setSupportsVideo(false)}
       />
       <DrawingLayer ref={drawRef} reset={clearWorkspace} />
-      <ColoringBookLayer
-        ref={cbRef}
-        hide={supportsVideo}
-        reset={clearWorkspace}
-      />
+      <ColoringBookLayer ref={cbRef} hide={false} reset={clearWorkspace} />
       <CaptureButton
-        onClick={() => handleCapture(videoRef.current, drawRef.current)}
+        onClick={() =>
+          handleCapture(videoRef.current, drawRef.current, cbRef.current)
+        }
       />
       <ClearButton
         onClick={() => {

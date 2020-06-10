@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import { randomColor } from 'common/lib/random';
+import throttle from 'lodash.throttle';
 import React from 'react';
 import styles from '../../styles.module.scss';
 import Cursor from './Cursor';
@@ -96,7 +97,7 @@ const DrawingLayer = React.forwardRef(
           // onTouchStart={handleMouseDown}
           // onTouchMove={handleMouseMove}
           onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
+          onMouseMove={throttle(handleMouseMove, 500)}
         >
           <svg
             ref={ref}
