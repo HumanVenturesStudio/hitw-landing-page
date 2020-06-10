@@ -2,7 +2,7 @@
 name: Callout3
 config:
   background: ""
-  format: right-aligned
+  format: left-aligned
   hide: false               # Hides Element
 # ---------------------------------------------------------
 # Notes:
@@ -12,7 +12,7 @@ config:
 
 <section>
 
-![Koala](/images/coop-1.png)
+![Easel](/images/easel-art.svg)
 
 </section>
 

@@ -95,6 +95,7 @@
   // ================================================================== */
   --block--max-width: 1080px;
   --block--padding: var(--theme--unit--base);
+  --block--padding--mobile: var(--theme--unit--small);
 
 
   /* ==================================================================
@@ -132,10 +133,10 @@
   --callout--cta--padding: var(--theme--unit--small);
   --callout--cta--radius: var(--theme--radius);
 
-  --callout--left--background: var(--theme--color--secondary);
+  --callout--left--background: var(--theme--color--quaternary);
   --callout--left--color: var(--theme--color--white);
 
-  --callout--right--background: var(--theme--color--quaternary);
+  --callout--right--background: var(--theme--color--secondary);
   --callout--right--color: var(--theme--color--white);
 
   --callout--center--background: none;
@@ -154,10 +155,10 @@
   --conversion--form--background: var(--theme--color--tertiary);
   --conversion--form--color: var(--theme--color--white);
   --conversion--form--padding: var(--theme--unit--small);
-  --conversion--form--radius: calc(2 * var(--conversion--form--padding));
+  --conversion--form--radius: 0;
   --conversion--form-input--background: var(--theme--color--white);
   --conversion--form-input--color: var(--theme--color--black);
-  --conversion--form-input--border: 1px solid var(--theme--color--primary);
+  --conversion--form-input--border: 5px solid var(--theme--color--primary);
   --conversion--form-label--color: var(--theme--color--black);
   --conversion--form-submit--color: var(--theme--color--black);
   --conversion--form-submit--background: var(--theme--color--primary);

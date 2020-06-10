@@ -22,6 +22,7 @@ export default function Preview({ onClick }) {
         autoPlay
         playsInline
         muted
+        loop
       />
       <svg
         className={styles.PreviewButton}

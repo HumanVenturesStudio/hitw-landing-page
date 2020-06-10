@@ -18,6 +18,15 @@ body {
   background-size: cover !important;
 }
 
+#Callout2 .callout-content > section {
+  flex-direction: row;
+  --conversion--form--background: none;
+}
+
+#Callout2 .callout-content > section > * {
+  width: 50%;
+}
+
 #Callout1 h2 {
   /* font-size: var(--theme--font--size-xl); */
 }

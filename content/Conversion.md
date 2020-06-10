@@ -8,12 +8,12 @@ config: {
 	fields:  [
 		{
 			label: "first name",
-			hide: false,
+			hide: true,
 			name: "FNAME",
 			type: "text"
 		},
 		{
-			label: "last name",
+			label: "your nickname",
 			hide: false,
 			name: "LNAME",
 			type: "text"

@@ -11,24 +11,3 @@ config:
 # ---------------------------------------------------------
 ---
 
-<section>
-
-### Give the gift of modern art
-
-Live and on-demand classes delivered by trained instructors
-
-Real-time feedback
-
-1-on-1 and group instruction
-
-Download, share and print your childrens’  artwork
-
-All ages and skill levels
-
-</section>
-
-<section>
-
-![Koala](/images/coop-1.png)
-
-</section>
