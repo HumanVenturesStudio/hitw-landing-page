@@ -93,6 +93,10 @@ function handleCapture(video, drawing, coloringBook) {
     width: size,
     height: size,
   }).then((ctx) => {
+    // Add Coloring Book
+    coloringBook && ctx.drawImage(coloringBook, 0, 0, size, size);
+
+    // Add Easel Watermark
     drawSVG({
       ctx,
       svg: watermark,
@@ -101,9 +105,6 @@ function handleCapture(video, drawing, coloringBook) {
       y: size - 25 - 40,
       x: size / 2 - 82 / 2,
     }).then((ctx) => {
-      // Add Coloring Book
-      coloringBook && ctx.drawImage(coloringBook, 0, 0, size, size);
-
       // Mask Canvas into Circle
       // Change Composite behavior to only draw image where mask is
       ctx.globalCompositeOperation = 'destination-in';
