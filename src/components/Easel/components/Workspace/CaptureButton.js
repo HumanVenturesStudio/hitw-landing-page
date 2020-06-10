@@ -6,7 +6,7 @@ export default function CaptureButton({ onClick }) {
   return (
     <svg
       onClick={onClick}
-      className={cx(styles.CaptureButton)}
+      className={cx(styles.WorkspaceCaptureButton)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 71 71"

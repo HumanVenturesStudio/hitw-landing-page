@@ -9,6 +9,16 @@
   border: 20px solid white;
 }
 
+@mixin workspace-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 @mixin button-hover {
   transition: transform 150ms ease-in-out;
   cursor: pointer;
@@ -42,7 +52,41 @@
   @include workspace;
 }
 
-.PreviewHeading {
+.PreviewVideo {
+  opacity: 0;
+  transition: opacity var(--theme--animation-timing)
+    var(--theme--animation-ease);
+}
+.PreviewVideoPlaying {
+  opacity: 1;
+}
+
+.PreviewButton {
+  position: absolute;
+  top: calc(100% + var(--theme--unit--base));
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  cursor: pointer;
+
+  transition: transform var(--theme--animation-timing)
+    var(--theme--animation-ease);
+
+  &:focus,
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+/**
+ * Workspace
+ * -------------------------------------------------------------- */
+
+.Workspace {
+  @include workspace;
+}
+
+.WorkspaceHeading {
   position: absolute;
   top: 0;
   right: 0;
@@ -58,41 +102,34 @@
   }
 }
 
-.PreviewVideo {
-}
-
-.PreviewButton {
-  position: absolute;
-  top: calc(100% + var(--theme--unit--base));
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  cursor: pointer;
-  transition: transform var(--theme--animation-timing)
-    var(--theme--animation-ease);
-  &:focus,
-  &:hover {
-    transform: scale(1.5);
-    transition: transform var(--theme--animation-timing)
-      var(--theme--animation-ease);
-  }
-}
-
-/**
- * Workspace
- * -------------------------------------------------------------- */
-
-.Workspace {
-  @include workspace;
-}
-
-.CaptureButton {
+.WorkspaceCaptureButton {
   position: absolute;
   top: calc(100% - 20px);
   left: calc(50% - 37px);
   width: 75px;
   height: 75px;
   @include button-hover;
+  z-index: 2;
+}
+
+.WorkspaceShuffleButton {
+  position: absolute;
+  top: 25px;
+  left: calc(100% - 60px);
+  width: 60px;
+  height: 60px;
+  @include button-hover;
+  z-index: 2;
+}
+
+.WorkspaceClearButton {
+  position: absolute;
+  top: -10px;
+  left: calc(100% - 120px);
+  width: 50px;
+  height: 50px;
+  @include button-hover;
+  z-index: 2;
 }
 
 /**
@@ -100,20 +137,19 @@
  * -------------------------------------------------------------- */
 
 .ColoringBookLayer {
+  @include workspace-layer;
+  pointer-events: none;
 }
 
+.ColoringBookArt {
+  display: block;
+}
 /**
  * Video Layer
  * -------------------------------------------------------------- */
 
 .VideoLayer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  overflow: hidden;
+  @include workspace-layer;
 }
 
 .PreviewVideo,
@@ -136,14 +172,10 @@
  * Drawing Layer
  * -------------------------------------------------------------- */
 .DrawingLayer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  border-radius: inherit;
+  @include workspace-layer;
+  // z-index: 2;
 }
+
 .Drawing {
   display: block;
   width: 100%;

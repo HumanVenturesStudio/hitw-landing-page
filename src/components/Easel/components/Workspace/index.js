@@ -2,9 +2,11 @@ import React from 'react';
 import watermark from '../../art/watermark.svg';
 import styles from '../../styles.module.scss';
 import CaptureButton from './CaptureButton';
+import ClearButton from './ClearButton';
 import ColoringBookLayer from './ColoringBookLayer';
 import DrawingLayer from './DrawingLayer';
 import VideoLayer from './VideoLayer';
+import YouAreHere from './YouAreHere';
 
 const FILE_FORMAT = 'image/png';
 const FILE_NAME = 'your-easel-artwork.png';
@@ -143,18 +145,38 @@ function handleCapture(video, drawing) {
  * @link Responsive Video: https://blog.logrocket.com/responsive-camera-component-react-hooks/
  */
 export default function Workspace({ release }) {
+  const [supportsVideo, setSupportsVideo] = React.useState(true);
+  const [clearWorkspace, setClearWorkspace] = React.useState(false);
   const videoRef = React.useRef();
   const drawRef = React.useRef();
+  const cbRef = React.useRef();
 
-  const captureWorkspace = () =>
-    handleCapture(videoRef.current, drawRef.current);
+  React.useEffect(() => {
+    clearWorkspace && setClearWorkspace(false);
+  }, [clearWorkspace]);
 
   return (
     <div className={styles.Workspace}>
-      <ColoringBookLayer />
-      <VideoLayer ref={videoRef} />
-      <DrawingLayer ref={drawRef} />
-      <CaptureButton onClick={captureWorkspace} />
+      <YouAreHere />
+      <VideoLayer
+        ref={videoRef}
+        handleIsEnabled={() => setSupportsVideo(true)}
+        handleIsDisabled={() => setSupportsVideo(false)}
+      />
+      <DrawingLayer ref={drawRef} reset={clearWorkspace} />
+      <ColoringBookLayer
+        ref={cbRef}
+        hide={supportsVideo}
+        reset={clearWorkspace}
+      />
+      <CaptureButton
+        onClick={() => handleCapture(videoRef.current, drawRef.current)}
+      />
+      <ClearButton
+        onClick={() => {
+          setClearWorkspace(true);
+        }}
+      />
     </div>
   );
 }

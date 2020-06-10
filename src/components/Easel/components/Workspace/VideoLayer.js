@@ -23,7 +23,15 @@ function getCameraPermissions(callback) {
 }
 
 const VideoLayer = React.forwardRef(
-  ({ className, captureOptions = CAPTURE_OPTIONS }, ref) => {
+  (
+    {
+      className,
+      captureOptions = CAPTURE_OPTIONS,
+      handleIsEnabled,
+      handleIsDisabled,
+    },
+    ref
+  ) => {
     const [isVideoPlaying, setIsVideoPlaying] = React.useState(false);
     const [requestedMedia, setRequestedMedia] = React.useState(false);
 
@@ -38,19 +46,18 @@ const VideoLayer = React.forwardRef(
 
     React.useEffect(() => {
       getCameraPermissions(({ state }) => {
-        console.log('[UserMedia]', 'State', state);
         if (state === 'granted' && mediaStream) {
           // We have camera access
+          handleIsEnabled();
         } else if (state === 'denied' && requestedMedia === true) {
-          console.log('permission denied -- take additional steps');
           // We have been denied camera acess
-          // TODO: Show instructions to grant permission
+          handleIsDisabled();
         } else {
           // We have not yet requested camera access
           setRequestedMedia(true);
         }
       });
-    }, [mediaStream, requestedMedia]);
+    }, [handleIsDisabled, handleIsEnabled, mediaStream, requestedMedia]);
 
     if (!mediaStream) {
       return null;

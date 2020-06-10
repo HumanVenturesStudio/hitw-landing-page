@@ -14,103 +14,111 @@ const MAX_SIZE = 40;
  * @link Inspired By: https://pspdfkit.com/blog/2017/how-to-build-free-hand-drawing-using-react/
  * @link Stamps example: https://codesandbox.io/s/github/konvajs/site/tree/master/react-demos/drop_image_into_stage?from-embed
  */
-const DrawingLayer = React.forwardRef(({ className, pathProps }, ref) => {
-  const [lines, setLines] = React.useState([]);
-  const [isDrawing, setIsDrawing] = React.useState(false);
-  const [hideCursor, setHideCursor] = React.useState(false);
-  const [color, setColor] = React.useState(randomColor());
-  const [size, setSize] = React.useState(MIN_SIZE);
-  const [coordinates, setCoordinates] = React.useState({ x: 0, y: 0 });
-  const drawRef = React.useRef();
+const DrawingLayer = React.forwardRef(
+  ({ className, reset = false, pathProps }, ref) => {
+    const [lines, setLines] = React.useState([]);
+    const [isDrawing, setIsDrawing] = React.useState(false);
+    const [hideCursor, setHideCursor] = React.useState(false);
+    const [color, setColor] = React.useState(randomColor());
+    const [size, setSize] = React.useState(MIN_SIZE);
+    const [coordinates, setCoordinates] = React.useState({ x: 0, y: 0 });
+    const drawRef = React.useRef();
 
-  React.useEffect(() => {
-    document.addEventListener('mouseup', handleMouseUp);
-    return () => document.removeEventListener('mouseup', handleMouseUp);
-  }, []);
+    React.useEffect(() => {
+      document.addEventListener('mouseup', handleMouseUp);
+      return () => document.removeEventListener('mouseup', handleMouseUp);
+    }, []);
 
-  const incrementSize = () => size < MAX_SIZE && setSize(size + SIZE_INCREMENT);
-  const decrementSize = () => size > MIN_SIZE && setSize(size - SIZE_INCREMENT);
+    React.useEffect(() => {
+      reset && setLines([]);
+    }, [reset]);
 
-  function handleMouseDown(mouseEvent) {
-    if (mouseEvent.button !== 0) {
-      return;
-    }
+    const incrementSize = () =>
+      size < MAX_SIZE && setSize(size + SIZE_INCREMENT);
+    const decrementSize = () =>
+      size > MIN_SIZE && setSize(size - SIZE_INCREMENT);
 
-    const point = relativeCoordinatesForEvent(mouseEvent);
+    function handleMouseDown(mouseEvent) {
+      if (mouseEvent.button !== 0) {
+        return;
+      }
 
-    setIsDrawing(true);
-    setLines([
-      ...lines,
-      {
-        style: {
-          color,
-          size,
+      const point = relativeCoordinatesForEvent(mouseEvent);
+
+      setIsDrawing(true);
+      setLines([
+        ...lines,
+        {
+          style: {
+            color,
+            size,
+          },
+          points: [point],
         },
-        points: [point],
-      },
-    ]);
-  }
-
-  function handleMouseMove(mouseEvent) {
-    setCoordinates({
-      x: mouseEvent.nativeEvent.offsetX,
-      y: mouseEvent.nativeEvent.offsetY,
-    });
-
-    if (!isDrawing) {
-      return;
+      ]);
     }
 
-    const point = relativeCoordinatesForEvent(mouseEvent);
-    const line = lines.pop();
-    line.points.push(point);
+    function handleMouseMove(mouseEvent) {
+      setCoordinates({
+        x: mouseEvent.nativeEvent.offsetX,
+        y: mouseEvent.nativeEvent.offsetY,
+      });
 
-    setLines([...lines, line]);
-  }
+      if (!isDrawing) {
+        return;
+      }
 
-  function handleMouseUp() {
-    setIsDrawing(false);
-    setColor(randomColor());
-  }
+      const point = relativeCoordinatesForEvent(mouseEvent);
+      const line = lines.pop();
+      line.points.push(point);
 
-  function relativeCoordinatesForEvent(mouseEvent) {
-    const boundingRect = drawRef.current.getBoundingClientRect();
-    return {
-      x: mouseEvent.clientX - boundingRect.left,
-      y: mouseEvent.clientY - boundingRect.top,
-    };
-  }
+      setLines([...lines, line]);
+    }
 
-  return (
-    <>
-      <div
-        ref={drawRef}
-        className={cx(className, styles.DrawingLayer)}
-        // onTouchStart={handleMouseDown}
-        // onTouchMove={handleMouseMove}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-      >
-        <svg
-          ref={ref}
-          className={styles.Drawing}
-          xmlns="http://www.w3.org/2000/svg"
+    function handleMouseUp() {
+      setIsDrawing(false);
+      setColor(randomColor());
+    }
+
+    function relativeCoordinatesForEvent(mouseEvent) {
+      const boundingRect = drawRef.current.getBoundingClientRect();
+      return {
+        x: mouseEvent.clientX - boundingRect.left,
+        y: mouseEvent.clientY - boundingRect.top,
+      };
+    }
+
+    return (
+      <>
+        <div
+          ref={drawRef}
+          className={cx(className, styles.DrawingLayer)}
+          // onTouchStart={handleMouseDown}
+          // onTouchMove={handleMouseMove}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
         >
-          {lines.map((line, index) => (
-            <DrawingLine {...pathProps} key={index} line={line} />
-          ))}
-        </svg>
-      </div>
-      <Cursor {...coordinates} color={color} size={size} hide={hideCursor} />
-      <DrawingControls
-        onSmaller={decrementSize}
-        onBigger={incrementSize}
-        onMouseEnterControls={() => setHideCursor(true)}
-        onMouseLeaveControls={() => setHideCursor(false)}
-      />
-    </>
-  );
-});
+          <svg
+            ref={ref}
+            className={styles.Drawing}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {lines.map((line, index) => (
+              <DrawingLine {...pathProps} key={index} line={line} />
+            ))}
+          </svg>
+        </div>
+        <Cursor {...coordinates} color={color} size={size} hide={hideCursor} />
+        <DrawingControls
+          onSmaller={decrementSize}
+          onBigger={incrementSize}
+          onMouseEnterControls={() => setHideCursor(true)}
+          onMouseLeaveControls={() => setHideCursor(false)}
+        />
+      </>
+    );
+  }
+);
 
 function DrawingLine({
   fill = 'none',
