@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import { WIN } from 'common/lib/global';
 import { randomColor } from 'common/lib/random';
 import React from 'react';
 import styles from '../../styles.module.scss';
@@ -8,6 +9,7 @@ import DrawingControls from './DrawingControls';
 const SIZE_INCREMENT = 10;
 const MIN_SIZE = 10;
 const MAX_SIZE = 40;
+const ALWAYS_HIDE_CURSOR = WIN && 'ontouchstart' in WIN; // browser with Touch Events running on touch-capable device
 
 /**
  * Drawing SVG Surface
@@ -108,7 +110,12 @@ const DrawingLayer = React.forwardRef(
             ))}
           </svg>
         </div>
-        <Cursor {...coordinates} color={color} size={size} hide={hideCursor} />
+        <Cursor
+          {...coordinates}
+          color={color}
+          size={size}
+          hide={ALWAYS_HIDE_CURSOR || hideCursor}
+        />
         <DrawingControls
           onSmaller={decrementSize}
           onBigger={incrementSize}

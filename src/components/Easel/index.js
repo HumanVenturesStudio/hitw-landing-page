@@ -13,7 +13,14 @@ const Easel = ({ release, captureOptions }) => {
       {showPreview ? (
         <Preview onClick={() => setShowPreview(false)} />
       ) : (
-        <Workspace />
+        <>
+          {/* <Desktop> */}
+          <Workspace />
+          {/* </Desktop>
+          <Mobile>
+            <Workspace size={350} />
+          </Mobile> */}
+        </>
       )}
     </div>
   );

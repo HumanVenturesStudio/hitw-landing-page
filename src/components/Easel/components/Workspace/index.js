@@ -64,11 +64,7 @@ function handleCapture(video, drawing, coloringBook) {
       : 'landscape'
     : 'landscape';
   // Video short side is size of square/circle
-  const size = video
-    ? video.videoWidth < video.videoHeight
-      ? video.videoWidth
-      : video.videoHeight
-    : FILE_DIMENSION;
+  const size = FILE_DIMENSION;
 
   canvas.width = size;
   canvas.height = size;
@@ -155,7 +151,7 @@ function handleCapture(video, drawing, coloringBook) {
 /**
  * @link Responsive Video: https://blog.logrocket.com/responsive-camera-component-react-hooks/
  */
-export default function Workspace({ release }) {
+export default function Workspace({ release, size }) {
   const [supportsVideo, setSupportsVideo] = React.useState(true);
   const [clearWorkspace, setClearWorkspace] = React.useState(false);
   const videoRef = React.useRef();
@@ -175,7 +171,11 @@ export default function Workspace({ release }) {
         handleIsDisabled={() => setSupportsVideo(false)}
       />
       <DrawingLayer ref={drawRef} reset={clearWorkspace} />
-      <ColoringBookLayer ref={cbRef} hide={false} reset={clearWorkspace} />
+      <ColoringBookLayer
+        ref={cbRef}
+        hide={false && supportsVideo} // Note: Remove `false &&` to anchor coloring book to non-video experience
+        reset={clearWorkspace}
+      />
       <CaptureButton
         onClick={() =>
           handleCapture(videoRef.current, drawRef.current, cbRef.current)
