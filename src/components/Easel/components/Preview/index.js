@@ -1,32 +1,30 @@
-import cx from 'classnames';
 import React from 'react';
-import styles from './styles.module.scss';
+import styles from '../../styles.module.scss';
 
 export default function Preview({ onClick }) {
   return (
-    <div
-      className={cx(styles.VideoContainer, styles.Preview)}
-      onClick={onClick}
-    >
-      <h2>
-        You
-        <br />
-        Are Here
+    <div className={styles.Preview} onClick={onClick}>
+      <h2 className={styles.PreviewHeading}>
+        <span>
+          You
+          <br />
+          Are Here
+        </span>
       </h2>
       <video
-        className={styles.Video}
+        className={styles.PreviewVideo}
         src="/videos/placeholder-vid.mov"
         autoPlay
         playsInline
         muted
       />
       <svg
+        className={styles.PreviewButton}
         width="189"
         height="89"
         viewBox="0 0 189 89"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={styles.PlayButton}
         onClick={onClick}
       >
         <rect width="189" height="89" fill="#BFA1FF" />

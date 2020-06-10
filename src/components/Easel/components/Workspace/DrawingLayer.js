@@ -1,8 +1,8 @@
 import cx from 'classnames';
 import { randomColor, sample } from 'common/lib/random';
 import React from 'react';
+import styles from '../../styles.module.scss';
 import Cursor from './Cursor';
-import styles from './styles.module.scss';
 
 const SIZES = ['10px', '20px', '30px', '40px'];
 
@@ -79,7 +79,7 @@ const DrawingLayer = React.forwardRef(({ className, pathProps }, ref) => {
     <>
       <div
         ref={drawRef}
-        className={cx(className, styles.Draw)}
+        className={cx(className, styles.DrawingLayer)}
         // onTouchStart={handleMouseDown}
         // onTouchMove={handleMouseMove}
         onMouseDown={handleMouseDown}

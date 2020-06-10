@@ -1,6 +1,13 @@
 /* ==================================================================
 // Landing Page Styles -- Add any custom styles here
 // ================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .header .header--h1 {
   margin: auto;
   text-align: center;

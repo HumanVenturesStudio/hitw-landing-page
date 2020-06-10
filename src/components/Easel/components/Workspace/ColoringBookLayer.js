@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import React from 'react';
-import styles from './styles.module.scss';
+import styles from '../../styles.module.scss';
 
 const ColoringBookLayer = ({ className }) => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import watermark from '../../art/watermark.svg';
+import styles from '../../styles.module.scss';
 import ColoringBookLayer from './ColoringBookLayer';
 import DrawingLayer from './DrawingLayer';
-import styles from './styles.module.scss';
 import VideoLayer from './VideoLayer';
 
 const FILE_FORMAT = 'image/png';
@@ -88,7 +88,7 @@ function handleCapture(video, drawing) {
       svg: watermark,
       width: 82,
       height: 25,
-      y: size - 25 - 20,
+      y: size - 25 - 40,
       x: size / 2 - 82 / 2,
     }).then((ctx) => {
       // Mask Canvas into Circle
@@ -111,21 +111,24 @@ function handleCapture(video, drawing) {
       ctx.globalCompositeOperation = 'source-over';
 
       // Create Border / Stroke around circle
-      var gradient = ctx.createLinearGradient(0, 0, size, 0);
-      gradient.addColorStop('0', 'magenta');
-      gradient.addColorStop('0.5', 'blue');
-      gradient.addColorStop('1.0', 'red');
+      // const gradient = ctx.createLinearGradient(0, 0, size, 0);
+      // gradient.addColorStop('0', 'magenta');
+      // gradient.addColorStop('0.5', 'blue');
+      // gradient.addColorStop('1.0', 'red');
+
+      const strokeWeight = 20;
 
       ctx.beginPath();
       ctx.arc(
         size * 0.5, // x
         size * 0.5, // y
-        size * 0.49, // radius
+        size * 0.5 - strokeWeight, // radius
         0, // start angle
         2 * Math.PI // end angle
       );
-      ctx.lineWidth = 10;
-      ctx.strokeStyle = gradient;
+      ctx.lineWidth = strokeWeight;
+      // ctx.strokeStyle = gradient;
+      ctx.strokeStyle = '#fff';
       ctx.stroke();
 
       handleDownload(

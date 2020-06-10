@@ -1,8 +1,7 @@
-import cx from 'classnames';
 import { NAVIGATOR } from 'common/lib/global';
 import React from 'react';
+import styles from '../../styles.module.scss';
 import useUserMedia from '../../useUserMedia';
-import styles from './styles.module.scss';
 
 const CAPTURE_OPTIONS = {
   audio: false,
@@ -25,13 +24,10 @@ function getCameraPermissions(callback) {
 
 const VideoLayer = React.forwardRef(
   ({ className, captureOptions = CAPTURE_OPTIONS }, ref) => {
-    const [isPlaying, setIsVideoPlaying] = React.useState(false);
+    const [isVideoPlaying, setIsVideoPlaying] = React.useState(false);
     const [requestedMedia, setRequestedMedia] = React.useState(false);
 
-    const mediaStream = useUserMedia({
-      ...CAPTURE_OPTIONS,
-      ...captureOptions,
-    });
+    const mediaStream = useUserMedia(captureOptions);
 
     React.useEffect(() => {
       const video = ref.current;
@@ -56,12 +52,16 @@ const VideoLayer = React.forwardRef(
       });
     }, [mediaStream, requestedMedia]);
 
+    if (!mediaStream) {
+      return null;
+    }
+
     return (
-      <div className={cx(className, styles.VideoLayer)}>
+      <div className={styles.VideoLayer}>
         <video
           className={styles.Video}
           ref={ref}
-          hidden={!isPlaying}
+          hidden={!isVideoPlaying}
           onCanPlay={() => {
             setIsVideoPlaying(true);
             ref.current.play();
