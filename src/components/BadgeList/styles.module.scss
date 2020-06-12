@@ -6,7 +6,7 @@
 
   .Badge {
     padding: var(--theme--unit--base);
-    margin: auto;
+    margin: 0 auto;
     width: 20rem;
     &::before {
       display: none;
