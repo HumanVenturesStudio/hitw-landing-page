@@ -72,6 +72,7 @@ trackEvent.EVENT__CONVERSION__NAV_CLICK = 'conversion:navigation:click';
 trackEvent.EVENT__CONVERSION__NAV_OPEN = 'conversion:navigation:open';
 trackEvent.EVENT__CONVERSION__ACCORDION_OPEN = 'conversion:accordion:open';
 trackEvent.EVENT__CONVERSION__LINK_CLICK = 'conversion:link:click';
+trackEvent.EVENT__CONVERSION__REDIRECT = 'conversion:redirect';
 
 /**
  * Expose Track Event to Theme Javascript
