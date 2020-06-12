@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
+import { graphql, useStaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 import slugify from 'slugify';
 
 function SEO({
@@ -29,7 +29,7 @@ function SEO({
     description: description || data.description,
     keywords: [...data.keywords, ...keywords].join(','),
     lang: lang || data.lang,
-    twitter: data.twitter,
+    twitter: data.twitter || '',
     image: {
       src: `${data.url}${(image && image.src) || data.image.src}`,
       width: (image && image.width) || data.image.width,
