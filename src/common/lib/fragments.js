@@ -67,10 +67,9 @@ export const CalloutContent = graphql`
     id
     html
     frontmatter {
-      hide
       name
-      hide
       config {
+        hide
         background
         format
       }
@@ -127,7 +126,6 @@ export const ConversionContent = graphql`
     id
     html
     frontmatter {
-      hide
       name
       submitLabel
       useCustom

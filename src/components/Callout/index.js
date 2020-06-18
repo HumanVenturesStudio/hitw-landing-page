@@ -64,6 +64,8 @@ const Callout = ({ release, name, children, config = {} }) => {
     ...config,
   };
 
+  console.log(frontmatter.config);
+
   if (configuration.hide === true) {
     return null;
   }
