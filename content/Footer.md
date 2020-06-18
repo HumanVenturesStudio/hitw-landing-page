@@ -8,10 +8,3 @@ hide: false               # Hides Element
 # ---------------------------------------------------------
 ---
 
-<section>
-
-- [Facebook](#link)
-- [Instagram](#link)
-- [Twitter](#link)
-
-</section>

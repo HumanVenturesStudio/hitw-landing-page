@@ -3,7 +3,7 @@ name: Callout2
 config:
   background: ""
   format: right-aligned
-  hide: false               # Hides Element
+  hide: true               # Hides Element
 # ---------------------------------------------------------
 # Notes:
 #   - Formats: left-aligned, right-aligned, center-aligned, full-bleed, big-numbers

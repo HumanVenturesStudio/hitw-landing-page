@@ -11,15 +11,3 @@ config:
 # ---------------------------------------------------------
 ---
 
-<section>
-
-## Introducing The Easel
-
-Your child can create beautiful things
-
-$599 + $29/month
-
-Earn 50% off by joining the waitlist
-
-</section>
-

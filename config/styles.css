@@ -37,4 +37,10 @@ body {
 
 #Footer .logo {
   filter: invert();
+  margin: auto;
+  padding: 0;
+}
+
+#Footer .footer--content {
+  display: none;
 }

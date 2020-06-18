@@ -1,0 +1,13 @@
+.EaselPrototype {
+  position: relative;
+  display: inline-block;
+  background: 50% 50% no-repeat;
+  background-size: contain;
+
+  img[alt='Easel Prototype'] {
+    opacity: 0;
+  }
+  img[alt='Easel Content'] {
+    position: absolute;
+  }
+}

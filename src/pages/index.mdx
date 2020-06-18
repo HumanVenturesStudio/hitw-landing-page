@@ -1,5 +1,6 @@
 import Header from 'components/Header';
 import Easel from 'components/Easel';
+import EaselPrototype from 'components/EaselPrototype';
 import Hero from 'components/Hero';
 import Callout from 'components/Callout';
 import Conversion from 'components/Conversion';
@@ -7,7 +8,15 @@ import Footer from 'components/Footer';
 
 <Header/>
 <Easel/>
-<Callout name="Callout1"/>
+<Callout name="Callout1">
+  <section>
+
+## Introducing The Easel
+
+<EaselPrototype/>
+
+  </section>
+</Callout>
 <Callout name="Callout2">
   <section>
 
@@ -26,10 +35,13 @@ All ages and skill levels
 </section>
 <section>
   <Conversion id="availability" config={{ heading: null }}/>
-  </section>
+</section>
 </Callout>
 <Callout name="Callout3"/>
 <Conversion id="get-started"/>
+<section>
+  <img src="/images/easel-in-place.png" width="100%" />
+</section>
 <Footer/>
 
 
