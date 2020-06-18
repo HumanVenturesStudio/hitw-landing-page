@@ -1,8 +1,17 @@
 module.exports = {
-  title: 'The Coop',
-  description: 'Farm fresh eggs from coop to stoop',
-  twitter: '@TheCoop',
-  keywords: ['The Coop', 'Chickens', 'Eggs'],
+  title: 'Try Easel | 2020',
+  description:
+    'Easel is a brand new experience for kids from ages 2 to 101 to learn, grow, create and discover. Sign up to try it!',
+  twitter: '',
+  keywords: [
+    'Easel',
+    'Kids',
+    'Art',
+    'Enrichment',
+    'Remote Learning',
+    'Interactive',
+    'Child Development',
+  ],
   lang: 'en',
   image: {
     src: '/images/site.png', // Path to your image you placed in the 'static' folder
