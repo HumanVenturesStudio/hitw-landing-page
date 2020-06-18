@@ -67,7 +67,7 @@
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
   --page--background: var(--theme--color--primary) url('/images/background.svg') -25% 50% repeat-y;
-  --page--color: var(--theme--color--primary);
+  --page--color: var(--theme--color--white);
   --page--link-active--color: var(--theme--color--black);
   --page--link-hover--color: var(--theme--color--secondary);
   --page--link--color: var(--theme--color--black);
@@ -152,14 +152,14 @@
   /* ==================================================================
   // Block: Conversion
   // ================================================================== */
-  --conversion--form--background: var(--theme--color--tertiary);
+  --conversion--form--background: transparent;
   --conversion--form--color: var(--theme--color--white);
   --conversion--form--padding: var(--theme--unit--small);
   --conversion--form--radius: 0;
   --conversion--form-input--background: var(--theme--color--white);
   --conversion--form-input--color: var(--theme--color--black);
-  --conversion--form-input--border: 5px solid var(--theme--color--primary);
+  --conversion--form-input--border: 5px solid var(--theme--color--secondary);
   --conversion--form-label--color: var(--theme--color--black);
-  --conversion--form-submit--color: var(--theme--color--black);
-  --conversion--form-submit--background: var(--theme--color--primary);
+  --conversion--form-submit--color: var(--theme--color--primary);
+  --conversion--form-submit--background: var(  --theme--color--tertiary);
 }

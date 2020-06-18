@@ -14,8 +14,7 @@ config: {
 }
 ---
 
-# Thank You {{CONVERSION__FNAME}}!
 
-Please check your email {{CONVERSION__EMAIL}} for further instructions
+# Thanks for joining Easel's waitlist!
 
-
+Please check your email {{CONVERSION__EMAIL}} for cool Easel stuff coming soon!

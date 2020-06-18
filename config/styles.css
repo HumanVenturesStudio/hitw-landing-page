@@ -1,6 +1,7 @@
 /* ==================================================================
 // Landing Page Styles -- Add any custom styles here
 // ================================================================== */
+
 .header {
   position: fixed;
   top: 0;
@@ -43,4 +44,26 @@ body {
 
 #Footer .footer--content {
   display: none;
+}
+
+.conversion--form {
+  margin-bottom: var(--theme--unit--base);
+}
+
+.conversion--content-children {
+  text-align: center;
+  padding: var(--theme--unit--base);
+}
+
+
+.page--success .header {
+  position: relative;
+}
+
+.page--success {
+  text-align: center;
+}
+
+#Success section {
+  padding: var(--theme--unit--base);
 }

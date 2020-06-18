@@ -1,10 +1,10 @@
 ---
 name: Conversion
-submitLabel: "easel me"		# Label for Submit Button
+submitLabel: "Join our waitlist!"		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
-	heading: "sign up now for early access.",
+	heading: "",
 	fields:  [
 		{
 			label: "first name",
@@ -13,13 +13,13 @@ config: {
 			type: "text"
 		},
 		{
-			label: "your nickname",
-			hide: false,
+			label: "your name",
+			hide: true,
 			name: "LNAME",
 			type: "text"
 		},
 		{
-			label: "favorite email",
+			label: "Your email",
 			hide: false,
 			name: "EMAIL",
 			type: "email"
