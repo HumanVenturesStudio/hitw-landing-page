@@ -94,7 +94,7 @@ const FormField = ({ name, label, onChange, ...attrs }) => {
   );
 };
 
-const Conversion = ({ release, id, config = {} }) => {
+const Conversion = ({ release, id, children, config = {} }) => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Conversion" } }) {
@@ -144,6 +144,16 @@ const Conversion = ({ release, id, config = {} }) => {
   return (
     (frontmatter.useCustom && (
       <div id={id} className={cx('conversion--form', styles.CustomForm, {})}>
+        {children && (
+          <div
+            className={cx(
+              'conversion--content conversion--content-children',
+              styles.Content
+            )}
+          >
+            {configuration.wrap ? <section>{children}</section> : children}
+          </div>
+        )}
         <div className={cx('conversion--content', styles.Content)}>
           <DangerousHTMLContent html={html} />
         </div>
@@ -151,6 +161,16 @@ const Conversion = ({ release, id, config = {} }) => {
     )) ||
     (!frontmatter.useCustom && (
       <div className={cx('conversion--form', styles.Form)}>
+        {children && (
+          <div
+            className={cx(
+              'conversion--content conversion--content-children',
+              styles.Content
+            )}
+          >
+            {configuration.wrap ? <section>{children}</section> : children}
+          </div>
+        )}
         <div className={cx('conversion--content', styles.Content)}>
           {!isEmpty(configuration.heading) && (
             <h3 className={cx('conversion--heading', styles.ConversionHeading)}>
@@ -176,7 +196,10 @@ const Conversion = ({ release, id, config = {} }) => {
                     }
                     onChange={(e) => {
                       setHasIntent(true);
-                      setValues({ ...values, [field.name]: e.target.value });
+                      setValues({
+                        ...values,
+                        [field.name]: e.target.value,
+                      });
                     }}
                     type="text"
                     name={field.name}
