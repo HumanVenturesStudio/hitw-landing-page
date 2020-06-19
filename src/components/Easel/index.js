@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import { trackEvent } from 'common/lib/analytics';
 import withReleaseInfo from 'common/lib/withReleaseInfo';
 import React from 'react';
 import Preview from './components/Preview';
@@ -11,11 +12,16 @@ const Easel = ({ release, captureOptions }) => {
   return (
     <div className={cx('easel', styles.Easel)}>
       {showPreview ? (
-        <Preview onClick={() => setShowPreview(false)} />
+        <Preview
+          onClick={() => {
+            trackEvent('easel:click:try-it', { release });
+            setShowPreview(false);
+          }}
+        />
       ) : (
         <>
           {/* <Desktop> */}
-          <Workspace />
+          <Workspace release={release} />
           {/* </Desktop>
           <Mobile>
             <Workspace size={350} />

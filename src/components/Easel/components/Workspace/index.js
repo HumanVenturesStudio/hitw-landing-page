@@ -1,3 +1,4 @@
+import { trackEvent } from 'common/lib/analytics';
 import React from 'react';
 import watermark from '../../art/watermark.svg';
 import styles from '../../styles.module.scss';
@@ -167,8 +168,14 @@ export default function Workspace({ release, size }) {
       <YouAreHere />
       <VideoLayer
         ref={videoRef}
-        handleIsEnabled={() => setSupportsVideo(true)}
-        handleIsDisabled={() => setSupportsVideo(false)}
+        handleIsEnabled={() => {
+          trackEvent('easel:video:enabled', { release });
+          setSupportsVideo(true);
+        }}
+        handleIsDisabled={() => {
+          trackEvent('easel:video:disabled', { release });
+          setSupportsVideo(false);
+        }}
       />
       <DrawingLayer ref={drawRef} reset={clearWorkspace} />
       <ColoringBookLayer
@@ -177,12 +184,14 @@ export default function Workspace({ release, size }) {
         reset={clearWorkspace}
       />
       <CaptureButton
-        onClick={() =>
-          handleCapture(videoRef.current, drawRef.current, cbRef.current)
-        }
+        onClick={() => {
+          trackEvent('easel:click:download', { release });
+          handleCapture(videoRef.current, drawRef.current, cbRef.current);
+        }}
       />
       <ClearButton
         onClick={() => {
+          trackEvent('easel:click:clear', { release });
           setClearWorkspace(true);
         }}
       />
