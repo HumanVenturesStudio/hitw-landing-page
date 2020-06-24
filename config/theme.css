@@ -7,8 +7,8 @@
   /* ==================================================================
   // Color Palette
   // ================================================================== */
-  --theme--color--primary: #EEE1C3;
-  --theme--color--secondary: #676a73;
+  --theme--color--primary: #FBE6A3;
+  --theme--color--secondary: #333333;
   --theme--color--tertiary: #e5e5e5;
   --theme--color--quaternary: #EEE1C3;
   --theme--color--white: #FFF;
@@ -21,8 +21,8 @@
   /* ==================================================================
   // Typography
   // ================================================================== */
-  --theme--font--root--family: 'Canela', serif;
-  --theme--font--heading--family: 'Canela', serif;
+  --theme--font--root--family: 'Marr Sans Web', 'Open Sans', 'Helvetica Neue', sans-serif;
+  --theme--font--heading--family: 'Marr Sans Web', 'Open Sans', 'Helvetica Neue', sans-serif;
   --theme--font--root--size: 20px;
   --theme--font--root--weight: 300;
   --theme--font--root--weight-heavy: 500;

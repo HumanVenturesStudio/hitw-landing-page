@@ -16,121 +16,128 @@
  */
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Bold.eot');
-    src: url('/fonts/canela/subset-Canela-Bold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Bold.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Bold.woff') format('woff');
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-Bold.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-LightItalic.eot');
-    src: url('/fonts/canela/subset-Canela-LightItalic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-LightItalic.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-LightItalic.woff') format('woff');
-    font-weight: 300;
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-RegularItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-RegularItalic.woff') format('woff');
+    font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Medium.eot');
-    src: url('/fonts/canela/subset-Canela-Medium.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Medium.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Thin.eot');
-    src: url('/fonts/canela/subset-Canela-Thin.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Thin.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Thin.woff') format('woff');
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-Thin.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Regular.eot');
-    src: url('/fonts/canela/subset-Canela-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Regular.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Regular.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-SemiboldItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-Medium.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-BoldItalic.eot');
-    src: url('/fonts/canela/subset-Canela-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-BoldItalic.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-BoldItalic.woff') format('woff');
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-BoldItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Light.eot');
-    src: url('/fonts/canela/subset-Canela-Light.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Light.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Italic.eot');
-    src: url('/fonts/canela/subset-Canela-Italic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Italic.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-MediumItalic.eot');
-    src: url('/fonts/canela/subset-Canela-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-MediumItalic.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-MediumItalic.woff') format('woff');
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-MediumItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-MediumItalic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-Black.eot');
-    src: url('/fonts/canela/subset-Canela-Black.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-Black.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-BlackItalic.eot');
-    src: url('/fonts/canela/subset-Canela-BlackItalic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-BlackItalic.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-BlackItalic.woff') format('woff');
+    font-family: 'Marr Sans Web Ultra';
+    src: url('/fonts/marr/subset-MarrSansWeb-UltraBlackItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-UltraBlackItalic.woff') format('woff');
     font-weight: 900;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Canela';
-    src: url('/fonts/canela/subset-Canela-ThinItalic.eot');
-    src: url('/fonts/canela/subset-Canela-ThinItalic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/canela/subset-Canela-ThinItalic.woff2') format('woff2'),
-        url('/fonts/canela/subset-Canela-ThinItalic.woff') format('woff');
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-Regular.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-LightItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-Semibold.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-ThinItalic.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Marr Sans Web Ultra';
+    src: url('/fonts/marr/subset-MarrSansWeb-UltraBlack.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-UltraBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marr Sans Web';
+    src: url('/fonts/marr/subset-MarrSansWeb-Light.woff2') format('woff2'),
+        url('/fonts/marr/subset-MarrSansWeb-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
