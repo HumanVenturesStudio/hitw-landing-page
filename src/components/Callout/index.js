@@ -36,7 +36,7 @@ export const CONFIG = {
   hide: false,
 };
 
-const Callout = ({ release, name, children, config = {} }) => {
+const Callout = ({ id, release, name, children, config = {} }) => {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -70,7 +70,7 @@ const Callout = ({ release, name, children, config = {} }) => {
 
   return (
     <div
-      id={`${frontmatter.name}`}
+      id={`${id || frontmatter.name}`}
       className={cx(
         'callout',
         styles.Callout,
