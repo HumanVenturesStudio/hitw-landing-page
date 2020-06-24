@@ -118,14 +118,14 @@ blockquote footer {
   #our-story {
     background-image: none;
   }
+  #our-story h3 {
+    text-align: center;
+  }
 }
-
-
-
 
 #Callout6 .callout-content h3 {
   text-align: center;
-  margin: auto;
+  margin: var(--theme--unit--small) auto 0;
 }
 
 #Callout6 .callout-content section {
