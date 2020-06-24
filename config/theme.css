@@ -8,9 +8,9 @@
   // Color Palette
   // ================================================================== */
   --theme--color--primary: #FBE6A3;
-  --theme--color--secondary: #333333;
-  --theme--color--tertiary: #e5e5e5;
-  --theme--color--quaternary: #EEE1C3;
+  --theme--color--secondary: #BBD2E2;
+  --theme--color--tertiary: #333333;
+  --theme--color--quaternary: #1EAEA3;
   --theme--color--white: #FFF;
   --theme--color--black: #000;
   --theme--color--transparent: transparent;
@@ -24,7 +24,7 @@
   --theme--font--root--family: 'Marr Sans Web', 'Open Sans', 'Helvetica Neue', sans-serif;
   --theme--font--heading--family: 'Marr Sans Web', 'Open Sans', 'Helvetica Neue', sans-serif;
   --theme--font--root--size: 20px;
-  --theme--font--root--weight: 300;
+  --theme--font--root--weight: 400;
   --theme--font--root--weight-heavy: 500;
   --theme--font--root--line-height: 1.5;
   --theme--font--size-xxl: 5rem;
@@ -46,7 +46,7 @@
   /* ==================================================================
   // Radius
   // ================================================================== */
-  --theme--radius: 3px;
+  --theme--radius: 4rem;
 
 
   /* ==================================================================
@@ -67,12 +67,12 @@
   // Page
   // ================================================================== */
   --page--scroll-behavior: smooth; /* smooth|auto */
-  --page--background: var(--theme--color--black);
-  --page--color: var(--theme--color--primary);
-  --page--link-active--color: var(--theme--color--primary);
-  --page--link-hover--color: var(--theme--color--secondary);
-  --page--link--color: var(--theme--color--primary);
-  --page--footer--background: var(--theme--color--black);
+  --page--background: var(--theme--color--primary);
+  --page--color: var(--theme--color--black);
+  --page--link-active--color: var(--theme--color--black);
+  --page--link-hover--color: var(--theme--color--black);
+  --page--link--color: var(--theme--color--black);
+  --page--footer--background: none;
   --page--footer--padding: var(--theme--unit--base);
 
 
@@ -80,9 +80,9 @@
   // Page
   // ================================================================== */
   --navigation--link--color--active: var(--theme--color--black);
-  --navigation--link--color: var(--theme--color--primary);
-  --navigation--mobile-menu--background: var(--theme--color--tertiary);
-  --navigation--mobile-menu--color: var(--theme--color--primary);
+  --navigation--link--color: var(--theme--color--black);
+  --navigation--mobile-menu--background: var(--theme--color--secondary);
+  --navigation--mobile-menu--color: var(--theme--color--black);
 
 
   /* ==================================================================
@@ -114,8 +114,8 @@
   /* ==================================================================
   // Block: CTA (in Hero)
   // ================================================================== */
-  --cta--background: var(--theme--color--primary);
-  --cta--color: var(--theme--color--white);
+  --cta--background: var(--theme--color--secondary);
+  --cta--color: var(--theme--color--black);
   --cta--font-size: var(--theme--font--size-m);
   --cta--size: var(--theme--unit--base);
 
@@ -129,15 +129,15 @@
   --callout--number-bg: var(--theme--color--white);
   --callout--number-text: var(--theme--color--primary);
 
-  --callout--cta--background: var(--theme--color--primary);
+  --callout--cta--background: var(--theme--color--secondary);
   --callout--cta--color: var(--theme--color--black);
   --callout--cta--padding: var(--theme--unit--small);
   --callout--cta--radius: var(--theme--radius);
 
-  --callout--left--background: var(--theme--color--black);
-  --callout--left--color: var(--theme--color--primary);
+  --callout--left--background: var(--theme--color--primary);
+  --callout--left--color: var(--theme--color--black);
 
-  --callout--right--background: var(--theme--color--quaternary);
+  --callout--right--background: var(--theme--color--primary);
   --callout--right--color: var(--theme--color--black);
 
   --callout--center--background: var(--theme--color--white);
@@ -153,14 +153,14 @@
   /* ==================================================================
   // Block: Conversion
   // ================================================================== */
-  --conversion--form--background: var(--theme--color--black);
-  --conversion--form--color: var(--theme--color--primary);
+  --conversion--form--background: var(--theme--color--primary);
+  --conversion--form--color: var(--theme--color--black);
   --conversion--form--padding: var(--theme--unit--small);
-  --conversion--form--radius: 5px;
-  --conversion--form-input--background: var(--theme--color--black);
-  --conversion--form-input--color: var(--theme--color--white);
-  --conversion--form-input--border: 1px solid var(--theme--color--primary);
-  --conversion--form-label--color: var(--theme--color--primary);
+  --conversion--form--radius: var(--theme--radius);
+  --conversion--form-input--background: var(--theme--color--white);
+  --conversion--form-input--color: var(--theme--color--black);
+  --conversion--form-input--border: none;
+  --conversion--form-label--color: var(--theme--color--black);
   --conversion--form-submit--color: var(--theme--color--black);
-  --conversion--form-submit--background: var(--theme--color--primary);
+  --conversion--form-submit--background: var(--theme--color--quaternary);
 }

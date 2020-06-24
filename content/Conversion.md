@@ -4,11 +4,11 @@ labels:
   first: "Enter your first name"
   last: "Enter your last name"
   email: "Enter your email"
-submitLabel: "Check Availability"		# Label for Submit Button
+submitLabel: "Sign up"		# Label for Submit Button
 useCustom: false			# Replaces Built-in Form with any HTML pasted below
 hide: false						# Hides Element
 config: {
-	heading: "See if nu me is available in your area!",
+	heading: "Sign up today to try Nymbl!",
 	fields:  [
 		{
 			label: "Enter your zip code",

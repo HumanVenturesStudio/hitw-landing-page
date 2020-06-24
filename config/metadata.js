@@ -1,28 +1,9 @@
 module.exports = {
-  title: 'nu me | nutrition for postpartum women | 2020',
+  title: 'nymbl | Finally, a protein shake that tastes great. | 2020',
   description:
-    'Healing nutrients for postpartum women, made easy. nu me is a daily superfood broth, made in seconds with hot water. Based on centuries of herbal science to provide better, faster postpartum recovery.',
-  keywords: [
-    'nu me',
-    'nume',
-    'postpartum',
-    'recovery',
-    'nutrition',
-    'wellness',
-    'postnatal',
-    'new mom',
-    'pregnant nutrition',
-    'baby shower gift',
-    'bone broth',
-    'wellness',
-    'traditional chinese medicine',
-    'tcm',
-    'confinement diet',
-   'new mom gift',
-    'ayurveda',
-    'ayurvedic',
-    'new born',
-  ],
+    'Effortless way to get your daily dose of fruit and protein. High quality ingredients, no mess, no fuss. Just shake, twist, and enjoy. ',
+  keywords: ['nymbl'],
+  twitter: '',
   lang: 'en',
   image: {
     src: '/images/site.png', // Path to your image you placed in the 'static' folder

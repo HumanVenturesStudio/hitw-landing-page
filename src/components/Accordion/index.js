@@ -37,6 +37,7 @@ const AccordionItem = ({
         id={id}
         className={cx('accordion--heading', styles.ItemHeading, {
           [styles.active]: isActive,
+          active: isActive,
         })}
         onClick={() => {
           document.location.hash = id;

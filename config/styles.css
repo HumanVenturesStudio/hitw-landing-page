@@ -26,6 +26,14 @@ blockquote footer {
   display: flex;
   min-height: calc(100vh - 3 * var(--block--padding));
   flex-direction: column;
+  background: url('/images/bg-hero-fruit.png') 100% 100% no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 767px) {
+  #Callout1 {
+    min-height: 66vh;
+  }
 }
 
 #Callout1 > .callout-content {
@@ -34,157 +42,99 @@ blockquote footer {
   top: calc(-2 * var(--block--padding));
 }
 
-#Callout1 .conversion--form  {
-  padding-left: 0;
-}
 
 @media (max-width: 767px) {
-  .nume-kit {
-    max-height: 30vh;
-  }
   #Callout1 > .callout-content {
     margin: 0;
     top: 0;
   }
 }
 
-#Callout7,
-#Callout2 {
-  position: relative;
-  padding: calc( 2 * var(--theme--unit--base));
-  overflow: hidden;
-}
+#Callout3 {
+  --callout--center--background: var(--theme--color--secondary);
+  --callout--center--color: var(--theme--color--black);
 
-#Callout7::before,
-#Callout7::after,
-#Callout2::before,
-#Callout2::after {
-  content: '';
-  position: absolute;
-  top: -0.5rem; bottom: -0.5rem;
-  width: 100rem;
-  background: url('/images/mark.svg') 50% 50% no-repeat;
+  background-image: url('/images/bg-yellow-fruit.png'), url('/images/bg-red-fruit.png');
+  background-position: 0 50%, 100% 50%;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
-#Callout7::before,
-#Callout2::before {
-  left: 0;
-  transform: translateX(-50%);
+#smoothies {
+  background: var(--theme--color--white) url('/images/bg-red-fruits.svg') 98% 98% no-repeat;
+  background-size: 35%;
 }
-
-#Callout7::after,
-#Callout2::after {
-  right: 0;
-  transform: translateX(50%) rotate(180deg);
-}
-
 @media (max-width: 767px) {
-  #Callout7,
-  #Callout2 {
-    padding: var(--theme--unit--base);
+  #smoothies {
+    background: var(--theme--color--white);
   }
-  #Callout7::after,
-  #Callout2::before {
+}
+
+#smoothies .callout-content > section {
+  display: flex;
+  flex-direction: row;
+}
+
+#smoothies .callout-content > section > section {
+  flex: 1 0 50%;
+}
+
+#smoothies .flavor-art {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 var(--theme--unit--large);
+}
+@media (max-width: 767px) {
+  #smoothies .flavor-art {
     display: none;
   }
 }
 
-#Callout7 {
-  --callout--center--background: var(--theme--color--black);
-  --callout--center--color: var(--theme--color--white);
+#smoothies .flavor-art img {
+  max-width: 500px;
 }
 
-#Callout7::before,
-#Callout7::after {
-  filter: invert();
+#smoothies .accordion--heading  {
+  border-color: #e2e2e2
 }
 
-#Callout6 {
+#smoothies .accordion--heading::after {
+  background-image: url('/images/plus.svg');
+  background-size: 33px;
+  height: 35px;
+  width: 35px;
+}
+#smoothies .accordion--heading.active::after {
+  background-image: url('/images/minus.svg');
 }
 
-#Callout6 > .callout-content section {
-  padding: var(--theme--unit--base);
-  cursor: pointer;
+#our-story {
+  background: var(--theme--color--secondary) url('/images/bg-pineapple.png') 100% 100% no-repeat;
+  background-size: cover;
+
 }
 
-#Callout6 > .callout-content section {
-  padding: var(--theme--unit--base);
-  cursor: pointer;
+#Callout6 .callout-content h3 {
+  text-align: center;
+  margin: auto;
 }
 
-#Callout3 .callout-cta {
-  --callout--cta--background: var(--theme--color--black);
-  --callout--cta--color: var(--theme--color--primary);
-}
-
-#Callout5 blockquote {
-  font-style: normal;
-  padding: 0 0 var(--theme--unit--base);
-}
-
-#Callout5 ul {
+#Callout6 .callout-content section {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-#Callout5 ul li {
-  width: 50%;
-  padding: 0 var(--theme--unit--base);
-}
-#Callout5 ul li::before {
-  display: none;
-}
-
-#Callout5 blockquote footer {
-  font-size: var(--theme--font--size-m);
+#Callout6 .callout-content section > .ig-embed {
+  margin: auto;
   padding: var(--theme--unit--small);
+  flex: 1 0 50%;
 }
 
-#Callout5 ul li blockquote footer {
-  font-size: var(--theme--font--size);
+#Callout6 .callout-content section > .ig-embed iframe {
+  margin: auto !important;
 }
 
-#Callout5 ul li blockquote {
-  font-size: var(--theme--font--size);
-  padding: 0;
-}
-
-@media (max-width: 767px) {
-  #Callout5 ul {
-    display: block;
-  }
-  #Callout5 ul li {
-    width: auto;
-  }
-  #Callout5 blockquote footer,
-  #Callout5 blockquote,
-  #Callout5 blockquote h3,
-  #Callout5 blockquote p,
-  #Callout5 ul li,
-  #Callout5 blockquote ul li blockquote {
-    line-height: inherit;
-    font-size: var(--theme--font--size);
-    padding: 0;
-    margin: 0;
-  }
-  #Callout5 blockquote footer {
-    padding: calc(0.5 * var(--theme--unit--base)) 0 var(--theme--unit--base);
-  }
-  #Callout5 li:last-child blockquote footer {
-    padding-bottom: calc(0.5 * var(--theme--unit--base));
-  }
-}
-
-
-@media (max-width: 767px) {
-  #Callout8 {
-    padding: var(--theme--unit--base) 0;
-
-  }
-  #Callout8 .callout-content section {
-    padding: 0;
-  }
-}
 
 @media (max-width: 767px) {
   #Footer {
@@ -201,55 +151,15 @@ blockquote footer {
   display: none;
 }
 
-#Success .success--container {
-  display: flex;
-  flex-wrap: wrap;
-}
-#Success .success--container section {
-  padding: var(--theme--unit--base);
+.page--try-it body {
+  background: var(--theme--color--primary) url('/images/bg-hero-fruit.png') 100% 100% no-repeat;
+  background-size: contain;
 }
 
-#Success .success--container:last-child {
+#Success .success--content {
   text-align: center;
 }
-#Success .success--container:last-child section {
-  width: 100%;
-}
-#Success .success--left,
-#Success .success--right {
-  width: 50%;
-}
-@media (max-width: 767px) {
-#Success .success--container section,
-#Success .success--left,
-#Success .success--right {
-  width: 100%;
-  padding-bottom: 0;
-}
-}
 
-#Success .callout-cta {
-  --callout--cta--background: var(--theme--color--primary);
-  --callout--cta--color: var(--theme--color--black);
-}
-
-.typeform-widget {
-  min-height: 600px;
-  height: 80vh;
-  margin: var(--block--padding);
-  margin-left: calc(-1 * var(--block--padding));
-  margin-right: calc(-1 * var(--block--padding));
-}
-
-@media (max-width: 767px) {
-  .typeform-widget {
-    height: 100vh;
-    margin: var(--block--padding--mobile);
-    margin-left: calc(-1 * var(--block--padding--mobile));
-    margin-right: calc(-1 * var(--block--padding--mobile));
-  }
-}
-
-.zipcode {
-  color: var(--theme--color--white);
+#Success .success--content > * {
+  margin: auto
 }
