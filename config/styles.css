@@ -33,6 +33,7 @@ blockquote footer {
 @media (max-width: 767px) {
   #Callout1 {
     min-height: 66vh;
+    background-size: 50%;
   }
 }
 
@@ -111,8 +112,16 @@ blockquote footer {
 #our-story {
   background: var(--theme--color--secondary) url('/images/bg-pineapple.png') 100% 100% no-repeat;
   background-size: cover;
-
 }
+
+@media (max-width: 767px) {
+  #our-story {
+    background-image: none;
+  }
+}
+
+
+
 
 #Callout6 .callout-content h3 {
   text-align: center;
@@ -130,6 +139,14 @@ blockquote footer {
   padding: var(--theme--unit--small);
   flex: 1 0 50%;
 }
+@media (max-width: 767px) {
+  #Callout6 .callout-content section,
+  #Callout6 .callout-content section > .ig-embed {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 
 #Callout6 .callout-content section > .ig-embed iframe {
   margin: auto !important;
