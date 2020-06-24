@@ -2,11 +2,26 @@ import cx from 'classnames';
 import React from 'react';
 import styles from '../../styles.module.scss';
 
+const PaletteDot = ({ color = 'white', onClick }) => (
+  <svg
+    onClick={() => onClick(color)}
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="20" cy="20" r="19" fill={color} stroke="#000" strokeWidth="2" />
+  </svg>
+);
+
 export default function DrawingControls({
   onBigger,
   onSmaller,
   onMouseEnterControls,
   onMouseLeaveControls,
+  onChooseColor,
+  showPalette = true,
 }) {
   return (
     <>
@@ -59,6 +74,18 @@ export default function DrawingControls({
           transform="rotate(90 59.73 23)"
         />
       </svg>
+      {showPalette && (
+        <div className={styles.DrawingPalette}>
+          <PaletteDot color={'#DF1C1C'} onClick={onChooseColor} />
+          <PaletteDot color={'#FF9223'} onClick={onChooseColor} />
+          <PaletteDot color={'#E2F004'} onClick={onChooseColor} />
+          <PaletteDot color={'#08EA0C'} onClick={onChooseColor} />
+          <PaletteDot color={'#2205DD'} onClick={onChooseColor} />
+          <PaletteDot color={'#460AA7'} onClick={onChooseColor} />
+          <PaletteDot color={'#EEEEEE'} onClick={onChooseColor} />
+          <PaletteDot color={'#111111'} onClick={onChooseColor} />
+        </div>
+      )}
     </>
   );
 }

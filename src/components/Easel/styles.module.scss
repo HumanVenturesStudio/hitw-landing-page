@@ -44,7 +44,7 @@
   width: 100%;
   position: relative;
   user-select: none;
-  padding-bottom: calc(2 * var(--theme--unit--large));
+  padding: var(--theme--unit--large) 0;
 
   @media ($mq-mobile) {
     min-height: 50vh;
@@ -250,4 +250,52 @@
 .DrawingControlBigger {
   right: 0;
   margin-right: -75px;
+}
+
+.DrawingPalette {
+  position: absolute;
+  bottom: 100%;
+  left: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  svg {
+    @include button-hover;
+
+    position: relative;
+    display: block;
+    cursor: grab;
+
+    &:nth-child(1) {
+      top: 18px;
+      left: 7px;
+    }
+    &:nth-child(2) {
+      top: -5px;
+      left: 3px;
+    }
+    &:nth-child(3) {
+      top: -21px;
+      left: 1px;
+    }
+    &:nth-child(4) {
+      top: -29px;
+    }
+    &:nth-child(5) {
+      top: -29px;
+    }
+    &:nth-child(6) {
+      top: -21px;
+      right: 1px;
+    }
+    &:nth-child(7) {
+      top: -5px;
+      right: 3px;
+    }
+    &:nth-child(8) {
+      top: 18px;
+      right: 7px;
+    }
+  }
 }

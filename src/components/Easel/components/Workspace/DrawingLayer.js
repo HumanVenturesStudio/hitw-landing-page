@@ -26,10 +26,16 @@ const DrawingLayer = React.forwardRef(
     const [coordinates, setCoordinates] = React.useState({ x: 0, y: 0 });
     const drawRef = React.useRef();
 
+    const showPalette = true; // set to false to fallback to random colors
+
     React.useEffect(() => {
+      const handleMouseUp = () => {
+        setIsDrawing(false);
+        !showPalette && setColor(randomColor());
+      };
       document.addEventListener('mouseup', handleMouseUp);
       return () => document.removeEventListener('mouseup', handleMouseUp);
-    }, []);
+    }, [showPalette]);
 
     React.useEffect(() => {
       reset && setLines([]);
@@ -77,11 +83,6 @@ const DrawingLayer = React.forwardRef(
       setLines([...lines, line]);
     }
 
-    function handleMouseUp() {
-      setIsDrawing(false);
-      setColor(randomColor());
-    }
-
     function relativeCoordinatesForEvent(mouseEvent) {
       const boundingRect = drawRef.current.getBoundingClientRect();
       return {
@@ -121,6 +122,8 @@ const DrawingLayer = React.forwardRef(
           onBigger={incrementSize}
           onMouseEnterControls={() => setHideCursor(true)}
           onMouseLeaveControls={() => setHideCursor(false)}
+          onChooseColor={(color) => setColor(color)}
+          showPalette={showPalette}
         />
       </>
     );
