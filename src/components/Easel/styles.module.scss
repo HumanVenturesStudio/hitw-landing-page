@@ -36,7 +36,7 @@
 .Easel {
   flex: 1;
   // Hack: 128px is header height
-  min-height: calc(-128px + 100vh);
+  // min-height: calc(-200px + 100vh);
   flex: 1;
   display: flex;
   flex-flow: column;
@@ -44,6 +44,11 @@
   width: 100%;
   position: relative;
   user-select: none;
+  padding-bottom: calc(2 * var(--theme--unit--large));
+
+  @media ($mq-mobile) {
+    min-height: 50vh;
+  }
 }
 
 /**
@@ -52,6 +57,11 @@
 
 .Preview {
   @include workspace;
+
+  @media ($mq-mobile) {
+    width: 90vw;
+    height: 90vw;
+  }
 }
 
 .PreviewVideo {

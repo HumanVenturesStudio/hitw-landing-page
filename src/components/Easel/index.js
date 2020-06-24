@@ -12,12 +12,14 @@ const Easel = ({ release, captureOptions }) => {
   return (
     <div className={cx('easel', styles.Easel)}>
       {showPreview ? (
-        <Preview
-          onClick={() => {
-            trackEvent('easel:click:try-it', { release });
-            setShowPreview(false);
-          }}
-        />
+        <>
+          <Preview
+            onClick={() => {
+              trackEvent('easel:click:try-it', { release });
+              setShowPreview(false);
+            }}
+          />
+        </>
       ) : (
         <>
           {/* <Desktop> */}
