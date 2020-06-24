@@ -7,12 +7,18 @@
   .Badge {
     padding: var(--theme--unit--base);
     margin: 0 auto;
-    width: 20rem;
+    // width: 15rem;
+    &.three {
+      flex: 1 0 30%;
+    }
+    &.four {
+      flex: 1 0 20%;
+    }
     &::before {
       display: none;
     }
     @media ($mq-mobile) {
-      width: 50%;
+      flex: 1 0 45% !important;
       padding: var(--theme--unit--small);
     }
   }
