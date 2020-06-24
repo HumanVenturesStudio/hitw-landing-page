@@ -14,7 +14,7 @@ export default function Preview({ onClick }) {
         className={cx(styles.PreviewVideo, {
           [styles.PreviewVideoPlaying]: isVideoPlaying,
         })}
-        src="/videos/placeholder-vid.mov"
+        src="/videos/drawing.mov"
         onCanPlay={() => {
           setIsVideoPlaying(true);
           videoRef.current.play();
