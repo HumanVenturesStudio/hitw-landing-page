@@ -44,7 +44,7 @@
   width: 100%;
   position: relative;
   user-select: none;
-  padding: var(--theme--unit--large) 0;
+  padding: var(--theme--unit--large) 0 calc(2 * var(--theme--unit--large));
 
   @media ($mq-mobile) {
     min-height: 50vh;

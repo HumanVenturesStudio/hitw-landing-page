@@ -4,13 +4,5 @@
   background: 50% 50% no-repeat;
   background-size: contain;
 
-  img[alt='Easel Prototype'] {
-    opacity: 0;
-  }
-  img[alt='Easel Content'] {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  padding: var(--theme--unit--small) 0 0;
 }
