@@ -5,4 +5,8 @@
   background-size: contain;
 
   padding: var(--theme--unit--small) 0 0;
+
+  img {
+    max-height: 80vh;
+  }
 }
