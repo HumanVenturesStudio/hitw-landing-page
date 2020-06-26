@@ -17,6 +17,6 @@ Effortless way to get your daily dose of fruit and protein. High quality ingredi
 
 Just shake, twist, and enjoy.
 
-<a href="/#try-it" class="callout-cta">Sign up to try it!</a>
+<a href="/#try-it" class="callout-cta">Where to buy</a>
 
 </section>
