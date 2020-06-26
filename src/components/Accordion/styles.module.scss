@@ -41,6 +41,10 @@
     margin: auto 0 auto auto;
   }
 
+  &.active {
+    cursor: default;
+  }
+
   &:focus {
     outline: none;
   }

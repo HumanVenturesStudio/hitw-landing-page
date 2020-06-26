@@ -15,6 +15,10 @@ const AccordionItem = ({
   setActive,
 }) => {
   const itemRef = React.useRef();
+  const [tracked, setTracked] = React.useState(false);
+  const toggleOpen = () => {
+    setActive(isActive === id ? null : id);
+  };
 
   React.useEffect(() => {
     if (document.location.hash === `#${id}`) {
@@ -23,11 +27,8 @@ const AccordionItem = ({
         itemRef.current.focus();
         setActive(id);
       }, 100);
-    } else if (active) {
-      // Set AccordionItem active if it's configured to be active
-      setActive(id);
     }
-  }, [active, id, setActive]);
+  }, [id, setActive]);
 
   return (
     <>
@@ -41,11 +42,14 @@ const AccordionItem = ({
         })}
         onClick={() => {
           document.location.hash = id;
-          setActive(isActive ? null : id);
-          trackEvent(trackEvent.EVENT__CONVERSION__ACCORDION_OPEN, {
-            id: id,
-            release: LandingPage.release,
-          });
+          toggleOpen();
+          if (!tracked) {
+            setTracked(true);
+            trackEvent(trackEvent.EVENT__CONVERSION__ACCORDION_OPEN, {
+              id: id,
+              release: LandingPage.release,
+            });
+          }
         }}
       >
         <span>{parseEntities(heading)}</span>
