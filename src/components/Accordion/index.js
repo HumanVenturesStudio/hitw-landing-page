@@ -26,7 +26,7 @@ const AccordionItem = ({
       setTimeout(() => {
         itemRef.current.focus();
         setActive(id);
-      }, 100);
+      }, 500);
     }
   }, [id, setActive]);
 
@@ -63,6 +63,11 @@ const AccordionItem = ({
 
 export default function Accordion({ id, heading, items }) {
   const [activeItem, setActiveItem] = React.useState();
+
+  React.useEffect(() => {
+    const defaultActive = items.find((item) => item.active);
+    !activeItem && defaultActive && setActiveItem(defaultActive.id);
+  }, [activeItem, items]);
 
   return (
     <div id={id} className={cx('accordion', styles.Accordion)}>
