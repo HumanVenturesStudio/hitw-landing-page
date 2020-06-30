@@ -62,6 +62,7 @@
     width: 90vw;
     height: 90vw;
   }
+  text-align: center;
 }
 
 .PreviewVideo {
@@ -74,14 +75,22 @@
 }
 
 .PreviewButton {
-  display: block;
+  --width: 300px;
+  @include button-hover;
+  display: inline-block;
   position: absolute;
   top: calc(100% + var(--theme--unit--base));
-  left: calc(50% - 100px);
+  left: calc(50% - calc(0.5 * var(--width)));
   margin: auto;
   height: auto;
-  width: 200px;
-  @include button-hover;
+  width: var(--width);
+  background: #e7ffa1;
+  color: #bfa1ff;
+  text-decoration: none;
+  text-align: center;
+  padding: var(--theme--unit--small);
+  white-space: nowrap;
+
   transition: transform calc(0.5 * var(--theme--animation-timing))
       var(--theme--animation-ease),
     box-shadow var(--theme--animation-timing) var(--theme--animation-ease);
