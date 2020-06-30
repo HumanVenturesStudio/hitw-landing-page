@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 export default function EaselPrototype() {
   return (
     <div className={styles.EaselPrototype}>
-      <img alt="Easel Content" src={content} />
+      <img alt="Experience The Easel" src={content} />
     </div>
   );
 }

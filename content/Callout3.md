@@ -12,7 +12,7 @@ config:
 
 <section>
 
-![Easel](/images/easel-art.svg)
+![The Easel](/images/easel-art.svg)
 
 </section>
 

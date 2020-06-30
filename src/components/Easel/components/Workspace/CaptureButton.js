@@ -11,7 +11,7 @@ export default function CaptureButton({ onClick }) {
       fill="none"
       viewBox="0 0 71 71"
     >
-      <title>💾 Save Your Easel!</title>
+      <title>💾 Save Your Creation!</title>
       <rect
         width="68"
         height="68"

@@ -1,12 +1,11 @@
-import React from 'react';
 import cx from 'classnames';
-
-import Navigation from 'components/Navigation';
 import Logo from 'components/Logo';
-import styles from './styles.module.scss';
+import Navigation from 'components/Navigation';
 import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import styles from './styles.module.scss';
 
-const Header = () => {
+const Header = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { name: { eq: "Header" } }) {
@@ -35,6 +34,9 @@ const Header = () => {
           className={cx('header--content', styles.Content)}
           dangerouslySetInnerHTML={{ __html: html }}
         />
+      )}
+      {children && (
+        <div className={cx('header--content', styles.Content)}>{children}</div>
       )}
     </header>
   );

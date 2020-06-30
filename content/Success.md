@@ -15,6 +15,12 @@ config: {
 ---
 
 
-# Thanks for joining Easel's waitlist!
+# Thanks for joining The Easel's waitlist!
 
-Please check your email {{CONVERSION__EMAIL}} for cool Easel stuff coming soon!
+<div class="hidden--mobile">
+  Create art here in the meantime!
+</div>
+
+<div class="hidden--mobile">
+  <a href="/playground" class="callout-cta">Try The Easel</a>
+</div>

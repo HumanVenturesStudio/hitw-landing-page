@@ -6,8 +6,8 @@ import Preview from './components/Preview';
 import Workspace from './components/Workspace';
 import styles from './styles.module.scss';
 
-const Easel = ({ release, captureOptions }) => {
-  const [showPreview, setShowPreview] = React.useState(true);
+const Easel = ({ release, captureOptions, skipPreview = false }) => {
+  const [showPreview, setShowPreview] = React.useState(!skipPreview);
 
   return (
     <div className={cx('easel', styles.Easel)}>

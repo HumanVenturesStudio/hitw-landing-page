@@ -1,10 +1,10 @@
 module.exports = {
-  title: 'Try Easel | 2020',
+  title: 'Try The Easel | 2020',
   description:
-    'Easel is a brand new experience for kids from ages 2 to 101 to learn, grow, create and discover. Sign up to try it!',
+    'The Easel is a brand new experience for kids from ages 2 to 101 to learn, grow, create and discover. Sign up to try it!',
   twitter: '',
   keywords: [
-    'Easel',
+    'The Easel',
     'Kids',
     'Art',
     'Enrichment',

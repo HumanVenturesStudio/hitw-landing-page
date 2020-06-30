@@ -1,6 +1,6 @@
 module.exports = {
-  name: `Easel`,
-  short_name: `Easel`,
+  name: `The Easel`,
+  short_name: `The Easel`,
   start_url: `/`,
   background_color: `#bfa1ff`,
   theme_color: `#ffffff`,
