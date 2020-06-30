@@ -34,7 +34,7 @@ export default function Preview({ onClick }) {
             onClick();
           }}
         >
-          Try The Easel
+          Try The Easel!
         </a>
       </Desktop>
     </div>
