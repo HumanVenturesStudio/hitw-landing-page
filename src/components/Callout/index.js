@@ -11,6 +11,7 @@ export const CALLOUT_ALIGNED_CENTER = 'center-aligned';
 export const CALLOUT_BIG_NUMBERS = 'big-numbers';
 export const CALLOUT_FULL_BLEED = 'full-bleed';
 export const CALLOUT_FOUR_UP = 'four-up';
+export const CALLOUT_CONTENT_ONLY = 'content-only';
 export const CALLOUT_FORMATS = [
   CALLOUT_ALIGNED_LEFT,
   CALLOUT_ALIGNED_RIGHT,
@@ -18,6 +19,7 @@ export const CALLOUT_FORMATS = [
   CALLOUT_BIG_NUMBERS,
   CALLOUT_FULL_BLEED,
   CALLOUT_FOUR_UP,
+  CALLOUT_CONTENT_ONLY,
 ];
 
 const calloutStyle = {
@@ -66,6 +68,16 @@ const Callout = ({ id, release, name, children, config = {} }) => {
 
   if (configuration.hide === true) {
     return null;
+  }
+
+  // Content Only
+  if (configuration.format === CALLOUT_CONTENT_ONLY) {
+    if (html && html.length) {
+      return <div dangerouslySetInnerHTML={{ __html: html }} />;
+    }
+    if (children) {
+      return children;
+    }
   }
 
   return (
