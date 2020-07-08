@@ -136,8 +136,8 @@
   --callout--left--background: var(--theme--color--quaternary);
   --callout--left--color: var(--theme--color--white);
 
-  --callout--right--background: var(--theme--color--secondary);
-  --callout--right--color: var(--theme--color--white);
+  --callout--right--background: transparent;
+  --callout--right--color: inherit;
 
   --callout--center--background: none;
   --callout--center--color: var(--theme--color--white);
@@ -145,8 +145,8 @@
   --callout--big-numbers--background: var(--theme--color--white);
   --callout--big-numbers--color: var(--theme--color--black);
 
-  --callout--full-bleed--background: var(--theme--color--primary);
-  --callout--full-bleed--color: var(--theme--color--white);
+  --callout--full-bleed--background: transparent;
+  --callout--full-bleed--color: inherit;
 
 
   /* ==================================================================

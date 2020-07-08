@@ -69,3 +69,34 @@ body {
 #Success section {
   padding: var(--theme--unit--base);
 }
+
+
+.callout-cta {
+  --width: 300px;
+  display: inline-block;
+  margin: auto;
+  height: auto;
+  width: var(--width);
+  background: #e7ffa1;
+  color: #bfa1ff;
+  text-decoration: none;
+  text-align: center;
+  padding: var(--theme--unit--small);
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition: transform calc(0.5 * var(--theme--animation-timing))
+      var(--theme--animation-ease),
+    box-shadow var(--theme--animation-timing) var(--theme--animation-ease);
+  box-shadow: 0 0 0 var(--theme--color--secondary);
+}
+
+.callout-cta:hover,
+.callout-cta:focus {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px var(--theme--color--secondary);
+}
+
+.callout-cta:active {
+  transform: scale(0.95);
+}

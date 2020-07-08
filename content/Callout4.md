@@ -2,6 +2,8 @@
 name: Callout4
 config:
   background: ""
-  format: full-bleed
+  format: content-only
   hide: false
 ---
+
+<img src="/images/easel-in-place.jpg" width="100%" />
