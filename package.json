@@ -41,7 +41,7 @@
     "lodash.isobject": "^3.0.2",
     "nanobus": "^4.4.0",
     "netlify-cli": "^2.48.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "query-string": "^6.12.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
