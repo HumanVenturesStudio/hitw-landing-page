@@ -26,7 +26,7 @@
     "gatsby-cli": "^2.12.26",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.3.3",
-    "gatsby-plugin-mdx": "^1.1.6",
+    "gatsby-plugin-mdx": "^2.14.1",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-segment-js": "^3.1.0",
